@@ -36,8 +36,8 @@ var is_wielding : bool
 
 
 func _ready():
-	#for node in wieldable_nodes:
-		#node.hide()
+	for node in wieldable_nodes:
+		node.hide()
 		
 	object_detected = false
 

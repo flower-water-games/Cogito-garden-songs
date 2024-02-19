@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgtjml2t3hdvx"]
+[gd_scene load_steps=13 format=3 uid="uid://bvylr50ht5dpa"]
 
-[ext_resource type="Script" path="res://COGITO/Scripts/Wieldable_Pistol.gd" id="1_b1v5k"]
-[ext_resource type="PackedScene" uid="uid://c1umit2vtv22v" path="res://COGITO/PrefabScenes/projectile_pistol.tscn" id="2_l6tt4"]
-[ext_resource type="AudioStream" uid="uid://clsajk36s7luk" path="res://COGITO/Assets/Audio/Kenney/error_004.ogg" id="3_vdfq8"]
-[ext_resource type="Resource" uid="uid://lc5uq2e6ldah" path="res://COGITO/InventoryPD/Items/Cogito_Pistol.tres" id="4_xoq73"]
-[ext_resource type="AnimationLibrary" uid="uid://bbnpn3wqqoj7l" path="res://COGITO/Animations/Wieldables/Wieldable_ToyPistol.res" id="5_fkf6b"]
+[ext_resource type="Script" path="res://COGITO/Scripts/Cogito_Object.gd" id="1_iw4u4"]
+[ext_resource type="PackedScene" uid="uid://b31v0mjo1op8x" path="res://FRESH-FLOWERS/Assets/barrelOpen.glb" id="2_m344n"]
+[ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://COGITO/Components/PickupComponent.tscn" id="3_8c0ly"]
+[ext_resource type="Resource" uid="uid://cmqs55rmw7a35" path="res://FRESH-FLOWERS/Inventory/Watering_Can.tres" id="4_ms6e8"]
+[ext_resource type="Script" path="res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_klhiw"]
+[ext_resource type="PackedScene" uid="uid://cio4x05ipvslu" path="res://COGITO/Components/CarryableComponent.tscn" id="6_hsxon"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_r6lnb"]
 _data = PackedByteArray(2, 0, 0, 0, 5, 0, 0, 0, 4, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0, 2, 0, 0, 0, 115, 66, 19, 0, 77, 0, 72, 115, 204, 0, 0, 0, 209, 226, 4, 0, 0, 1, 0, 0, 1, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 77, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8, 0, 8, 0, 2, 0, 2, 0, 169, 0, 0, 0, 64, 0, 0, 0, 56, 181, 0, 0, 0, 1, 1, 4, 0, 4, 0, 1, 0, 1, 0, 233, 0, 0, 0, 16, 0, 0, 0, 200, 214, 0, 0, 0, 2, 1, 2, 0, 2, 0, 1, 0, 1, 0, 249, 0, 0, 0, 16, 0, 0, 0, 172, 110, 0, 0, 0, 3, 1, 1, 0, 1, 0, 1, 0, 1, 0, 9, 1, 0, 0, 16, 0, 0, 0, 6, 136, 183, 185, 185, 185, 25, 93, 107, 1, 0, 0, 0, 0, 0, 0, 0, 0, 183, 185, 185, 185, 25, 93, 107, 1, 0, 0, 0, 0, 0, 0, 0, 0, 8, 93, 129, 224, 4, 29, 157, 85, 72, 68, 68, 68, 55, 222, 22, 247, 8, 108, 145, 99, 148, 156, 158, 85, 0, 0, 0, 0, 26, 15, 141, 171, 176, 20, 161, 81, 28, 158, 158, 94, 0, 0, 0, 0, 0, 0, 243, 230, 80, 193, 136, 65, 222, 222, 95, 223, 0, 0, 127, 119, 127, 119, 127, 119, 119, 247, 182, 86, 59, 182, 181, 2, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -50,35 +51,31 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gcevq")
 
-[node name="Toy Pistol" type="Node3D" node_paths=PackedStringArray("wieldable_mesh")]
-transform = Transform3D(-3.61999e-06, 0, 0.999999, 0, 1, 0, -1, 0, -3.61999e-06, 0.328536, -0.26394, -0.53488)
-script = ExtResource("1_b1v5k")
-projectile_prefab = ExtResource("2_l6tt4")
-projectile_velocity = 50.0
-default_position = Vector3(0.329, -0.264, -0.535)
-sound_primary_use = ExtResource("3_vdfq8")
-item_reference = ExtResource("4_xoq73")
-wieldable_mesh = NodePath("ToyPistol_mesh")
-anim_equip = "ToyPistol/equip"
-anim_unequip = "ToyPistol/unequip"
-anim_action_primary = "ToyPistol/shoot"
-anim_action_secondary = "ToyPistol/action_secondary"
-anim_reload = "ToyPistol/reload"
+[sub_resource type="BoxShape3D" id="BoxShape3D_amy1d"]
+size = Vector3(0.439306, 0.368719, 0.270923)
 
-[node name="ToyPistol_mesh" type="Node3D" parent="."]
+[sub_resource type="Resource" id="Resource_vcolb"]
+script = ExtResource("5_klhiw")
+inventory_item = ExtResource("4_ms6e8")
+quantity = 1
 
-[node name="pistol_mesh" type="MeshInstance3D" parent="ToyPistol_mesh"]
+[node name="pickup_watering_can" type="RigidBody3D"]
+collision_layer = 3
+script = ExtResource("1_iw4u4")
+
+[node name="barrelOpen2" parent="." instance=ExtResource("2_m344n")]
+
+[node name="pistol_mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
 mesh = SubResource("ArrayMesh_gjvni")
 skeleton = NodePath("")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-bus = &"SFX"
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010732, 0.177845, -0.00766547)
+shape = SubResource("BoxShape3D_amy1d")
 
-[node name="Bullet_Point" type="Node3D" parent="."]
-transform = Transform3D(1, 0, -1.81899e-12, 0, 1, 0, 0, 0, 1, 0.277335, 0.0601448, 0.00182778)
+[node name="PickupComponent" parent="." instance=ExtResource("3_8c0ly")]
+slot_data = SubResource("Resource_vcolb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"ToyPistol": ExtResource("5_fkf6b")
-}
+[node name="CarryableComponent" parent="." instance=ExtResource("6_hsxon")]

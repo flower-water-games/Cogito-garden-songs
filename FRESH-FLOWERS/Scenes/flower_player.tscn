@@ -1,16 +1,136 @@
-[gd_scene load_steps=2 format=3 uid="uid://r5um2mxw2dfg"]
+[gd_scene load_steps=22 format=3 uid="uid://r5um2mxw2dfg"]
 
-[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PrefabScenes/player.tscn" id="1_spknu"]
+[ext_resource type="Script" path="res://COGITO/Scripts/player.gd" id="1_uqygk"]
+[ext_resource type="PackedScene" uid="uid://dt6brf8pfl28d" path="res://FRESH-FLOWERS/PrefabScenes/Wieldables/watering_can.tscn" id="2_8hj5s"]
+[ext_resource type="Resource" uid="uid://ev2xuamhfojm" path="res://COGITO/InventoryPD/Inventories/PlayerInventory.tres" id="2_tacho"]
+[ext_resource type="AudioStream" uid="uid://ba8gpptnnapyh" path="res://COGITO/Assets/Audio/Kenney/cloth2.ogg" id="3_7i333"]
+[ext_resource type="AnimationLibrary" uid="uid://cdchpsv104er2" path="res://COGITO/Assets/Animations/player_eyes.tres" id="4_y3b7i"]
+[ext_resource type="AudioStream" uid="uid://up2hfhgq1qx6" path="res://COGITO/Assets/Audio/Kenney/Footsteps/footstep00.ogg" id="8_2f17t"]
+[ext_resource type="AudioStream" uid="uid://crj07wq4oocwi" path="res://COGITO/Assets/Audio/Kenney/Footsteps/footstep01.ogg" id="9_ojyyv"]
+[ext_resource type="AudioStream" uid="uid://dewyukd562k37" path="res://COGITO/Assets/Audio/Kenney/Footsteps/footstep02.ogg" id="10_5ok3f"]
+[ext_resource type="AudioStream" uid="uid://c5kfw4o57foju" path="res://COGITO/Assets/Audio/Kenney/Footsteps/footstep03.ogg" id="11_5pxe7"]
+[ext_resource type="AudioStream" uid="uid://b4mt1tuxo2144" path="res://COGITO/Assets/Audio/Kenney/Footsteps/footstep04.ogg" id="12_chy5m"]
+[ext_resource type="Script" path="res://COGITO/DynamicFootstepSystem/Scripts/footstep_surface_detector.gd" id="13_i1ljt"]
+[ext_resource type="AudioStream" uid="uid://dc03jiw2a6y3j" path="res://COGITO/DynamicFootstepSystem/FootstepProfiles/generic_footstep_profile.tres" id="14_omn5y"]
+[ext_resource type="Resource" uid="uid://ca0q2t6w08ubh" path="res://COGITO/DynamicFootstepSystem/FootstepMaterialLibrary/sample_footstep_material_library.tres" id="15_vh71q"]
+[ext_resource type="PackedScene" uid="uid://dy3tudla5p2nc" path="res://COGITO/Components/PlayerInteractionComponent.tscn" id="16_po8au"]
+[ext_resource type="PackedScene" uid="uid://c4p6cl0xvfdar" path="res://COGITO/Components/HealthComponent.tscn" id="17_riywi"]
+[ext_resource type="PackedScene" uid="uid://b37xr3nyh6aog" path="res://COGITO/Components/StaminaComponent.tscn" id="18_5n2t3"]
+[ext_resource type="PackedScene" uid="uid://ctdx2bs6fji20" path="res://COGITO/Components/SanityComponent.tscn" id="19_6angn"]
+[ext_resource type="PackedScene" uid="uid://bkbudpcayf2jc" path="res://COGITO/Components/BrightnessComponent.tscn" id="20_ul1bq"]
 
-[node name="Player" instance=ExtResource("1_spknu")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bvi11"]
+size = Vector3(0.8, 1.6, 0.8)
 
-[node name="Flashlight" parent="Neck/Head/Wieldables" index="0" node_paths=PackedStringArray("wieldable_mesh")]
-wieldable_mesh = NodePath("Flashlight_Mesh")
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fgxde"]
+radius = 0.4
+height = 0.8
 
-[node name="Toy Pistol" parent="Neck/Head/Wieldables" index="1" node_paths=PackedStringArray("wieldable_mesh")]
-wieldable_mesh = NodePath("ToyPistol_mesh")
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_af0lu"]
+streams_count = 5
+stream_0/stream = ExtResource("8_2f17t")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("9_ojyyv")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("10_5ok3f")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("11_5pxe7")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("12_chy5m")
+stream_4/weight = 1.0
 
-[node name="PlayerInteractionComponent" parent="." index="9" node_paths=PackedStringArray("interaction_raycast", "carryable_position", "wieldable_nodes")]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+script = ExtResource("1_uqygk")
+fall_damage = 10
+inventory_data = ExtResource("2_tacho")
+jump_sound = ExtResource("3_7i333")
+STEP_MAX_SLOPE_DEGREE = 1.0
+
+[node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_bvi11")
+
+[node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("CapsuleShape3D_fgxde")
+disabled = true
+
+[node name="StaircheckRayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+target_position = Vector3(0, -0.5, 0)
+
+[node name="CrouchRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+target_position = Vector3(0, 1.6, 0)
+collision_mask = 3
+
+[node name="CarryablePosition" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.2, 0.341, -0.3)
+
+[node name="Neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="Head" type="Node3D" parent="Neck"]
+
+[node name="Eyes" type="Node3D" parent="Neck/Head"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Neck/Head/Eyes"]
+reset_on_save = false
+root_node = NodePath("../..")
+libraries = {
+"": ExtResource("4_y3b7i")
+}
+
+[node name="Camera" type="Camera3D" parent="Neck/Head/Eyes"]
+
+[node name="InteractionRaycast" type="RayCast3D" parent="Neck/Head/Eyes/Camera"]
+target_position = Vector3(0, 0, -2.5)
+collision_mask = 2
+
+[node name="Wieldables" type="Node3D" parent="Neck/Head"]
+
+[node name="watering_can" parent="Neck/Head/Wieldables" node_paths=PackedStringArray("wieldable_mesh") instance=ExtResource("2_8hj5s")]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.325805, -0.407073, -0.531526)
+wieldable_mesh = NodePath("barrelOpen2")
+
+[node name="SlidingTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.488, 0)
+stream = SubResource("AudioStreamRandomizer_af0lu")
+volume_db = -38.0
+bus = &"SFX"
+script = ExtResource("13_i1ljt")
+generic_fallback_footstep_profile = ExtResource("14_omn5y")
+footstep_material_library = ExtResource("15_vh71q")
+
+[node name="FootstepTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="PlayerInteractionComponent" parent="." node_paths=PackedStringArray("interaction_raycast", "carryable_position", "wieldable_nodes") instance=ExtResource("16_po8au")]
 interaction_raycast = NodePath("../Neck/Head/Eyes/Camera/InteractionRaycast")
 carryable_position = NodePath("../CarryablePosition")
-wieldable_nodes = [NodePath("../Neck/Head/Wieldables/Flashlight"), NodePath("../Neck/Head/Wieldables/Toy Pistol")]
+wieldable_nodes = [NodePath("../Neck/Head/Wieldables/watering_can")]
+
+[node name="HealthComponent" parent="." instance=ExtResource("17_riywi")]
+max_health = 100.0
+start_health = 80.0
+no_sanity_damage = 1.0
+
+[node name="StaminaComponent" parent="." instance=ExtResource("18_5n2t3")]
+max_stamina = 30.0
+
+[node name="SanityComponent" parent="." instance=ExtResource("19_6angn")]
+start_sanity = 30.0
+
+[node name="BrightnessComponent" parent="." instance=ExtResource("20_ul1bq")]
+
+[node name="JumpCooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="animation_finished" from="Neck/Head/Eyes/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="SlidingTimer" to="." method="_on_sliding_timer_timeout"]

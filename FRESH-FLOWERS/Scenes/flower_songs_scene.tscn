@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnk5lddo8nc7u"]
+[gd_scene load_steps=15 format=3 uid="uid://cnk5lddo8nc7u"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Material" uid="uid://hhhudvarh7gk" path="res://COGITO/Assets/Materials/Prototype_Orange.tres" id="7_riqx5"]
 [ext_resource type="Material" uid="uid://dhg1uhiq7ywn2" path="res://COGITO/Assets/Materials/Prototype_Green.tres" id="8_q8ys2"]
 [ext_resource type="PackedScene" uid="uid://bdyukj85qkut0" path="res://COGITO/PrefabScenes/door.tscn" id="9_jepcv"]
+[ext_resource type="PackedScene" uid="uid://bvylr50ht5dpa" path="res://FRESH-FLOWERS/PrefabScenes/pickup_watering_can.tscn" id="11_2lufm"]
 [ext_resource type="PackedScene" uid="uid://bab56bf0vqfss" path="res://COGITO/PrefabScenes/Pickups/pickup_battery.tscn" id="11_bw302"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
@@ -130,3 +131,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, 
 
 [node name="RayCast3D" type="RayCast3D" parent="ConnectorA"]
 target_position = Vector3(0, 0, -1)
+
+[node name="pickup_watering_can" parent="." instance=ExtResource("11_2lufm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74672, -4.84288e-08, 6.5716)
