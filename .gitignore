@@ -12,3 +12,9 @@ export_presets.cfg
 .godot/
 data_*/
 
+
+# System/tool-specific ignores
+.directory
+.DS_Store
+*~
+*.blend1
