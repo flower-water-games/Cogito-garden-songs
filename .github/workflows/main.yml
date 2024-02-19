@@ -1,0 +1,103 @@
+env:
+  ITCH_USERNAME: carlos-michael
+  ITCH_GAMEID: moo
+  GODOT_VERSION: 4.3
+  GODOT_BUILD : dev3
+  DEPLOY_WEB: false
+  DEPLOY_WINDOWS: false
+  DEPLOY_LINUX: false
+
+# Whenever a tag push matching pattern "v*" then run the job
+on: 
+    push:
+        # only run on branch names /main and /playtest
+        branches:
+            - main
+            - playtest
+            - workflows
+#
+jobs:
+    #godot default export
+    export_game:
+      # Always use ubuntu-latest for this action
+      runs-on: ubuntu-latest
+      # Add permission for release creation. Can be made narrower according to your needs
+      permissions: write-all
+      # Job name, can be anything
+      name: Export Game
+      steps:
+        # Always include the checkout step so that 
+        # your project is available for Godot to export
+        - name: checkout
+          uses: actions/checkout@v3.3.0
+      
+        - name: export game
+          id: export
+          # Use latest version (see releases for all versions)
+          uses: firebelley/godot-export@v5.2.1
+          with:
+            # Defining all the required inputs
+            godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/${{ env.GODOT_BUILD }}/Godot_v${{ env.GODOT_VERSION }}-${{ env.GODOT_BUILD }}_linux.x86_64.zip
+            godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/${{ env.GODOT_BUILD }}/Godot_v${{ env.GODOT_VERSION }}-${{ env.GODOT_BUILD }}_export_templates.tpz
+            relative_project_path: ./
+            archive_output: true
+        - uses: actions/upload-artifact@v3
+          with:
+              name: godot-export
+              path: ${{ steps.export.outputs.archive_directory }}
+    # deploy to itch step web / windows / linux
+    deploy_web:
+      needs: export_game
+      runs-on: ubuntu-latest
+      if: github.ref == 'refs/heads/main' && needs.set_env_vars.outputs.deploy_web == 'true'
+      steps:
+        - uses: actions/download-artifact@v2
+          with:
+            name: godot-export
+            path: ./
+        - name: Deploy - Itch.io - web
+          uses: KikimoraGames/itch-publish@v0.0.3
+          with:
+              butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+              gameData: ./Web.zip
+              itchUsername: ${{ env.ITCH_USERNAME }}
+              itchGameId: ${{ env.ITCH_GAMEID }}
+              buildChannel: web
+              buildNumber: ${{ github.run_number }}
+    deploy_windows:
+      needs: export_game
+      runs-on: ubuntu-latest
+      if: github.ref == 'refs/heads/main' && needs.set_env_vars.outputs.deploy_windows == 'true'
+      steps:
+        - uses: actions/download-artifact@v2
+          with:
+            name: godot-export
+            path: ./
+        - name: Deploy - Itch.io - windows
+          uses: KikimoraGames/itch-publish@v0.0.3
+          with:
+              butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+              gameData: ./win.zip
+
+              itchUsername: ${{ env.ITCH_USERNAME }}
+              itchGameId: ${{ env.ITCH_GAMEID }}
+              buildChannel: windows
+              buildNumber: windows:${{ github.run_number }}
+    deploy_linux:
+      needs: export_game
+      runs-on: ubuntu-latest
+      if: github.ref == 'refs/heads/main' && needs.set_env_vars.outputs.deploy_linux == 'true'
+      steps:
+        - uses: actions/download-artifact@v2
+          with:
+            name: godot-export
+            path: ./
+        - name: Deploy - Itch.io - linux
+          uses: KikimoraGames/itch-publish@v0.0.3
+          with:
+              butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+              gameData: ./LinuxX11.zip
+              itchUsername: ${{ env.ITCH_USERNAME }}
+              itchGameId: ${{ env.ITCH_GAMEID }}
+              buildChannel: linux
+              buildNumber: linux:${{ github.run_number }}
