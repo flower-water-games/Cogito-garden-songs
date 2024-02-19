@@ -13,6 +13,7 @@
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
 panorama = ExtResource("2_upsuv")
+energy_multiplier = 1.4
 
 [sub_resource type="Sky" id="Sky_6xcgc"]
 sky_material = SubResource("PanoramaSkyMaterial_4q5fr")

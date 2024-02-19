@@ -1,9 +1,9 @@
 env:
   ITCH_USERNAME: carlos-michael
-  ITCH_GAMEID: moo
+  ITCH_GAMEID: invalid
   GODOT_VERSION: 4.3
   GODOT_BUILD : dev3
-  DEPLOY_WEB: false
+  DEPLOY_WEB: true
   DEPLOY_WINDOWS: false
   DEPLOY_LINUX: false
 
