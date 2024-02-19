@@ -1,0 +1,131 @@
+[gd_scene load_steps=14 format=3 uid="uid://cnk5lddo8nc7u"]
+
+[ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
+[ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
+[ext_resource type="Texture2D" uid="uid://dntmkhn0pilpn" path="res://FRESH-FLOWERS/Assets/pink_sky.png" id="2_upsuv"]
+[ext_resource type="PackedScene" uid="uid://wiugfhd6al3l" path="res://FRESH-FLOWERS/Scenes/flowers_player_hud.tscn" id="3_1351y"]
+[ext_resource type="PackedScene" uid="uid://cf0e57ahc0m1i" path="res://FRESH-FLOWERS/Scenes/flower_pause_menu.tscn" id="5_rt261"]
+[ext_resource type="Material" uid="uid://dkbgl3p3ffd1" path="res://COGITO/Assets/Materials/Prototype_DarkGrey.tres" id="6_8e7kf"]
+[ext_resource type="Material" uid="uid://hhhudvarh7gk" path="res://COGITO/Assets/Materials/Prototype_Orange.tres" id="7_riqx5"]
+[ext_resource type="Material" uid="uid://dhg1uhiq7ywn2" path="res://COGITO/Assets/Materials/Prototype_Green.tres" id="8_q8ys2"]
+[ext_resource type="PackedScene" uid="uid://bdyukj85qkut0" path="res://COGITO/PrefabScenes/door.tscn" id="9_jepcv"]
+[ext_resource type="PackedScene" uid="uid://bab56bf0vqfss" path="res://COGITO/PrefabScenes/Pickups/pickup_battery.tscn" id="11_bw302"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
+panorama = ExtResource("2_upsuv")
+
+[sub_resource type="Sky" id="Sky_6xcgc"]
+sky_material = SubResource("PanoramaSkyMaterial_4q5fr")
+
+[sub_resource type="Environment" id="Environment_ai7l5"]
+background_mode = 2
+sky = SubResource("Sky_6xcgc")
+ambient_light_source = 3
+ambient_light_color = Color(0.588235, 0.588235, 0.588235, 1)
+ambient_light_sky_contribution = 0.1
+ambient_light_energy = 0.2
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[node name="flower_songs_scene" type="Node3D" node_paths=PackedStringArray("connectors")]
+script = ExtResource("1_mmok6")
+connectors = [NodePath("ConnectorA")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(1, 0.988235, 0.988235, 1)
+shadow_enabled = true
+shadow_opacity = 0.8
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ai7l5")
+
+[node name="Player" parent="." instance=ExtResource("2_ds3e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.94384, 1.27955, 3.70879)
+pause_menu = NodePath("../PauseMenu")
+player_hud = NodePath("../Player_HUD")
+
+[node name="Player_HUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_1351y")]
+player = NodePath("../Player")
+use_stamina_component = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_rt261")]
+visible = false
+
+[node name="STATIC ENVIRONMENT" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="STATIC ENVIRONMENT"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+use_collision = true
+size = Vector3(20, 0.1, 20)
+material = ExtResource("6_8e7kf")
+
+[node name="Wall" type="CSGBox3D" parent="STATIC ENVIRONMENT"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 9.95)
+use_collision = true
+size = Vector3(20, 4, 0.1)
+material = ExtResource("6_8e7kf")
+
+[node name="Txt_SceneB" type="Label3D" parent="STATIC ENVIRONMENT/Wall"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.7, 0.235219, -0.149947)
+text = "welcome to flower water garden game
+by cm, paul, wei, gabriel and more
+
+this is the prototype with our core mechanics and tracks from houis/wei
+
+[wasd] - walk around
+[mouse movement] - look around"
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 800.0
+
+[node name="Wall2" type="CSGBox3D" parent="STATIC ENVIRONMENT"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -9.95)
+use_collision = true
+size = Vector3(20, 4, 0.1)
+material = ExtResource("6_8e7kf")
+
+[node name="Wall3" type="CSGBox3D" parent="STATIC ENVIRONMENT"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.95, 2, 0)
+use_collision = true
+size = Vector3(19.8, 4, 0.1)
+material = ExtResource("6_8e7kf")
+
+[node name="Wall4" type="CSGBox3D" parent="STATIC ENVIRONMENT"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.95, 2, 0)
+use_collision = true
+size = Vector3(19.8, 4, 0.1)
+material = ExtResource("6_8e7kf")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="STATIC ENVIRONMENT"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.41561e-07, 4, 10)
+visible = false
+material_override = ExtResource("7_riqx5")
+inner_radius = 1.0
+outer_radius = 2.0
+sides = 16
+ring_sides = 12
+material = ExtResource("8_q8ys2")
+
+[node name="Wall_w_Door" type="CSGPolygon3D" parent="STATIC ENVIRONMENT"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -4, 0, -0.1)
+use_collision = true
+collision_layer = 3
+polygon = PackedVector2Array(0, 0, 0, 3, 9.6, 3, 9.6, 0, 5, 0, 5, 2, 4, 2, 4, 0)
+depth = 0.2
+material = ExtResource("6_8e7kf")
+
+[node name="Door" parent="." instance=ExtResource("9_jepcv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -0.2)
+open_rotation_deg = 180.0
+closed_rotation_deg = 90.0
+
+[node name="Pickup_Battery" parent="." instance=ExtResource("11_bw302")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18302, 0.18151, 8.27574)
+
+[node name="ConnectorA" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, -4)
+
+[node name="RayCast3D" type="RayCast3D" parent="ConnectorA"]
+target_position = Vector3(0, 0, -1)

@@ -91,9 +91,11 @@ collision_mask = 2
 
 [node name="Wieldables" type="Node3D" parent="Neck/Head"]
 
-[node name="Flashlight" parent="Neck/Head/Wieldables" instance=ExtResource("5_ukw1v")]
+[node name="Flashlight" parent="Neck/Head/Wieldables" node_paths=PackedStringArray("wieldable_mesh") instance=ExtResource("5_ukw1v")]
+wieldable_mesh = NodePath("Flashlight_Mesh")
 
-[node name="Toy Pistol" parent="Neck/Head/Wieldables" instance=ExtResource("6_lwwgx")]
+[node name="Toy Pistol" parent="Neck/Head/Wieldables" node_paths=PackedStringArray("wieldable_mesh") instance=ExtResource("6_lwwgx")]
+wieldable_mesh = NodePath("ToyPistol_mesh")
 
 [node name="SlidingTimer" type="Timer" parent="."]
 wait_time = 1.5

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://r5um2mxw2dfg"]
+
+[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PrefabScenes/player.tscn" id="1_spknu"]
+
+[node name="Player" instance=ExtResource("1_spknu")]
+
+[node name="Flashlight" parent="Neck/Head/Wieldables" index="0" node_paths=PackedStringArray("wieldable_mesh")]
+wieldable_mesh = NodePath("Flashlight_Mesh")
+
+[node name="Toy Pistol" parent="Neck/Head/Wieldables" index="1" node_paths=PackedStringArray("wieldable_mesh")]
+wieldable_mesh = NodePath("ToyPistol_mesh")
+
+[node name="PlayerInteractionComponent" parent="." index="9" node_paths=PackedStringArray("interaction_raycast", "carryable_position", "wieldable_nodes")]
+interaction_raycast = NodePath("../Neck/Head/Eyes/Camera/InteractionRaycast")
+carryable_position = NodePath("../CarryablePosition")
+wieldable_nodes = [NodePath("../Neck/Head/Wieldables/Flashlight"), NodePath("../Neck/Head/Wieldables/Toy Pistol")]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cogito-Garden-Songs"
-run/main_scene="res://COGITO/DemoScenes/COGITO_MainMenu.tscn"
+run/main_scene="res://FRESH-FLOWERS/Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=120
 boot_splash/image="res://COGITO/COGITO_icon.png"

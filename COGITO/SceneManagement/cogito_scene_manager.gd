@@ -241,7 +241,7 @@ func save_scene_state(_scene_name_to_save, slot: String):
 
 # Function to transition to another scene via the loading screen.
 func load_next_scene(target : String, connector_name: String, passed_slot: String, load_mode: CogitoSceneLoadMode) -> void:
-	var loading_screen = preload("res://COGITO/SceneManagement/LoadingScene.tscn").instantiate()
+	var loading_screen = preload("res://FRESH-FLOWERS/Scenes/flowers_loading_scene.tscn").instantiate()
 	loading_screen.next_scene_path = target
 	loading_screen.connector_name = connector_name
 	loading_screen.passed_slot = passed_slot

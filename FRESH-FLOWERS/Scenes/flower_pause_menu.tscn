@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf0e57ahc0m1i"]
+
+[ext_resource type="PackedScene" uid="uid://rw7gdui8lu3n" path="res://COGITO/EasyMenus/Scenes/pause_menu.tscn" id="1_1mrrs"]
+
+[node name="PauseMenu" instance=ExtResource("1_1mrrs")]
+
+[node name="MenuSceneSwitcher" parent="." index="3"]
+main_menu_scene = "res://FRESH-FLOWERS/Scenes/main_menu.tscn"
+start_game_scene = "res://FRESH-FLOWERS/Scenes/flower_songs_scene.tscn"

@@ -539,6 +539,7 @@ vertical_alignment = 1
 [node name="TabContainer" type="TabContainer" parent="QuestHUD/QuestDisplay/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("5_j6s1a")
+current_tab = 0
 
 [node name="Active" type="VBoxContainer" parent="QuestHUD/QuestDisplay/VBoxContainer/TabContainer"]
 layout_mode = 2

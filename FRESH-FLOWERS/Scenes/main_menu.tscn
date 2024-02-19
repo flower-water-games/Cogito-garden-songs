@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvs0cy2bawr7k"]
+
+[ext_resource type="Script" path="res://COGITO/Scripts/menu_scene_switcher.gd" id="1_do27t"]
+[ext_resource type="PackedScene" uid="uid://dk1i6yi8hnhrw" path="res://FRESH-FLOWERS/Scenes/flowers_main_menu.tscn" id="2_lxu5p"]
+[ext_resource type="AudioStream" uid="uid://cr3bcp0u6w1pl" path="res://COGITO/Assets/Audio/Kenney/UiAudio/mouseclick1.ogg" id="3_2nsfu"]
+[ext_resource type="AudioStream" uid="uid://kbw2s407quul" path="res://COGITO/Assets/Audio/Kenney/UiAudio/click1.ogg" id="4_k8sfh"]
+
+[node name="MenuSwitcher" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_do27t")
+main_menu_scene = "res://FRESH-FLOWERS/Scenes/main_menu.tscn"
+start_game_scene = "res://FRESH-FLOWERS/Scenes/flower_songs_scene.tscn"
+
+[node name="MainMenuScene" parent="." instance=ExtResource("2_lxu5p")]
+layout_mode = 1
+sound_hover = ExtResource("3_2nsfu")
+sound_click = ExtResource("4_k8sfh")
+
+[connection signal="start_game_pressed" from="MainMenuScene" to="." method="_on_main_menu_start_game_pressed"]

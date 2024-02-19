@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://wiugfhd6al3l"]
+
+[ext_resource type="PackedScene" uid="uid://0c32kepv0ahx" path="res://COGITO/PrefabScenes/Player_HUD.tscn" id="1_eod0v"]
+
+[node name="Player_HUD" instance=ExtResource("1_eod0v")]
