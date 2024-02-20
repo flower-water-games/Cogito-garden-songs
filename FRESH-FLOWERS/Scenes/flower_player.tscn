@@ -1,10 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://r5um2mxw2dfg"]
+[gd_scene load_steps=24 format=3 uid="uid://r5um2mxw2dfg"]
 
 [ext_resource type="Script" path="res://COGITO/Scripts/player.gd" id="1_uqygk"]
 [ext_resource type="PackedScene" uid="uid://dt6brf8pfl28d" path="res://FRESH-FLOWERS/PrefabScenes/Wieldables/watering_can.tscn" id="2_8hj5s"]
 [ext_resource type="Resource" uid="uid://ev2xuamhfojm" path="res://COGITO/InventoryPD/Inventories/PlayerInventory.tres" id="2_tacho"]
 [ext_resource type="AudioStream" uid="uid://ba8gpptnnapyh" path="res://COGITO/Assets/Audio/Kenney/cloth2.ogg" id="3_7i333"]
 [ext_resource type="AnimationLibrary" uid="uid://cdchpsv104er2" path="res://COGITO/Assets/Animations/player_eyes.tres" id="4_y3b7i"]
+[ext_resource type="PackedScene" uid="uid://5r8icl42jumy" path="res://COGITO/Wieldables/flashlight.tscn" id="5_rbb7k"]
+[ext_resource type="Resource" uid="uid://ckvdkigvwowm5" path="res://COGITO/InventoryPD/Items/Cogito_Flashlight.tres" id="7_p6o6p"]
 [ext_resource type="AudioStream" uid="uid://up2hfhgq1qx6" path="res://COGITO/Assets/Audio/Kenney/Footsteps/footstep00.ogg" id="8_2f17t"]
 [ext_resource type="AudioStream" uid="uid://crj07wq4oocwi" path="res://COGITO/Assets/Audio/Kenney/Footsteps/footstep01.ogg" id="9_ojyyv"]
 [ext_resource type="AudioStream" uid="uid://dewyukd562k37" path="res://COGITO/Assets/Audio/Kenney/Footsteps/footstep02.ogg" id="10_5ok3f"]
@@ -94,6 +96,10 @@ collision_mask = 2
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.325805, -0.407073, -0.531526)
 wieldable_mesh = NodePath("barrelOpen2")
 
+[node name="Flashlight" parent="Neck/Head/Wieldables" node_paths=PackedStringArray("wieldable_mesh") instance=ExtResource("5_rbb7k")]
+item_reference = ExtResource("7_p6o6p")
+wieldable_mesh = NodePath(".")
+
 [node name="SlidingTimer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
@@ -113,7 +119,7 @@ one_shot = true
 [node name="PlayerInteractionComponent" parent="." node_paths=PackedStringArray("interaction_raycast", "carryable_position", "wieldable_nodes") instance=ExtResource("16_po8au")]
 interaction_raycast = NodePath("../Neck/Head/Eyes/Camera/InteractionRaycast")
 carryable_position = NodePath("../CarryablePosition")
-wieldable_nodes = [NodePath("../Neck/Head/Wieldables/watering_can")]
+wieldable_nodes = [NodePath("../Neck/Head/Wieldables/watering_can"), NodePath("../Neck/Head/Wieldables/Flashlight")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("17_riywi")]
 max_health = 100.0

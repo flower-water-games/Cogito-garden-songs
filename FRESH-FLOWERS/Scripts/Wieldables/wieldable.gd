@@ -8,8 +8,15 @@ class_name Wieldable
 ## Visible parts of the wieldable. Used to hide/show on equip/unequip.
 @export var wieldable_mesh : Node3D
 
+@export_group("AudioVisual")
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
+
+var player_interaction_component: PlayerInteractionComponent
+
 func _ready():
 	wieldable_mesh.hide()
+	pass
 
 func action_primary(_camera_collision:Vector3, _passed_item_reference:InventoryItemPD):
 	pass
@@ -21,13 +28,4 @@ func action_secondary(_is_released: bool):
 func reload():
 	pass
 
-# Function called when wieldable is unequipped.
-func equip(_player_interaction_component: PlayerInteractionComponent):
-	wieldable_mesh.show()
-	pass
 
-
-# Function called when wieldable is unequipped.
-func unequip():
-	wieldable_mesh.hide()
-	pass

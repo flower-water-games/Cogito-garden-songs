@@ -8,9 +8,10 @@
 script = ExtResource("2_qe4cc")
 primary_use_prompt = "Pour"
 secondary_use_prompt = "Refill"
-charge_max = 0.0
+wieldable_data_icon = ExtResource("1_n3dgp")
+charge_max = 100.0
 ammo_item_name = ""
-charge_current = 0.0
+charge_current = 100.0
 wieldable_range = 0.0
 wieldable_damage = 0.0
 name = "Watering Can"

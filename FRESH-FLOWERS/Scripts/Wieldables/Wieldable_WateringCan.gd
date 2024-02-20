@@ -49,3 +49,17 @@ func use_water():
 		print("Watering Can: Used water. Current water level: ", current_water_level)
 	else:
 		print("Watering Can: Can is empty.")
+
+# Function called when wieldable is unequipped.
+func equip(_player_interaction_component: PlayerInteractionComponent):
+	wieldable_mesh.show()
+	player_interaction_component = _player_interaction_component
+	print("Wieldable equipped")
+	pass
+
+
+# Function called when wieldable is unequipped.
+func unequip():
+	wieldable_mesh.hide()
+	print("Wieldable unequipped")
+	pass
