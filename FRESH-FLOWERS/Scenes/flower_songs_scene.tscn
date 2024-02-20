@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cnk5lddo8nc7u"]
+[gd_scene load_steps=12 format=3 uid="uid://cnk5lddo8nc7u"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -6,12 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://wiugfhd6al3l" path="res://FRESH-FLOWERS/Scenes/flowers_player_hud.tscn" id="3_1351y"]
 [ext_resource type="PackedScene" uid="uid://cf0e57ahc0m1i" path="res://FRESH-FLOWERS/Scenes/flower_pause_menu.tscn" id="5_rt261"]
 [ext_resource type="Material" uid="uid://dkbgl3p3ffd1" path="res://COGITO/Assets/Materials/Prototype_DarkGrey.tres" id="6_8e7kf"]
-[ext_resource type="Material" uid="uid://hhhudvarh7gk" path="res://COGITO/Assets/Materials/Prototype_Orange.tres" id="7_riqx5"]
-[ext_resource type="Material" uid="uid://dhg1uhiq7ywn2" path="res://COGITO/Assets/Materials/Prototype_Green.tres" id="8_q8ys2"]
-[ext_resource type="PackedScene" uid="uid://bdyukj85qkut0" path="res://COGITO/PrefabScenes/door.tscn" id="9_jepcv"]
+[ext_resource type="PackedScene" uid="uid://cw4ubg4v5p2ni" path="res://FRESH-FLOWERS/Assets/grass.glb" id="9_x8aq7"]
 [ext_resource type="PackedScene" uid="uid://bvylr50ht5dpa" path="res://FRESH-FLOWERS/PrefabScenes/pickup_watering_can.tscn" id="11_2lufm"]
-[ext_resource type="PackedScene" uid="uid://bab56bf0vqfss" path="res://COGITO/PrefabScenes/Pickups/pickup_battery.tscn" id="11_bw302"]
-[ext_resource type="PackedScene" uid="uid://cwd3g16ep0idw" path="res://COGITO/PrefabScenes/Pickups/pickup_flashlight.tscn" id="12_03lgb"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
 panorama = ExtResource("2_upsuv")
@@ -57,21 +53,22 @@ use_stamina_component = true
 [node name="PauseMenu" parent="." instance=ExtResource("5_rt261")]
 visible = false
 
-[node name="STATIC ENVIRONMENT" type="Node3D" parent="."]
+[node name="STATIC DOME ENVIRONMENT" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99721, 0, 0)
 
-[node name="Floor" type="CSGBox3D" parent="STATIC ENVIRONMENT"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+[node name="Floor" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00589633, -0.0561991, 0.00219393)
 use_collision = true
 size = Vector3(20, 0.1, 20)
 material = ExtResource("6_8e7kf")
 
-[node name="Wall" type="CSGBox3D" parent="STATIC ENVIRONMENT"]
+[node name="Wall" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 9.95)
 use_collision = true
 size = Vector3(20, 4, 0.1)
 material = ExtResource("6_8e7kf")
 
-[node name="Txt_SceneB" type="Label3D" parent="STATIC ENVIRONMENT/Wall"]
+[node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.7, 0.235219, -0.149947)
 text = "welcome to flower water garden game
 by cm, paul, william, gabriel and more
@@ -84,49 +81,54 @@ horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
 
-[node name="Wall2" type="CSGBox3D" parent="STATIC ENVIRONMENT"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -9.95)
+[node name="Wall2" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1372, 2, 9.95)
 use_collision = true
 size = Vector3(20, 4, 0.1)
 material = ExtResource("6_8e7kf")
 
-[node name="Wall3" type="CSGBox3D" parent="STATIC ENVIRONMENT"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.95, 2, 0)
+[node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.7, 0.235219, -0.149947)
+text = "welcome to flower water garden game
+by cm, paul, william, gabriel and more
+
+this is the prototype with our core mechanics and tracks from houis/wei
+
+[wasd] - walk around
+[mouse movement] - look around"
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 800.0
+
+[node name="LEVEL1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2766, 0, 0)
+
+[node name="Floor" type="CSGBox3D" parent="LEVEL1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20084, -0.05, -1.60602)
 use_collision = true
-size = Vector3(19.8, 4, 0.1)
+size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
 
-[node name="Wall4" type="CSGBox3D" parent="STATIC ENVIRONMENT"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.95, 2, 0)
+[node name="grass2" parent="LEVEL1/Floor" instance=ExtResource("9_x8aq7")]
+transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
+
+[node name="Floor2" type="CSGBox3D" parent="LEVEL1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91878, -0.05, 12.3992)
 use_collision = true
-size = Vector3(19.8, 4, 0.1)
+size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="STATIC ENVIRONMENT"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.41561e-07, 4, 10)
-visible = false
-material_override = ExtResource("7_riqx5")
-inner_radius = 1.0
-outer_radius = 2.0
-sides = 16
-ring_sides = 12
-material = ExtResource("8_q8ys2")
+[node name="grass2" parent="LEVEL1/Floor2" instance=ExtResource("9_x8aq7")]
+transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
 
-[node name="Wall_w_Door" type="CSGPolygon3D" parent="STATIC ENVIRONMENT"]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -4, 0, -0.1)
+[node name="Floor3" type="CSGBox3D" parent="LEVEL1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91878, -0.05, -15.5841)
 use_collision = true
-collision_layer = 3
-polygon = PackedVector2Array(0, 0, 0, 3, 9.6, 3, 9.6, 0, 5, 0, 5, 2, 4, 2, 4, 0)
-depth = 0.2
+size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
 
-[node name="Door" parent="." instance=ExtResource("9_jepcv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -0.2)
-open_rotation_deg = 180.0
-closed_rotation_deg = 90.0
-
-[node name="Pickup_Battery" parent="." instance=ExtResource("11_bw302")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18302, 0.18151, 8.27574)
+[node name="grass2" parent="LEVEL1/Floor3" instance=ExtResource("9_x8aq7")]
+transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
 
 [node name="ConnectorA" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, -4)
@@ -136,6 +138,3 @@ target_position = Vector3(0, 0, -1)
 
 [node name="pickup_watering_can" parent="." instance=ExtResource("11_2lufm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74672, 0.712185, 6.5716)
-
-[node name="Pickup_Flashlight" parent="." instance=ExtResource("12_03lgb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63575, 1.36794, 3.37979)
