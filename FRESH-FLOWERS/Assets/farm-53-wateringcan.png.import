@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw0lgmj3c81jw"
 path.s3tc="res://.godot/imported/farm-53-wateringcan.png-dad50e9de9be04059dafc35641e33db0.s3tc.ctex"
+path.etc2="res://.godot/imported/farm-53-wateringcan.png-dad50e9de9be04059dafc35641e33db0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://FRESH-FLOWERS/Assets/farm-53-wateringcan.png"
-dest_files=["res://.godot/imported/farm-53-wateringcan.png-dad50e9de9be04059dafc35641e33db0.s3tc.ctex"]
+dest_files=["res://.godot/imported/farm-53-wateringcan.png-dad50e9de9be04059dafc35641e33db0.s3tc.ctex", "res://.godot/imported/farm-53-wateringcan.png-dad50e9de9be04059dafc35641e33db0.etc2.ctex"]
 
 [params]
 
