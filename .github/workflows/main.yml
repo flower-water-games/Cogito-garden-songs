@@ -69,7 +69,7 @@ jobs:
     deploy_windows:
       needs: export_game
       runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/main' && needs.set_env_vars.outputs.deploy_windows == true
+      if: github.ref == 'refs/heads/main'
       steps:
         - uses: actions/download-artifact@v2
           with:
@@ -98,15 +98,15 @@ jobs:
           uses: KikimoraGames/itch-publish@v0.0.3
           with:
               butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
-              gameData: ./app.zip
+              gameData: ./macOS.zip
               itchUsername: ${{ env.ITCH_USERNAME }}
               itchGameId: ${{ env.ITCH_GAMEID }}
-              buildChannel: mac
+              buildChannel: macOS
               buildNumber: mac:${{ github.run_number }}
     deploy_linux:
       needs: export_game
       runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/main' && needs.set_env_vars.outputs.deploy_linux == true
+      if: github.ref == 'refs/heads/main'
       steps:
         - uses: actions/download-artifact@v2
           with:
@@ -116,7 +116,7 @@ jobs:
           uses: KikimoraGames/itch-publish@v0.0.3
           with:
               butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
-              gameData: ./LinuxX11.zip
+              gameData: ./Linux.zip
               itchUsername: ${{ env.ITCH_USERNAME }}
               itchGameId: ${{ env.ITCH_GAMEID }}
               buildChannel: linux
