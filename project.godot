@@ -10,13 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Cogito-Garden-Songs"
+config/name="Garden-Songs"
 run/main_scene="res://FRESH-FLOWERS/Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=120
-boot_splash/image="res://COGITO/COGITO_icon.png"
+boot_splash/image="res://FRESH-FLOWERS/Assets/freshlogo.png"
 boot_splash/fullsize=false
-config/icon="res://COGITO/COGITO_icon.png"
+config/icon="res://FRESH-FLOWERS/Assets/freshlogo.png"
 
 [audio]
 
