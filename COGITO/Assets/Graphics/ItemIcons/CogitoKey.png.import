@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsf2bc116o1oi"
-path="res://.godot/imported/CogitoKey.png-6becd48401957def97248cf78fde2b26.ctex"
+path.s3tc="res://.godot/imported/CogitoKey.png-6becd48401957def97248cf78fde2b26.s3tc.ctex"
+path.etc2="res://.godot/imported/CogitoKey.png-6becd48401957def97248cf78fde2b26.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://COGITO/Assets/Graphics/ItemIcons/CogitoKey.png"
-dest_files=["res://.godot/imported/CogitoKey.png-6becd48401957def97248cf78fde2b26.ctex"]
+dest_files=["res://.godot/imported/CogitoKey.png-6becd48401957def97248cf78fde2b26.s3tc.ctex", "res://.godot/imported/CogitoKey.png-6becd48401957def97248cf78fde2b26.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

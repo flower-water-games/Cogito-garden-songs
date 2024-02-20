@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlsbl1glpswk5"
-path="res://.godot/imported/Hint_Question.png-0c2c24a5b0eec14ba40fc66e226156b4.ctex"
+path.s3tc="res://.godot/imported/Hint_Question.png-0c2c24a5b0eec14ba40fc66e226156b4.s3tc.ctex"
+path.etc2="res://.godot/imported/Hint_Question.png-0c2c24a5b0eec14ba40fc66e226156b4.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://COGITO/Assets/Graphics/HintIcons/Hint_Question.png"
-dest_files=["res://.godot/imported/Hint_Question.png-0c2c24a5b0eec14ba40fc66e226156b4.ctex"]
+dest_files=["res://.godot/imported/Hint_Question.png-0c2c24a5b0eec14ba40fc66e226156b4.s3tc.ctex", "res://.godot/imported/Hint_Question.png-0c2c24a5b0eec14ba40fc66e226156b4.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

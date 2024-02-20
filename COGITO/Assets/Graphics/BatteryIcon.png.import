@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4xstvhrf4r2h"
-path="res://.godot/imported/BatteryIcon.png-ffdcf1c3ef9f98c895594b690685dcdf.ctex"
+path.s3tc="res://.godot/imported/BatteryIcon.png-ffdcf1c3ef9f98c895594b690685dcdf.s3tc.ctex"
+path.etc2="res://.godot/imported/BatteryIcon.png-ffdcf1c3ef9f98c895594b690685dcdf.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://COGITO/Assets/Graphics/BatteryIcon.png"
-dest_files=["res://.godot/imported/BatteryIcon.png-ffdcf1c3ef9f98c895594b690685dcdf.ctex"]
+dest_files=["res://.godot/imported/BatteryIcon.png-ffdcf1c3ef9f98c895594b690685dcdf.s3tc.ctex", "res://.godot/imported/BatteryIcon.png-ffdcf1c3ef9f98c895594b690685dcdf.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

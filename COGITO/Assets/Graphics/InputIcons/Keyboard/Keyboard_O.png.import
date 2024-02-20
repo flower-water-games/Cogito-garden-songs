@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1a42d8rvruu4"
-path="res://.godot/imported/Keyboard_O.png-00a1b2c0f3d3418ffee138693635b55e.ctex"
+path.s3tc="res://.godot/imported/Keyboard_O.png-00a1b2c0f3d3418ffee138693635b55e.s3tc.ctex"
+path.etc2="res://.godot/imported/Keyboard_O.png-00a1b2c0f3d3418ffee138693635b55e.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://COGITO/Assets/Graphics/InputIcons/Keyboard/Keyboard_O.png"
-dest_files=["res://.godot/imported/Keyboard_O.png-00a1b2c0f3d3418ffee138693635b55e.ctex"]
+dest_files=["res://.godot/imported/Keyboard_O.png-00a1b2c0f3d3418ffee138693635b55e.s3tc.ctex", "res://.godot/imported/Keyboard_O.png-00a1b2c0f3d3418ffee138693635b55e.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

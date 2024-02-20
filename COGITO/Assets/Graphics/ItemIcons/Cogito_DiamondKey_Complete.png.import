@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b026nu4btecpx"
-path="res://.godot/imported/Cogito_DiamondKey_Complete.png-9b9d7bd9fa530791cc6fffdc7bd7f1ab.ctex"
+path.s3tc="res://.godot/imported/Cogito_DiamondKey_Complete.png-9b9d7bd9fa530791cc6fffdc7bd7f1ab.s3tc.ctex"
+path.etc2="res://.godot/imported/Cogito_DiamondKey_Complete.png-9b9d7bd9fa530791cc6fffdc7bd7f1ab.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://COGITO/Assets/Graphics/ItemIcons/Cogito_DiamondKey_Complete.png"
-dest_files=["res://.godot/imported/Cogito_DiamondKey_Complete.png-9b9d7bd9fa530791cc6fffdc7bd7f1ab.ctex"]
+dest_files=["res://.godot/imported/Cogito_DiamondKey_Complete.png-9b9d7bd9fa530791cc6fffdc7bd7f1ab.s3tc.ctex", "res://.godot/imported/Cogito_DiamondKey_Complete.png-9b9d7bd9fa530791cc6fffdc7bd7f1ab.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

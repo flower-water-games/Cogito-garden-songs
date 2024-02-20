@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4hcbc0gf3uou"
-path="res://.godot/imported/RightTrigger.png-64348e612f412b99d34e0e9d4365f14f.ctex"
+path.s3tc="res://.godot/imported/RightTrigger.png-64348e612f412b99d34e0e9d4365f14f.s3tc.ctex"
+path.etc2="res://.godot/imported/RightTrigger.png-64348e612f412b99d34e0e9d4365f14f.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://COGITO/Assets/Graphics/InputIcons/Gamepad/RightTrigger.png"
-dest_files=["res://.godot/imported/RightTrigger.png-64348e612f412b99d34e0e9d4365f14f.ctex"]
+dest_files=["res://.godot/imported/RightTrigger.png-64348e612f412b99d34e0e9d4365f14f.s3tc.ctex", "res://.godot/imported/RightTrigger.png-64348e612f412b99d34e0e9d4365f14f.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

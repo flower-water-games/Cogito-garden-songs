@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ra2d8abru67o"
-path="res://.godot/imported/Cogito_StaminaExtension.png-cc960dea7183df0e243c3b98cf63b88e.ctex"
+path.s3tc="res://.godot/imported/Cogito_StaminaExtension.png-cc960dea7183df0e243c3b98cf63b88e.s3tc.ctex"
+path.etc2="res://.godot/imported/Cogito_StaminaExtension.png-cc960dea7183df0e243c3b98cf63b88e.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://COGITO/Assets/Graphics/ItemIcons/Cogito_StaminaExtension.png"
-dest_files=["res://.godot/imported/Cogito_StaminaExtension.png-cc960dea7183df0e243c3b98cf63b88e.ctex"]
+dest_files=["res://.godot/imported/Cogito_StaminaExtension.png-cc960dea7183df0e243c3b98cf63b88e.s3tc.ctex", "res://.godot/imported/Cogito_StaminaExtension.png-cc960dea7183df0e243c3b98cf63b88e.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

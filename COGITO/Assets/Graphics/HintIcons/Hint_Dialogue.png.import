@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4r37pjj3vjgf"
-path="res://.godot/imported/Hint_Dialogue.png-def980c47515b9c24ebd5f16b88780dc.ctex"
+path.s3tc="res://.godot/imported/Hint_Dialogue.png-def980c47515b9c24ebd5f16b88780dc.s3tc.ctex"
+path.etc2="res://.godot/imported/Hint_Dialogue.png-def980c47515b9c24ebd5f16b88780dc.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://COGITO/Assets/Graphics/HintIcons/Hint_Dialogue.png"
-dest_files=["res://.godot/imported/Hint_Dialogue.png-def980c47515b9c24ebd5f16b88780dc.ctex"]
+dest_files=["res://.godot/imported/Hint_Dialogue.png-def980c47515b9c24ebd5f16b88780dc.s3tc.ctex", "res://.godot/imported/Hint_Dialogue.png-def980c47515b9c24ebd5f16b88780dc.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

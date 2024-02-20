@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlsoyuuuqgnii"
-path="res://.godot/imported/Keyboard_Tab.png-6bf12b9729e42363a13de362b730863a.ctex"
+path.s3tc="res://.godot/imported/Keyboard_Tab.png-6bf12b9729e42363a13de362b730863a.s3tc.ctex"
+path.etc2="res://.godot/imported/Keyboard_Tab.png-6bf12b9729e42363a13de362b730863a.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://COGITO/Assets/Graphics/InputIcons/Keyboard/Keyboard_Tab.png"
-dest_files=["res://.godot/imported/Keyboard_Tab.png-6bf12b9729e42363a13de362b730863a.ctex"]
+dest_files=["res://.godot/imported/Keyboard_Tab.png-6bf12b9729e42363a13de362b730863a.s3tc.ctex", "res://.godot/imported/Keyboard_Tab.png-6bf12b9729e42363a13de362b730863a.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
