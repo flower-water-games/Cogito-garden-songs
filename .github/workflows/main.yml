@@ -95,8 +95,9 @@ jobs:
             name: godot-export
             path: ./
         - name: Unzip macOS.zip
-          run: unzip macOS.zip -d unzipped
-               unzip unzipped/flower-water-godot-mac.zip -d finalUnzipped
+          run: |
+            unzip macOS.zip -d unzipped
+            unzip unzipped/flower-water-godot-mac.zip -d finalUnzipped
 
              
         - name: Deploy - Itch.io - Mac
