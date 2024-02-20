@@ -5,6 +5,7 @@ env:
   GODOT_BUILD : dev3
   # TODO this is not working yet
   DEPLOY_WEB: true
+  DEPLOY_MAC: true
   DEPLOY_WINDOWS: false
   DEPLOY_LINUX: false
 
@@ -84,6 +85,24 @@ jobs:
               itchGameId: ${{ env.ITCH_GAMEID }}
               buildChannel: windows
               buildNumber: windows:${{ github.run_number }}
+    deploy_mac:
+      needs: export_game
+      runs-on: ubuntu-latest
+      if: github.ref == 'refs/heads/main'
+      steps:
+        - uses: actions/download-artifact@v2
+          with:
+            name: godot-export
+            path: ./
+        - name: Deploy - Itch.io - Mac
+          uses: KikimoraGames/itch-publish@v0.0.3
+          with:
+              butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+              gameData: ./app.zip
+              itchUsername: ${{ env.ITCH_USERNAME }}
+              itchGameId: ${{ env.ITCH_GAMEID }}
+              buildChannel: mac
+              buildNumber: mac:${{ github.run_number }}
     deploy_linux:
       needs: export_game
       runs-on: ubuntu-latest
