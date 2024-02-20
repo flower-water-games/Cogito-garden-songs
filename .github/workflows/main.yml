@@ -1,6 +1,6 @@
 env:
   ITCH_USERNAME: carlos-michael
-  ITCH_GAMEID: invalid
+  ITCH_GAMEID: flower-water-godot
   GODOT_VERSION: 4.3
   GODOT_BUILD : dev3
   DEPLOY_WEB: true
@@ -49,7 +49,7 @@ jobs:
     deploy_web:
       needs: export_game
       runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/main' && needs.set_env_vars.outputs.deploy_web == 'true'
+      if: github.ref == 'refs/heads/main' && needs.set_env_vars.outputs.deploy_web == true
       steps:
         - uses: actions/download-artifact@v2
           with:
