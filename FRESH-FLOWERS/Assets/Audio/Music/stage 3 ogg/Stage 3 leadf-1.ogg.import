@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://hr3vokaqd7bp"
+path="res://.godot/imported/Stage 3 leadf-1.ogg-f3f202a06d9ba6ddd7f3f7cb991a012b.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 leadf-1.ogg"
+dest_files=["res://.godot/imported/Stage 3 leadf-1.ogg-f3f202a06d9ba6ddd7f3f7cb991a012b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

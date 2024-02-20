@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://hb33o45kxxrg"
+path="res://.godot/imported/Stage 2 flute.ogg-3888dce3cc0962a129208d461f6f6507.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 flute.ogg"
+dest_files=["res://.godot/imported/Stage 2 flute.ogg-3888dce3cc0962a129208d461f6f6507.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

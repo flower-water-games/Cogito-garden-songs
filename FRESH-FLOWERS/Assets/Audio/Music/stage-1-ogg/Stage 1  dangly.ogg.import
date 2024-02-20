@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cmniasxpeliie"
+path="res://.godot/imported/Stage 1  dangly.ogg-d702507d05c5219a7a47efc219822268.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  dangly.ogg"
+dest_files=["res://.godot/imported/Stage 1  dangly.ogg-d702507d05c5219a7a47efc219822268.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

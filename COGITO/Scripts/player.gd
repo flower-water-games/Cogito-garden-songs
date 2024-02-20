@@ -156,6 +156,9 @@ func _ready():
 	
 	health_component.death.connect(_on_death) # Hookup HealthComponent signal to detect player death
 	brightness_component.brightness_changed.connect(_on_brightness_changed) # Hookup brightness component signal
+	# MusicManager.play("Music", "Stage2")
+	# MusicManager.enable_stem("piano")
+	# MusicManager.enable_stem("flute")
 
 # Use this function to manipulate player attributes.
 func increase_attribute(attribute_name: String, value: float) -> bool:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://4u7rhyop77tx"
+path="res://.godot/imported/Stage 3 bass.ogg-bcfb3361176a50974485d9459c563d59.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 bass.ogg"
+dest_files=["res://.godot/imported/Stage 3 bass.ogg-bcfb3361176a50974485d9459c563d59.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://do06t5ioo764e"
+path="res://.godot/imported/Stage 2 4-Drum Rack.ogg-e44bd6a3e713bf5c99dbee85a4ab4476.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 4-Drum Rack.ogg"
+dest_files=["res://.godot/imported/Stage 2 4-Drum Rack.ogg-e44bd6a3e713bf5c99dbee85a4ab4476.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ktp6yysuyq54"
+path="res://.godot/imported/Stage 2 piano smart.ogg-6d3e4bd082f9cef7d69a24620ad1924e.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 piano smart.ogg"
+dest_files=["res://.godot/imported/Stage 2 piano smart.ogg-6d3e4bd082f9cef7d69a24620ad1924e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

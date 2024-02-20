@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxt2rgxinljev"
+path="res://.godot/imported/Stage 1  FLute.ogg-510e30f67f8a4ddc355fec631d2e9f5e.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  FLute.ogg"
+dest_files=["res://.godot/imported/Stage 1  FLute.ogg-510e30f67f8a4ddc355fec631d2e9f5e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

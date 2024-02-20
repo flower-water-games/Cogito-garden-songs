@@ -18,6 +18,15 @@ boot_splash/image="res://COGITO/COGITO_icon.png"
 boot_splash/fullsize=false
 config/icon="res://COGITO/COGITO_icon.png"
 
+[audio]
+
+manager/sound/bus="Sound"
+manager/sound/pool_1D_size=16
+manager/sound/pool_2D_size=16
+manager/sound/pool_3D_size=16
+manager/sound/max_polyphony=32
+manager/music/bus="Music"
+
 [autoload]
 
 MenuTemplateManager="*res://COGITO/EasyMenus/Nodes/menu_template_manager.tscn"
@@ -25,6 +34,8 @@ InputHelper="*res://addons/input_helper/input_helper.gd"
 Audio="*res://addons/quick_audio/./Audio.gd"
 CogitoSceneManager="*res://COGITO/SceneManagement/cogito_scene_manager.gd"
 CogitoQuestManager="*res://COGITO/QuestSystemPD/CogitoQuestManager.gd"
+SoundManager="*res://addons/resonate/sound_manager/sound_manager.gd"
+MusicManager="*res://addons/resonate/music_manager/music_manager.gd"
 
 [display]
 
@@ -34,7 +45,7 @@ window/size/initial_position_type=3
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/input_helper/plugin.cfg", "res://addons/quick_audio/plugin.cfg")
+enabled=PackedStringArray("res://addons/input_helper/plugin.cfg", "res://addons/quick_audio/plugin.cfg", "res://addons/resonate/plugin.cfg")
 
 [file_customization]
 

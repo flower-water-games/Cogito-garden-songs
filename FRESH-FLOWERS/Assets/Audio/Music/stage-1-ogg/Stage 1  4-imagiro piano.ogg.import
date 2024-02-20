@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bputesskmkl1p"
+path="res://.godot/imported/Stage 1  4-imagiro piano.ogg-57667651708da7b3036ea4c774d44be8.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  4-imagiro piano.ogg"
+dest_files=["res://.godot/imported/Stage 1  4-imagiro piano.ogg-57667651708da7b3036ea4c774d44be8.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

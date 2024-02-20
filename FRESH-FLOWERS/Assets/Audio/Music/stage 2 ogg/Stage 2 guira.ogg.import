@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7nf3botyy20m"
+path="res://.godot/imported/Stage 2 guira.ogg-07d7e025fee51b9c278dfb5cc1366de7.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 guira.ogg"
+dest_files=["res://.godot/imported/Stage 2 guira.ogg-07d7e025fee51b9c278dfb5cc1366de7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7vss2aj0sjls"
+path="res://.godot/imported/Stage 2 Mix.ogg-885ba50d4c15e0ff632db3af53c3b8df.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 Mix.ogg"
+dest_files=["res://.godot/imported/Stage 2 Mix.ogg-885ba50d4c15e0ff632db3af53c3b8df.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

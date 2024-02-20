@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnk5lddo8nc7u"]
+[gd_scene load_steps=38 format=3 uid="uid://cnk5lddo8nc7u"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -7,7 +7,20 @@
 [ext_resource type="PackedScene" uid="uid://cf0e57ahc0m1i" path="res://FRESH-FLOWERS/Scenes/flower_pause_menu.tscn" id="5_rt261"]
 [ext_resource type="Material" uid="uid://dkbgl3p3ffd1" path="res://COGITO/Assets/Materials/Prototype_DarkGrey.tres" id="6_8e7kf"]
 [ext_resource type="PackedScene" uid="uid://cw4ubg4v5p2ni" path="res://FRESH-FLOWERS/Assets/grass.glb" id="9_x8aq7"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_yv0im"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="10_l7kqs"]
 [ext_resource type="PackedScene" uid="uid://bvylr50ht5dpa" path="res://FRESH-FLOWERS/PrefabScenes/pickup_watering_can.tscn" id="11_2lufm"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="11_gwqgc"]
+[ext_resource type="AudioStream" uid="uid://bputesskmkl1p" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  4-imagiro piano.ogg" id="12_ncg87"]
+[ext_resource type="AudioStream" uid="uid://cmniasxpeliie" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  dangly.ogg" id="14_0cvbq"]
+[ext_resource type="AudioStream" uid="uid://cxt2rgxinljev" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  FLute.ogg" id="15_mpcjl"]
+[ext_resource type="AudioStream" uid="uid://b4jkpu6hs7vy2" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  String.ogg" id="16_s1jak"]
+[ext_resource type="AudioStream" uid="uid://b7vss2aj0sjls" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 Mix.ogg" id="16_sc0nl"]
+[ext_resource type="AudioStream" uid="uid://4u7rhyop77tx" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 bass.ogg" id="16_ynvft"]
+[ext_resource type="AudioStream" uid="uid://t6veknx6y0rv" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 gabe chords.ogg" id="17_wvblp"]
+[ext_resource type="AudioStream" uid="uid://hr3vokaqd7bp" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 leadf-1.ogg" id="18_vo7ce"]
+[ext_resource type="AudioStream" uid="uid://c4406g4rkgx3b" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 leadf.ogg" id="19_dd0lf"]
+[ext_resource type="AudioStream" uid="uid://dll7kbhwggtpo" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 main arp.ogg" id="20_6wecq"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
 panorama = ExtResource("2_upsuv")
@@ -26,6 +39,94 @@ ambient_light_energy = 0.2
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_borns"]
+script = ExtResource("11_gwqgc")
+name = "piano"
+enabled = true
+volume = 0.0
+stream = ExtResource("12_ncg87")
+
+[sub_resource type="Resource" id="Resource_ska0b"]
+script = ExtResource("11_gwqgc")
+name = "dangly"
+enabled = false
+volume = 0.0
+stream = ExtResource("14_0cvbq")
+
+[sub_resource type="Resource" id="Resource_8cjrc"]
+script = ExtResource("11_gwqgc")
+name = "flute"
+enabled = false
+volume = 0.0
+stream = ExtResource("15_mpcjl")
+
+[sub_resource type="Resource" id="Resource_q8656"]
+script = ExtResource("11_gwqgc")
+name = "string"
+enabled = false
+volume = 0.0
+stream = ExtResource("16_s1jak")
+
+[sub_resource type="Resource" id="Resource_fen5i"]
+script = ExtResource("10_l7kqs")
+name = "Stage1"
+bus = ""
+stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_borns"), SubResource("Resource_ska0b"), SubResource("Resource_8cjrc"), SubResource("Resource_q8656")])
+
+[sub_resource type="Resource" id="Resource_0542l"]
+script = ExtResource("11_gwqgc")
+name = "mix"
+enabled = true
+volume = 0.0
+stream = ExtResource("16_sc0nl")
+
+[sub_resource type="Resource" id="Resource_owi6n"]
+script = ExtResource("10_l7kqs")
+name = "Stage2"
+bus = ""
+stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_0542l")])
+
+[sub_resource type="Resource" id="Resource_3aixo"]
+script = ExtResource("11_gwqgc")
+name = "bass"
+enabled = false
+volume = 0.0
+stream = ExtResource("16_ynvft")
+
+[sub_resource type="Resource" id="Resource_04qdx"]
+script = ExtResource("11_gwqgc")
+name = "chords"
+enabled = false
+volume = 0.0
+stream = ExtResource("17_wvblp")
+
+[sub_resource type="Resource" id="Resource_dvh1q"]
+script = ExtResource("11_gwqgc")
+name = "lead1"
+enabled = false
+volume = 0.0
+stream = ExtResource("18_vo7ce")
+
+[sub_resource type="Resource" id="Resource_d5fhy"]
+script = ExtResource("11_gwqgc")
+name = "lead"
+enabled = false
+volume = 0.0
+stream = ExtResource("19_dd0lf")
+
+[sub_resource type="Resource" id="Resource_o677e"]
+script = ExtResource("11_gwqgc")
+name = "arp"
+enabled = false
+volume = 0.0
+stream = ExtResource("20_6wecq")
+
+[sub_resource type="Resource" id="Resource_ll6ke"]
+script = ExtResource("10_l7kqs")
+name = "Stage3"
+bus = ""
+stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_3aixo"), SubResource("Resource_04qdx"), SubResource("Resource_dvh1q"), SubResource("Resource_d5fhy"), SubResource("Resource_o677e")])
 
 [node name="flower_songs_scene" type="Node3D" node_paths=PackedStringArray("connectors")]
 script = ExtResource("1_mmok6")
@@ -57,38 +158,86 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99721, 0, 0)
 
 [node name="Floor" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00589633, -0.0561991, 0.00219393)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.70038, -0.0561991, 0.00219393)
 use_collision = true
-size = Vector3(20, 0.1, 20)
+size = Vector3(27.6885, 0.1, 20)
 material = ExtResource("6_8e7kf")
 
 [node name="Wall" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 9.95)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.80908, 2, 7.87236)
 use_collision = true
-size = Vector3(20, 4, 0.1)
+size = Vector3(12.3818, 4, 0.1)
 material = ExtResource("6_8e7kf")
 
 [node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.7, 0.235219, -0.149947)
-text = "welcome to flower water garden game
-by cm, paul, william, gabriel and more
-
-this is the prototype with our core mechanics and tracks from houis/wei
-
-[wasd] - walk around
-[mouse movement] - look around"
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.99732, 0.235219, -0.149947)
+text = "this wall will expand into the intro, entering the garden"
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
 
 [node name="Wall2" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1372, 2, 9.95)
+transform = Transform3D(-0.999869, 0, 0.0162133, 0, 1, 0, -0.0162133, 0, -0.999869, 3.80908, 2, -9.88631)
 use_collision = true
-size = Vector3(20, 4, 0.1)
+size = Vector3(12.3818, 4, 0.1)
 material = ExtResource("6_8e7kf")
 
 [node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.7, 0.235219, -0.149947)
+transform = Transform3D(-1, 0, -8.75202e-08, 0, 1, 0, 8.75569e-08, 0, -1, 1.99732, 0.218324, -0.149947)
+text = "this should unlock for the stage 3 music. for now clicking this will trigger stage 3 jams!"
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 800.0
+
+[node name="Wall3" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
+transform = Transform3D(-0.844767, 0, 0.535134, 0, 1, 0, -0.535134, 0, -0.844767, 13.4126, 2, -8.5198)
+use_collision = true
+size = Vector3(10.2235, 4, 0.1)
+material = ExtResource("6_8e7kf")
+
+[node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall3"]
+transform = Transform3D(-1, 0, -8.64593e-08, 0, 1, 0, 8.72584e-08, 0, -1, 2.00459, 0.235219, -0.167028)
+text = "Level 1c, enter through 1b ->"
+font_size = 48
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 800.0
+
+[node name="Wall4" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
+transform = Transform3D(0.854559, 0, 0.519355, 0, 1, 0, -0.519355, 0, 0.854559, 13.4126, 2, 5.24911)
+use_collision = true
+size = Vector3(10.2235, 4, 0.1)
+material = ExtResource("6_8e7kf")
+
+[node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall4"]
+transform = Transform3D(-1, 0, -5.60087e-08, 0, 1, 0, 6.74389e-08, 0, -1, 2.00459, 0.235219, -0.167027)
+text = "<- level 1a, enter through 1b"
+font_size = 48
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 800.0
+
+[node name="Wall5" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
+transform = Transform3D(0.836171, 0, -0.548468, 0, 1, 0, 0.548468, 0, 0.836172, -5.89729, 2, 5.72967)
+use_collision = true
+size = Vector3(10.2235, 4, 0.1)
+material = ExtResource("6_8e7kf")
+
+[node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall5"]
+transform = Transform3D(-1, 0, -8.64593e-08, 0, 1, 0, 8.72584e-08, 0, -1, 2.00459, 0.235219, -0.167028)
+text = "level 2a, enter through 2b once unlocked through completing level 1."
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 800.0
+
+[node name="Wall6" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
+transform = Transform3D(-0.86269, 0, -0.505733, 0, 1, 0, 0.505733, 0, -0.86269, -5.67885, 2, -8.03751)
+use_collision = true
+size = Vector3(10.2235, 4, 0.1)
+material = ExtResource("6_8e7kf")
+
+[node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall6"]
+transform = Transform3D(-1, 0, -5.60087e-08, 0, 1, 0, 6.74389e-08, 0, -1, 2.00459, 0.235219, -0.167027)
 text = "welcome to flower water garden game
 by cm, paul, william, gabriel and more
 
@@ -130,6 +279,36 @@ material = ExtResource("6_8e7kf")
 [node name="grass2" parent="LEVEL1/Floor3" instance=ExtResource("9_x8aq7")]
 transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
 
+[node name="LEVEL2" type="Node3D" parent="."]
+transform = Transform3D(-0.999998, 0, 0.00174537, 0, 1, 0, -0.00174537, 0, -0.999998, -18.4861, 0, -2.2126)
+
+[node name="Floor" type="CSGBox3D" parent="LEVEL2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20084, -0.05, -1.60602)
+use_collision = true
+size = Vector3(15.8955, 0.1, 18.7568)
+material = ExtResource("6_8e7kf")
+
+[node name="grass2" parent="LEVEL2/Floor" instance=ExtResource("9_x8aq7")]
+transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
+
+[node name="Floor2" type="CSGBox3D" parent="LEVEL2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91878, -0.05, 12.3992)
+use_collision = true
+size = Vector3(15.8955, 0.1, 18.7568)
+material = ExtResource("6_8e7kf")
+
+[node name="grass2" parent="LEVEL2/Floor2" instance=ExtResource("9_x8aq7")]
+transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
+
+[node name="Floor3" type="CSGBox3D" parent="LEVEL2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91878, -0.05, -15.5841)
+use_collision = true
+size = Vector3(15.8955, 0.1, 18.7568)
+material = ExtResource("6_8e7kf")
+
+[node name="grass2" parent="LEVEL2/Floor3" instance=ExtResource("9_x8aq7")]
+transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
+
 [node name="ConnectorA" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, -4)
 
@@ -138,3 +317,8 @@ target_position = Vector3(0, 0, -1)
 
 [node name="pickup_watering_can" parent="." instance=ExtResource("11_2lufm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74672, 0.712185, 6.5716)
+
+[node name="MusicBank" type="Node" parent="."]
+script = ExtResource("9_yv0im")
+label = "Music"
+tracks = Array[ExtResource("10_l7kqs")]([SubResource("Resource_fen5i"), SubResource("Resource_owi6n"), SubResource("Resource_ll6ke")])

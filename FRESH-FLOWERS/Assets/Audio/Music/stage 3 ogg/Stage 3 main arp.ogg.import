@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dll7kbhwggtpo"
+path="res://.godot/imported/Stage 3 main arp.ogg-e7db1a310003206eaf1f60b5e22355b7.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 main arp.ogg"
+dest_files=["res://.godot/imported/Stage 3 main arp.ogg-e7db1a310003206eaf1f60b5e22355b7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

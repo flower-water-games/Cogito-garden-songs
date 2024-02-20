@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://iaefvbaf7o05"
+path="res://.godot/imported/Stage 2 drone.ogg-e36814e097d9aef5ea15740208e6dc0d.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 drone.ogg"
+dest_files=["res://.godot/imported/Stage 2 drone.ogg-e36814e097d9aef5ea15740208e6dc0d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

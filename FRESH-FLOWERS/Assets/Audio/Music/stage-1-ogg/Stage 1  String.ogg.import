@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b4jkpu6hs7vy2"
+path="res://.godot/imported/Stage 1  String.ogg-51dc9e24c692d5df86c0d55645de6575.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  String.ogg"
+dest_files=["res://.godot/imported/Stage 1  String.ogg-51dc9e24c692d5df86c0d55645de6575.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

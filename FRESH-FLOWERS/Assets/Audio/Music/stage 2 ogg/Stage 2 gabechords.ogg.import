@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://58gtk2260c2q"
+path="res://.godot/imported/Stage 2 gabechords.ogg-69b26390b290b6408b025f22b1e9aa02.oggvorbisstr"
+
+[deps]
+
+source_file="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 gabechords.ogg"
+dest_files=["res://.godot/imported/Stage 2 gabechords.ogg-69b26390b290b6408b025f22b1e9aa02.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
