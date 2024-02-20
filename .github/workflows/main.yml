@@ -101,7 +101,7 @@ jobs:
           uses: KikimoraGames/itch-publish@v0.0.3
           with:
               butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
-              gameData: ./Garden-Songs.app
+              gameData: ./flower-water-godot-mac.zip/Garden-Songs.app
               itchUsername: ${{ env.ITCH_USERNAME }}
               itchGameId: ${{ env.ITCH_GAMEID }}
               buildChannel: macOS
