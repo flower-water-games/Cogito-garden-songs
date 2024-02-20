@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cnk5lddo8nc7u"]
+[gd_scene load_steps=39 format=3 uid="uid://cnk5lddo8nc7u"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wiugfhd6al3l" path="res://FRESH-FLOWERS/Scenes/flowers_player_hud.tscn" id="3_1351y"]
 [ext_resource type="PackedScene" uid="uid://cf0e57ahc0m1i" path="res://FRESH-FLOWERS/Scenes/flower_pause_menu.tscn" id="5_rt261"]
 [ext_resource type="Material" uid="uid://dkbgl3p3ffd1" path="res://COGITO/Assets/Materials/Prototype_DarkGrey.tres" id="6_8e7kf"]
+[ext_resource type="Texture2D" uid="uid://cn4nbo68thmvr" path="res://FRESH-FLOWERS/Assets/IMG_0607 (2).jpg" id="8_c5c38"]
 [ext_resource type="PackedScene" uid="uid://cw4ubg4v5p2ni" path="res://FRESH-FLOWERS/Assets/grass.glb" id="9_x8aq7"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_yv0im"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="10_l7kqs"]
@@ -186,11 +187,16 @@ size = Vector3(12.3818, 4, 0.1)
 material = ExtResource("6_8e7kf")
 
 [node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall2"]
-transform = Transform3D(-1, 0, -8.75202e-08, 0, 1, 0, 8.75569e-08, 0, -1, 1.99732, 0.218324, -0.149947)
-text = "this should unlock for the stage 3 music. for now clicking this will trigger stage 3 jams!"
+transform = Transform3D(-1, 0, -9.24287e-08, 0, 1, 0, 9.24538e-08, 0, -1, 1.99732, 0.218324, -0.149947)
+text = "this area will house the 6 key hex tracker and eventually unlock the end state"
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
+
+[node name="Sprite3D" type="Sprite3D" parent="STATIC DOME ENVIRONMENT/Wall2"]
+transform = Transform3D(0.09, 0, 6.26032e-10, 0, 0.09, 0, -5.35997e-10, 0, 0.09, -3.81772, 0, -0.0961447)
+flip_h = true
+texture = ExtResource("8_c5c38")
 
 [node name="Wall3" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
 transform = Transform3D(-0.844767, 0, 0.535134, 0, 1, 0, -0.535134, 0, -0.844767, 13.4126, 2, -8.5198)
