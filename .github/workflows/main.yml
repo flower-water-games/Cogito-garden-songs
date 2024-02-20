@@ -95,7 +95,7 @@ jobs:
             name: godot-export
             path: ./
         - name: Unzip macOS.zip
-          run: unzip macOS.zip -d ./macOS
+          run: unzip macOS.zip -d .
              
         - name: Deploy - Itch.io - Mac
           uses: KikimoraGames/itch-publish@v0.0.3
