@@ -156,7 +156,11 @@ func _ready():
 	
 	health_component.death.connect(_on_death) # Hookup HealthComponent signal to detect player death
 	brightness_component.brightness_changed.connect(_on_brightness_changed) # Hookup brightness component signal
+	
+
+	# play music
 	MusicManager.play("Music", "Stage1")
+	
 	# after 40 seconds, switch to stage 2 music
 	await get_tree().create_timer(40).timeout
 	

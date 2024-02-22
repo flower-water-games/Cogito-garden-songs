@@ -32,8 +32,8 @@ static func configure(p_base, p_streams: Array, p_reserved: bool, p_bus: String,
 		return false
 	
 	var max_polyphony = ProjectSettings.get_setting(
-		ResonatePlugin.MAX_POLYPHONY_SETTING_NAME,
-		ResonatePlugin.MAX_POLYPHONY_SETTING_DEFAULT)
+		ResonateSettings.MAX_POLYPHONY_SETTING_NAME,
+		ResonateSettings.MAX_POLYPHONY_SETTING_DEFAULT)
 	
 	p_base.stream = AudioStreamPolyphonic.new()
 	p_base.max_polyphony = max_polyphony
