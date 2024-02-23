@@ -1,4 +1,4 @@
-extends GPUParticlesCollisionBox3D
+extends Waterable
 
 
 func _ready():
