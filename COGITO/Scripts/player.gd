@@ -162,10 +162,10 @@ func _ready():
 	MusicManager.play("Music", "Stage1")
 	
 	# after 40 seconds, switch to stage 2 music
-	await get_tree().create_timer(40).timeout
+	# await get_tree().create_timer(40).timeout
 	
 
-	MusicManager.play("Music", "Stage2", 40)
+	# MusicManager.play("Music", "Stage2", 3)
 	# MusicManager.enable_stem("piano")
 	# MusicManager.enable_stem("flute")
 
