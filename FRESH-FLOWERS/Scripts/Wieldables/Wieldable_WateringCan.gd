@@ -1,7 +1,7 @@
 extends Wieldable 
 
 @export var water_capacity: float = 100.0
-@export var drainage_rate: float = 10.0
+@export var drainage_rate: float = 1.0
 var current_water_level: float
 
 @onready var water_stream: GPUParticles3D = %WaterStream
@@ -35,9 +35,8 @@ func check_for_waterable_surface():
 	if interaction_raycast.is_colliding():
 		var target = interaction_raycast.get_collider()
 		# scale up target if is colliding
-		target.scale = Vector3(1.5, 1.5, 1.5)
 		if target.has_method("water"):
-			target.water(10)
+			target.water(1.0)
 
 var original_rotation: Vector3
 

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://5pjvp6vhf3n5"]
+
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/flower_cube.gd" id="1_fcdht"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o14ho"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jqxj6"]
+
+[node name="FlowerCube" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40733, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_fcdht")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139221, 0)
+shape = SubResource("BoxShape3D_o14ho")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CollisionShape3D"]
+mesh = SubResource("BoxMesh_jqxj6")
