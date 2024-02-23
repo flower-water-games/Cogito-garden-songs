@@ -22,7 +22,7 @@ function = 31
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_cou3i"]
 parameter_name = "BaseColor"
 default_value_enabled = true
-default_value = Color(0.141176, 0.156863, 0.0745098, 1)
+default_value = Color(0.437108, 0.349243, 0, 1)
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_hx30t"]
 
@@ -80,7 +80,7 @@ code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_toon, specular_schlick_ggx;
 
 uniform sampler2D WindNoise;
-uniform vec4 BaseColor : source_color = vec4(0.141176, 0.156863, 0.074510, 1.000000);
+uniform vec4 BaseColor : source_color = vec4(0.437108, 0.349243, 0.000000, 1.000000);
 uniform vec4 WindColor : source_color = vec4(0.384314, 0.529412, 0.301961, 1.000000);
 
 
@@ -200,6 +200,7 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-337.527, -209.458)
 modes/cull = 2
 modes/diffuse = 3
 nodes/vertex/0/position = Vector2(1320, 520)
