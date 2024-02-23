@@ -4,6 +4,8 @@ extends Wieldable
 @export var drainage_rate: float = 1.0
 var current_water_level: float
 
+@onready var water_stream: GPUParticles3D = %WaterStream
+
 func action_primary(is_pressed, is_released):
 	print("Watering Can: Primary action")
 	if is_pressed:
@@ -26,16 +28,18 @@ func _ready():
 var original_rotation: Vector3
 
 func start_watering():
-	if not is_watering:
+	if not is_watering and current_water_level > 0:
 		is_watering = true
 		original_rotation = rotation_degrees
-		rotate_x(45)
+		water_stream.emitting = true
+		rotate_x(-45)
 		watering_timer.start()
 
 func stop_watering():
 	if is_watering:
 		is_watering = false
 		rotation_degrees = original_rotation
+		water_stream.emitting = false
 		watering_timer.stop()
 
 func _on_watering_timer_timeout():

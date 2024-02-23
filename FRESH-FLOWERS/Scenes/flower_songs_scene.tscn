@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cnk5lddo8nc7u"]
+[gd_scene load_steps=23 format=3 uid="uid://cnk5lddo8nc7u"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cf0e57ahc0m1i" path="res://FRESH-FLOWERS/Scenes/flower_pause_menu.tscn" id="5_rt261"]
 [ext_resource type="Material" uid="uid://dkbgl3p3ffd1" path="res://COGITO/Assets/Materials/Prototype_DarkGrey.tres" id="6_8e7kf"]
 [ext_resource type="Texture2D" uid="uid://cn4nbo68thmvr" path="res://FRESH-FLOWERS/Assets/IMG_0607 (2).jpg" id="8_c5c38"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/flower_cube.gd" id="9_vw7ix"]
 [ext_resource type="PackedScene" uid="uid://cw4ubg4v5p2ni" path="res://FRESH-FLOWERS/Assets/grass.glb" id="9_x8aq7"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_yv0im"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="10_l7kqs"]
@@ -32,6 +33,8 @@ ambient_light_energy = 0.2
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_1bxwa"]
 
 [sub_resource type="Resource" id="Resource_5tul2"]
 script = ExtResource("11_gwqgc")
@@ -181,6 +184,14 @@ this is the prototype with our core mechanics and tracks from houis/wei
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="STATIC DOME ENVIRONMENT"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0108819, 0.582017, -4.99921)
+size = Vector3(1, 1, 1)
+script = ExtResource("9_vw7ix")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="STATIC DOME ENVIRONMENT/GPUParticlesCollisionBox3D"]
+mesh = SubResource("BoxMesh_1bxwa")
 
 [node name="LEVEL1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2766, 0, 0)
