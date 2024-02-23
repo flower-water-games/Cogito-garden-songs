@@ -1,7 +1,11 @@
 @tool
-class_name ResonatePlugin
 extends EditorPlugin
 
+
+# ------------------------------------------------------------------------------
+# IMPORTANT: Ensure that these settings are synchronised with the duplicates
+# located in the resonate_settings script in the shared directory.
+# ------------------------------------------------------------------------------
 
 static var SOUND_BANK_BUS_SETTING_NAME = "audio/manager/sound/bus"
 static var SOUND_BANK_BUS_SETTING_DEFAULT = ""

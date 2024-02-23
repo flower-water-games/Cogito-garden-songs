@@ -14,3 +14,5 @@ wieldable_mesh = NodePath("barrelOpen2")
 bus = &"SFX"
 
 [node name="barrelOpen2" parent="." instance=ExtResource("2_qhl7i")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
