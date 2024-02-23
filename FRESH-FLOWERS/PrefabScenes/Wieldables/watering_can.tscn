@@ -36,11 +36,20 @@ bus = &"SFX"
 
 [node name="WaterStream" type="GPUParticles3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.962843, 0.270063, -1.34509e-07, -0.270063, 0.962843, -9.77624e-07, -1.34509e-07, 9.77624e-07, 1, 0, 0.443186, 0)
+transform = Transform3D(0.694734, -0.719267, -1.10506e-06, 0.719267, 0.694734, 2.60374e-06, -1.10506e-06, -2.60374e-06, 1, 0, 0.443186, 0)
 emitting = false
 amount = 1300
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_1vode")
 draw_pass_1 = SubResource("SphereMesh_yn73a")
+
+[node name="WateringRaycast" type="RayCast3D" parent="WaterStream"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0554425, -0.133795, 2.08616e-07)
+target_position = Vector3(1, 2.08165e-12, 2.08165e-12)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(0, 0, 1, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

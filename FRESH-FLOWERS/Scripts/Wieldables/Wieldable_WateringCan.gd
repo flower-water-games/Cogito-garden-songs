@@ -1,10 +1,11 @@
 extends Wieldable 
 
 @export var water_capacity: float = 100.0
-@export var drainage_rate: float = 1.0
+@export var drainage_rate: float = 10.0
 var current_water_level: float
 
 @onready var water_stream: GPUParticles3D = %WaterStream
+@onready var interaction_raycast: RayCast3D = %WateringRaycast
 
 func action_primary(is_pressed, is_released):
 	print("Watering Can: Primary action")
@@ -24,6 +25,19 @@ func _ready():
 	watering_timer.one_shot = false
 	watering_timer.timeout.connect(_on_watering_timer_timeout)
 	add_child(watering_timer)
+
+func _process(delta):
+	if is_watering:
+		check_for_waterable_surface()
+		
+
+func check_for_waterable_surface():
+	if interaction_raycast.is_colliding():
+		var target = interaction_raycast.get_collider()
+		# scale up target if is colliding
+		target.scale = Vector3(1.5, 1.5, 1.5)
+		if target.has_method("water"):
+			target.water(10)
 
 var original_rotation: Vector3
 
@@ -53,6 +67,7 @@ func use_water():
 		print("Watering Can: Used water. Current water level: ", current_water_level)
 	else:
 		print("Watering Can: Can is empty.")
+		stop_watering()
 
 # Function called when wieldable is unequipped.
 func equip(_player_interaction_component: PlayerInteractionComponent):
