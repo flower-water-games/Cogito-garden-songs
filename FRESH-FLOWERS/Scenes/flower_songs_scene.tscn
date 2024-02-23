@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cnk5lddo8nc7u"]
+[gd_scene load_steps=47 format=3 uid="uid://cnk5lddo8nc7u"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cf0e57ahc0m1i" path="res://FRESH-FLOWERS/Scenes/flower_pause_menu.tscn" id="5_rt261"]
 [ext_resource type="Material" uid="uid://dkbgl3p3ffd1" path="res://COGITO/Assets/Materials/Prototype_DarkGrey.tres" id="6_8e7kf"]
 [ext_resource type="Texture2D" uid="uid://cn4nbo68thmvr" path="res://FRESH-FLOWERS/Assets/IMG_0607 (2).jpg" id="8_c5c38"]
-[ext_resource type="PackedScene" uid="uid://cw4ubg4v5p2ni" path="res://FRESH-FLOWERS/Assets/grass.glb" id="9_x8aq7"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_yv0im"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="10_l7kqs"]
 [ext_resource type="PackedScene" uid="uid://bvylr50ht5dpa" path="res://FRESH-FLOWERS/PrefabScenes/pickup_watering_can.tscn" id="11_2lufm"]
@@ -324,7 +323,7 @@ use_collision = true
 size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
 
-[node name="grass2" parent="LEVEL1/Floor" instance=ExtResource("9_x8aq7")]
+[node name="grass2" parent="LEVEL1/Floor" instance=ExtResource("24_rldij")]
 transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
 
 [node name="Floor2" type="CSGBox3D" parent="LEVEL1"]
@@ -333,7 +332,7 @@ use_collision = true
 size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
 
-[node name="grass2" parent="LEVEL1/Floor2" instance=ExtResource("9_x8aq7")]
+[node name="grass2" parent="LEVEL1/Floor2" instance=ExtResource("24_rldij")]
 transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
 
 [node name="Floor3" type="CSGBox3D" parent="LEVEL1"]
@@ -342,7 +341,7 @@ use_collision = true
 size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
 
-[node name="grass2" parent="LEVEL1/Floor3" instance=ExtResource("9_x8aq7")]
+[node name="grass2" parent="LEVEL1/Floor3" instance=ExtResource("24_rldij")]
 transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
 
 [node name="LEVEL2" type="Node3D" parent="."]
@@ -354,7 +353,7 @@ use_collision = true
 size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
 
-[node name="grass2" parent="LEVEL2/Floor" instance=ExtResource("9_x8aq7")]
+[node name="grass2" parent="LEVEL2/Floor" instance=ExtResource("24_rldij")]
 transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
 
 [node name="Floor2" type="CSGBox3D" parent="LEVEL2"]
@@ -363,7 +362,7 @@ use_collision = true
 size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
 
-[node name="grass2" parent="LEVEL2/Floor2" instance=ExtResource("9_x8aq7")]
+[node name="grass2" parent="LEVEL2/Floor2" instance=ExtResource("24_rldij")]
 transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
 
 [node name="Floor3" type="CSGBox3D" parent="LEVEL2"]
@@ -372,7 +371,7 @@ use_collision = true
 size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
 
-[node name="grass2" parent="LEVEL2/Floor3" instance=ExtResource("9_x8aq7")]
+[node name="grass2" parent="LEVEL2/Floor3" instance=ExtResource("24_rldij")]
 transform = Transform3D(16.06, 0, 0, 0, 16.06, 0, 0, 0, 16.06, 0, -3.09559, 0)
 
 [node name="ConnectorA" type="Node3D" parent="."]
@@ -387,7 +386,7 @@ label = "Music"
 tracks = Array[ExtResource("10_l7kqs")]([SubResource("Resource_fen5i"), SubResource("Resource_owi6n"), SubResource("Resource_ll6ke")])
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.283118, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63083, -1.24733, 2.08165e-12)
 material_override = SubResource("ShaderMaterial_ci11c")
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_6x7rx")
