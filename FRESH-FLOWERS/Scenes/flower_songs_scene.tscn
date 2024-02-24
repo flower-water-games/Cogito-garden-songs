@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=72 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -12,13 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://bvylr50ht5dpa" path="res://FRESH-FLOWERS/PrefabScenes/pickup_watering_can.tscn" id="11_2lufm"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="11_gwqgc"]
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/flower_cube.tscn" id="11_kigdu"]
+[ext_resource type="Texture2D" uid="uid://bwa2xd5fdir05" path="res://FRESH-FLOWERS/Assets/PB/4k_text/4k_grass.png" id="12_6ht57"]
 [ext_resource type="AudioStream" uid="uid://bputesskmkl1p" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  4-imagiro piano.ogg" id="12_ncg87"]
-[ext_resource type="Texture2D" uid="uid://d2nwnnjagyw7g" path="res://FRESH-FLOWERS/Assets/PB/textures/high_resdiffuse_v2.png" id="12_qxldb"]
-[ext_resource type="Texture2D" uid="uid://xk61i3y3l2rl" path="res://FRESH-FLOWERS/Assets/PB/textures/high_UV.png" id="13_pcrn7"]
+[ext_resource type="Texture2D" uid="uid://dnyqq3vb45edo" path="res://FRESH-FLOWERS/Assets/PB/4k_text/4k_glossy.png" id="13_jib40"]
 [ext_resource type="AudioStream" uid="uid://cmniasxpeliie" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  dangly.ogg" id="14_0cvbq"]
-[ext_resource type="Texture2D" uid="uid://dx62klv6k33u0" path="res://FRESH-FLOWERS/Assets/PB/textures/high_resNormal.png" id="14_kk815"]
+[ext_resource type="Texture2D" uid="uid://y17gi0joakwk" path="res://FRESH-FLOWERS/Assets/PB/4k_text/4k_normal.png" id="14_o8pmd"]
+[ext_resource type="Texture2D" uid="uid://cmhtk66x566ie" path="res://FRESH-FLOWERS/Assets/PB/4k_text/4k_roughness.png" id="15_2qcpn"]
 [ext_resource type="AudioStream" uid="uid://cxt2rgxinljev" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  FLute.ogg" id="15_mpcjl"]
-[ext_resource type="Texture2D" uid="uid://dw15kintsqss8" path="res://FRESH-FLOWERS/Assets/PB/textures/high_roughness.png" id="15_wmf80"]
 [ext_resource type="AudioStream" uid="uid://b4jkpu6hs7vy2" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  String.ogg" id="16_s1jak"]
 [ext_resource type="AudioStream" uid="uid://b7vss2aj0sjls" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 Mix.ogg" id="16_sc0nl"]
 [ext_resource type="AudioStream" uid="uid://4u7rhyop77tx" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 bass.ogg" id="16_ynvft"]
@@ -102,6 +102,9 @@ buffer = PackedFloat32Array(-1.001, 0, 0, 0.985308, 0, 1.001, 0, 0, 0, 0, -1.001
 [sub_resource type="PlaneMesh" id="PlaneMesh_vtbvp"]
 size = Vector2(30, 30)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w5dtc"]
+load_path = "res://.godot/imported/high_UV.png-e568d8d1bc024d887f35c6f44d8c797d.s3tc.ctex"
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_28o4t"]
 noise_type = 0
 frequency = 0.0811
@@ -114,14 +117,15 @@ noise = SubResource("FastNoiseLite_28o4t")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvjme"]
 cull_mode = 2
 albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("12_qxldb")
+albedo_texture = ExtResource("12_6ht57")
+metallic = 1.0
 metallic_specular = 0.0
-roughness = 0.5
-roughness_texture = ExtResource("15_wmf80")
+metallic_texture = ExtResource("13_jib40")
+roughness_texture = ExtResource("15_2qcpn")
 normal_enabled = true
-normal_texture = ExtResource("14_kk815")
+normal_texture = ExtResource("14_o8pmd")
 ao_light_affect = 0.09
-ao_texture = ExtResource("13_pcrn7")
+ao_texture = SubResource("CompressedTexture2D_w5dtc")
 backlight = Color(0.719886, 0.473622, 0.71786, 1)
 backlight_texture = SubResource("NoiseTexture2D_50cii")
 texture_repeat = false
