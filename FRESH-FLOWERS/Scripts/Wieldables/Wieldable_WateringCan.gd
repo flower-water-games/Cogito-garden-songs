@@ -11,6 +11,9 @@ func action_primary(is_pressed, is_released):
 	print("Watering Can: Primary action")
 	if is_pressed:
 		start_watering()
+	elif is_released:
+		stop_watering()
+
 var is_watering: bool = false
 var watering_timer: Timer
 
