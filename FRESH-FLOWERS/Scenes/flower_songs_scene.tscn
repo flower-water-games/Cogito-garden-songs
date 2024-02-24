@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=73 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cf0e57ahc0m1i" path="res://FRESH-FLOWERS/Scenes/flower_pause_menu.tscn" id="5_rt261"]
 [ext_resource type="Material" uid="uid://dkbgl3p3ffd1" path="res://COGITO/Assets/Materials/Prototype_DarkGrey.tres" id="6_8e7kf"]
 [ext_resource type="Texture2D" uid="uid://cn4nbo68thmvr" path="res://FRESH-FLOWERS/Assets/IMG_0607 (2).jpg" id="8_c5c38"]
+[ext_resource type="AudioStream" uid="uid://dkq8qtulsqp5g" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  6-Audio.ogg" id="9_opfm6"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_yv0im"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="10_l7kqs"]
 [ext_resource type="PackedScene" uid="uid://bvylr50ht5dpa" path="res://FRESH-FLOWERS/PrefabScenes/pickup_watering_can.tscn" id="11_2lufm"]
@@ -32,7 +33,7 @@
 [sub_resource type="Resource" id="Resource_borns"]
 script = ExtResource("11_gwqgc")
 name = "piano"
-enabled = true
+enabled = false
 volume = 0.0
 stream = ExtResource("12_ncg87")
 
@@ -57,11 +58,18 @@ enabled = false
 volume = 0.0
 stream = ExtResource("16_s1jak")
 
+[sub_resource type="Resource" id="Resource_7drnl"]
+script = ExtResource("11_gwqgc")
+name = "audio"
+enabled = true
+volume = 0.0
+stream = ExtResource("9_opfm6")
+
 [sub_resource type="Resource" id="Resource_fen5i"]
 script = ExtResource("10_l7kqs")
 name = "Stage1"
 bus = ""
-stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_borns"), SubResource("Resource_ska0b"), SubResource("Resource_8cjrc"), SubResource("Resource_q8656")])
+stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_borns"), SubResource("Resource_ska0b"), SubResource("Resource_8cjrc"), SubResource("Resource_q8656"), SubResource("Resource_7drnl")])
 
 [sub_resource type="Resource" id="Resource_0542l"]
 script = ExtResource("11_gwqgc")
@@ -345,7 +353,7 @@ shadow_opacity = 0.8
 environment = SubResource("Environment_ai7l5")
 
 [node name="Player" parent="." instance=ExtResource("2_ds3e6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.492924, 1.27955, 3.70879)
+transform = Transform3D(-0.999295, 0, -0.0375332, 0, 1, 0, 0.0375332, 0, -0.999295, -0.492924, 1.27955, 3.70879)
 pause_menu = NodePath("../PauseMenu")
 player_hud = NodePath("../Player_HUD")
 is_using_sanity = false
@@ -360,11 +368,24 @@ visible = false
 [node name="STATIC DOME ENVIRONMENT" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99721, 0, 0)
 
+[node name="Txt_SceneB2" type="Label3D" parent="STATIC DOME ENVIRONMENT"]
+transform = Transform3D(-0.996528, 0, -0.0832611, 0, 1, 0, 0.0832611, 0, -0.996528, 4.25169, 2.35918, 7.25064)
+text = "welcome to the garden
+please pick up this watering can (that looks like a red barrel)
+
+and click to water those cubes over there. once they're watered they'll grow!
+
+listen to the music changing ... find the flute cube!"
+font_size = 37
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 800.0
+
 [node name="pickup_watering_can" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_2lufm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74393, 0.712185, 6.5716)
 
 [node name="GRASS" type="MultiMeshInstance3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62804, -1.51661, 0)
+transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 2.89982, -1.0866, -1.9651)
 material_override = SubResource("ShaderMaterial_ci11c")
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_6x7rx")
@@ -449,7 +470,7 @@ size = Vector3(10.2235, 4, 0.1)
 material = ExtResource("6_8e7kf")
 
 [node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall4"]
-transform = Transform3D(-1, 0, -5.60087e-08, 0, 1, 0, 6.74389e-08, 0, -1, 2.00459, 0.235219, -0.167027)
+transform = Transform3D(-1, 0, -3.95655e-08, 0, 1, 0, -5.03974e-09, 0, -1, 2.00459, 0.235219, -0.167027)
 text = "<- level 1a, enter through 1b"
 font_size = 48
 horizontal_alignment = 0
@@ -463,8 +484,8 @@ size = Vector3(10.2235, 4, 0.1)
 material = ExtResource("6_8e7kf")
 
 [node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall5"]
-transform = Transform3D(-1, 0, -8.64593e-08, 0, 1, 0, 8.72584e-08, 0, -1, 2.00459, 0.235219, -0.167028)
-text = "level 2a, enter through 2b once unlocked through completing level 1."
+transform = Transform3D(-1, 0, -7.88779e-08, 0, 1, 0, 6.70241e-08, 0, -1, -0.852284, 0.679908, -0.253287)
+text = "level 2a -> "
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
@@ -491,15 +512,19 @@ autowrap_mode = 3
 width = 800.0
 
 [node name="FlowerCube" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_kigdu")]
+stem_name = "piano"
 
 [node name="FlowerCube2" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_kigdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00236, 0.40733, 0)
+stem_name = "dangly"
 
 [node name="FlowerCube3" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_kigdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16772, 0.40733, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14611, 1.61743, -7.20495)
+stem_name = "flute"
 
 [node name="FlowerCube4" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_kigdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.69295, 0.40733, 0)
+stem_name = "string"
 
 [node name="LEVEL1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2766, 0, 0)
