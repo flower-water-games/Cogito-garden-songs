@@ -30,13 +30,18 @@ func _process(delta):
 	if is_watering:
 		check_for_waterable_surface()
 		
+var watering_target;
 
 func check_for_waterable_surface():
 	if interaction_raycast.is_colliding():
 		var target = interaction_raycast.get_collider()
 		# scale up target if is colliding
 		if target.has_method("water"):
-			target.water(1.0)
+			watering_target = target
+			# target.water(1.0)
+		else:
+			watering_target = null
+			
 
 var original_rotation: Vector3
 
@@ -61,6 +66,8 @@ func _on_watering_timer_timeout():
 func use_water():
 	if current_water_level > 0:
 		current_water_level -= drainage_rate
+		if watering_target:
+			watering_target.water(drainage_rate)
 		if current_water_level < 0:
 			current_water_level = 0
 		print("Watering Can: Used water. Current water level: ", current_water_level)

@@ -5,7 +5,7 @@ class_name Waterable
 
 var moisture_level = 0.0
 var max_moisture_level = 10.0
-var threshold = 5.0
+var threshold = 4.0
 
 func water(amount):
 	moisture_level += amount
@@ -18,4 +18,10 @@ func water(amount):
 func update_moisture_level():
 	# Implement logic to update the visual representation of the moisture level here
 	if moisture_level > threshold:
+		# swap cube texture
+		_on_threshold_reached()
 		scale = Vector3(1.5, 1.5, 1.5)
+
+func _on_threshold_reached():
+	# Implement logic to trigger growth here
+	print('warning: not implemented -> threshold reached')
