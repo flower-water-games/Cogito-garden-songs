@@ -29,6 +29,94 @@
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="23_o7m3t"]
 [ext_resource type="PackedScene" uid="uid://dibcob5mpje7q" path="res://FRESH-FLOWERS/Assets/PB/grass.glb" id="24_rldij"]
 
+[sub_resource type="Resource" id="Resource_borns"]
+script = ExtResource("11_gwqgc")
+name = "piano"
+enabled = true
+volume = 0.0
+stream = ExtResource("12_ncg87")
+
+[sub_resource type="Resource" id="Resource_ska0b"]
+script = ExtResource("11_gwqgc")
+name = "dangly"
+enabled = false
+volume = 0.0
+stream = ExtResource("14_0cvbq")
+
+[sub_resource type="Resource" id="Resource_8cjrc"]
+script = ExtResource("11_gwqgc")
+name = "flute"
+enabled = false
+volume = 0.0
+stream = ExtResource("15_mpcjl")
+
+[sub_resource type="Resource" id="Resource_q8656"]
+script = ExtResource("11_gwqgc")
+name = "string"
+enabled = false
+volume = 0.0
+stream = ExtResource("16_s1jak")
+
+[sub_resource type="Resource" id="Resource_fen5i"]
+script = ExtResource("10_l7kqs")
+name = "Stage1"
+bus = ""
+stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_borns"), SubResource("Resource_ska0b"), SubResource("Resource_8cjrc"), SubResource("Resource_q8656")])
+
+[sub_resource type="Resource" id="Resource_0542l"]
+script = ExtResource("11_gwqgc")
+name = "mix"
+enabled = true
+volume = 0.0
+stream = ExtResource("16_sc0nl")
+
+[sub_resource type="Resource" id="Resource_owi6n"]
+script = ExtResource("10_l7kqs")
+name = "Stage2"
+bus = ""
+stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_0542l")])
+
+[sub_resource type="Resource" id="Resource_3aixo"]
+script = ExtResource("11_gwqgc")
+name = "bass"
+enabled = false
+volume = 0.0
+stream = ExtResource("16_ynvft")
+
+[sub_resource type="Resource" id="Resource_04qdx"]
+script = ExtResource("11_gwqgc")
+name = "chords"
+enabled = false
+volume = 0.0
+stream = ExtResource("17_wvblp")
+
+[sub_resource type="Resource" id="Resource_dvh1q"]
+script = ExtResource("11_gwqgc")
+name = "lead1"
+enabled = false
+volume = 0.0
+stream = ExtResource("18_vo7ce")
+
+[sub_resource type="Resource" id="Resource_d5fhy"]
+script = ExtResource("11_gwqgc")
+name = "lead"
+enabled = false
+volume = 0.0
+stream = ExtResource("19_dd0lf")
+
+[sub_resource type="Resource" id="Resource_o677e"]
+script = ExtResource("11_gwqgc")
+name = "arp"
+enabled = false
+volume = 0.0
+stream = ExtResource("20_6wecq")
+
+[sub_resource type="Resource" id="Resource_ll6ke"]
+script = ExtResource("10_l7kqs")
+name = "Stage3"
+bus = ""
+stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_3aixo"), SubResource("Resource_04qdx"), SubResource("Resource_dvh1q"), SubResource("Resource_d5fhy"), SubResource("Resource_o677e")])
+
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
 panorama = ExtResource("2_upsuv")
 energy_multiplier = 1.4
@@ -238,97 +326,14 @@ albedo_texture = SubResource("NoiseTexture2D_y16d2")
 [sub_resource type="PlaneMesh" id="PlaneMesh_jprsr"]
 size = Vector2(30, 30)
 
-[sub_resource type="Resource" id="Resource_borns"]
-script = ExtResource("11_gwqgc")
-name = "piano"
-enabled = true
-volume = 0.0
-stream = ExtResource("12_ncg87")
-
-[sub_resource type="Resource" id="Resource_ska0b"]
-script = ExtResource("11_gwqgc")
-name = "dangly"
-enabled = false
-volume = 0.0
-stream = ExtResource("14_0cvbq")
-
-[sub_resource type="Resource" id="Resource_8cjrc"]
-script = ExtResource("11_gwqgc")
-name = "flute"
-enabled = false
-volume = 0.0
-stream = ExtResource("15_mpcjl")
-
-[sub_resource type="Resource" id="Resource_q8656"]
-script = ExtResource("11_gwqgc")
-name = "string"
-enabled = false
-volume = 0.0
-stream = ExtResource("16_s1jak")
-
-[sub_resource type="Resource" id="Resource_fen5i"]
-script = ExtResource("10_l7kqs")
-name = "Stage1"
-bus = ""
-stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_borns"), SubResource("Resource_ska0b"), SubResource("Resource_8cjrc"), SubResource("Resource_q8656")])
-
-[sub_resource type="Resource" id="Resource_0542l"]
-script = ExtResource("11_gwqgc")
-name = "mix"
-enabled = true
-volume = 0.0
-stream = ExtResource("16_sc0nl")
-
-[sub_resource type="Resource" id="Resource_owi6n"]
-script = ExtResource("10_l7kqs")
-name = "Stage2"
-bus = ""
-stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_0542l")])
-
-[sub_resource type="Resource" id="Resource_3aixo"]
-script = ExtResource("11_gwqgc")
-name = "bass"
-enabled = false
-volume = 0.0
-stream = ExtResource("16_ynvft")
-
-[sub_resource type="Resource" id="Resource_04qdx"]
-script = ExtResource("11_gwqgc")
-name = "chords"
-enabled = false
-volume = 0.0
-stream = ExtResource("17_wvblp")
-
-[sub_resource type="Resource" id="Resource_dvh1q"]
-script = ExtResource("11_gwqgc")
-name = "lead1"
-enabled = false
-volume = 0.0
-stream = ExtResource("18_vo7ce")
-
-[sub_resource type="Resource" id="Resource_d5fhy"]
-script = ExtResource("11_gwqgc")
-name = "lead"
-enabled = false
-volume = 0.0
-stream = ExtResource("19_dd0lf")
-
-[sub_resource type="Resource" id="Resource_o677e"]
-script = ExtResource("11_gwqgc")
-name = "arp"
-enabled = false
-volume = 0.0
-stream = ExtResource("20_6wecq")
-
-[sub_resource type="Resource" id="Resource_ll6ke"]
-script = ExtResource("10_l7kqs")
-name = "Stage3"
-bus = ""
-stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_3aixo"), SubResource("Resource_04qdx"), SubResource("Resource_dvh1q"), SubResource("Resource_d5fhy"), SubResource("Resource_o677e")])
-
 [node name="flower_songs_scene" type="Node3D" node_paths=PackedStringArray("connectors")]
 script = ExtResource("1_mmok6")
 connectors = [NodePath("ConnectorA")]
+
+[node name="MusicBank" type="Node" parent="."]
+script = ExtResource("9_yv0im")
+label = "Music"
+tracks = Array[ExtResource("10_l7kqs")]([SubResource("Resource_fen5i"), SubResource("Resource_owi6n"), SubResource("Resource_ll6ke")])
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.773396, -0.200364, 0.601426, 0.632793, -0.187375, 0.751308, -0.0378429, 0.961637, 0.271704, 0, 0, 0)
@@ -380,7 +385,7 @@ size = Vector3(27.6885, 0.1, 20)
 material = ExtResource("6_8e7kf")
 
 [node name="Wall" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.80908, 2, 7.87236)
+transform = Transform3D(-0.00115196, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00115196, 1.98723, 2.09898, 14.6315)
 use_collision = true
 size = Vector3(12.3818, 4, 0.1)
 material = ExtResource("6_8e7kf")
@@ -392,8 +397,21 @@ horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
 
+[node name="Wall7" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
+transform = Transform3D(-0.00115196, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00115196, 1.98723, 2.09898, -19.1295)
+use_collision = true
+size = Vector3(12.3818, 4, 0.1)
+material = ExtResource("6_8e7kf")
+
+[node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall7"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.99732, 0.235219, -0.149947)
+text = "this wall will expand into the intro, entering the garden"
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 800.0
+
 [node name="Wall2" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.999869, 0, 0.0162133, 0, 1, 0, -0.0162133, 0, -0.999869, 3.80908, 2, -9.88631)
+transform = Transform3D(-0.999869, -9.71016e-10, 0.0162133, 0.00942709, 0.813588, 0.581365, -0.0131909, 0.581442, -0.813482, 1.41785, 5.24706, -6.47072)
 use_collision = true
 size = Vector3(12.3818, 4, 0.1)
 material = ExtResource("6_8e7kf")
@@ -411,13 +429,13 @@ flip_h = true
 texture = ExtResource("8_c5c38")
 
 [node name="Wall3" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.844767, 0, 0.535134, 0, 1, 0, -0.535134, 0, -0.844767, 13.4126, 2, -8.5198)
+transform = Transform3D(-0.844767, 0, 0.535134, 0, 1, 0, -0.535134, 0, -0.844767, 6.07187, 2, -10.2905)
 use_collision = true
 size = Vector3(10.2235, 4, 0.1)
 material = ExtResource("6_8e7kf")
 
 [node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall3"]
-transform = Transform3D(-1, 0, -8.64593e-08, 0, 1, 0, 8.72584e-08, 0, -1, 2.00459, 0.235219, -0.167028)
+transform = Transform3D(-1, 0, -7.79206e-08, 0, 1, 0, 8.53086e-08, 0, -1, 2.00459, 0.235219, -0.167028)
 text = "Level 1c, enter through 1b ->"
 font_size = 48
 horizontal_alignment = 0
@@ -425,7 +443,7 @@ autowrap_mode = 3
 width = 800.0
 
 [node name="Wall4" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(0.854559, 0, 0.519355, 0, 1, 0, -0.519355, 0, 0.854559, 13.4126, 2, 5.24911)
+transform = Transform3D(0.854559, 0, 0.519355, 0, 1, 0, -0.519355, 0, 0.854559, 6.5002, 2, 6.42297)
 use_collision = true
 size = Vector3(10.2235, 4, 0.1)
 material = ExtResource("6_8e7kf")
@@ -439,7 +457,7 @@ autowrap_mode = 3
 width = 800.0
 
 [node name="Wall5" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(0.836171, 0, -0.548468, 0, 1, 0, 0.548468, 0, 0.836172, -5.89729, 2, 5.72967)
+transform = Transform3D(0.836171, 0, -0.548468, 0, 1, 0, 0.548468, 0, 0.836172, -2.14592, 1.98244, 6.29667)
 use_collision = true
 size = Vector3(10.2235, 4, 0.1)
 material = ExtResource("6_8e7kf")
@@ -452,20 +470,22 @@ autowrap_mode = 3
 width = 800.0
 
 [node name="Wall6" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.86269, 0, -0.505733, 0, 1, 0, 0.505733, 0, -0.86269, -5.67885, 2, -8.03751)
+transform = Transform3D(-0.86269, 0, -0.505733, 0, 1, 0, 0.505733, 0, -0.86269, -2.59506, 2, -10.483)
 use_collision = true
 size = Vector3(10.2235, 4, 0.1)
 material = ExtResource("6_8e7kf")
 
 [node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall6"]
-transform = Transform3D(-1, 0, -5.60087e-08, 0, 1, 0, 6.74389e-08, 0, -1, 2.00459, 0.235219, -0.167027)
+transform = Transform3D(-1, 0, -4.74827e-08, 0, 1, 0, 8.05943e-08, 0, -1, 2.00459, 0.125457, -0.167027)
 text = "welcome to flower water garden game
-by cm, paul, william, gabriel and more
+by cm, paul, william, gabriel, jenna, jesse, 
+and many more flowers <3
 
 this is the prototype with our core mechanics and tracks from houis/wei
 
 [wasd] - walk around
 [mouse movement] - look around"
+font_size = 37
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
@@ -485,7 +505,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.69295, 0.40733, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2766, 0, 0)
 
 [node name="HEXfloor 1" type="Node3D" parent="LEVEL1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3087, 4.4717, 10.5093)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.27687, 4.4717, 10.5093)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL1/HEXfloor 1"]
 transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
@@ -519,7 +539,7 @@ mesh = SubResource("PlaneMesh_jprsr")
 visible = false
 
 [node name="HEXfloor 2" type="Node3D" parent="LEVEL1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27593, 4.4717, 27.3223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75588, 4.4717, 27.3223)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL1/HEXfloor 2"]
 transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
@@ -553,7 +573,7 @@ mesh = SubResource("PlaneMesh_jprsr")
 visible = false
 
 [node name="HEXfloor 3" type="Node3D" parent="LEVEL1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27593, 4.4717, -5.96801)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75588, 4.4717, -5.96801)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL1/HEXfloor 3"]
 transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
@@ -588,6 +608,7 @@ visible = false
 
 [node name="Floor" type="CSGBox3D" parent="LEVEL1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20084, -0.05, -1.60602)
+visible = false
 use_collision = true
 size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
@@ -610,7 +631,7 @@ material = ExtResource("6_8e7kf")
 transform = Transform3D(-0.999998, 0, 0.00174537, 0, 1, 0, -0.00174537, 0, -0.999998, -18.4861, 0, -2.2126)
 
 [node name="HEXfloor 4" type="Node3D" parent="LEVEL2"]
-transform = Transform3D(1, -8.74228e-08, -8.73115e-08, -8.74229e-08, -1, 1.14179e-11, -8.72297e-08, -1.14102e-11, -1, 13.7565, -7.07331, -12.7459)
+transform = Transform3D(1, -8.74228e-08, -8.7262e-08, -8.74229e-08, -1, 1.14179e-11, -8.69969e-08, -1.14102e-11, -1, 9.98862, -7.07331, -12.7394)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL2/HEXfloor 4"]
 transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
@@ -620,31 +641,13 @@ mesh = SubResource("ArrayMesh_scsu7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cvjme")
 
-[node name="grass mapper" type="MeshInstance3D" parent="LEVEL2/HEXfloor 4/Circle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181653, -0.454133, 0.0908265)
-mesh = SubResource("QuadMesh_gu0jv")
-
 [node name="StaticBody3D" type="StaticBody3D" parent="LEVEL2/HEXfloor 4/Circle"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/HEXfloor 4/Circle/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8penb")
 
-[node name="Grass Generator" type="MultiMeshInstance3D" parent="LEVEL2/HEXfloor 4"]
-transform = Transform3D(0.346463, 0, 0, 0, 0.53, 0, 0, 0, 0.423062, -34.2861, -4.78194, -12.6845)
-material_override = SubResource("ShaderMaterial_w3bvu")
-cast_shadow = 0
-multimesh = SubResource("MultiMesh_2ssgd")
-
-[node name="grass plane" type="MeshInstance3D" parent="LEVEL2/HEXfloor 4/Grass Generator"]
-transform = Transform3D(0.476, 0, 0, 0, 0.365, 0, 0, 0, 0.401, 71.2725, 1.13764, 0)
-material_override = SubResource("StandardMaterial3D_arrka")
-mesh = SubResource("PlaneMesh_jprsr")
-
-[node name="grass" parent="LEVEL2/HEXfloor 4/Grass Generator/grass plane" instance=ExtResource("24_rldij")]
-visible = false
-
 [node name="HEXfloor 5" type="Node3D" parent="LEVEL2"]
-transform = Transform3D(1, -8.74228e-08, -8.73115e-08, -8.74229e-08, -1, 1.14179e-11, -8.72297e-08, -1.14102e-11, -1, 4.69714, -7.29542, -29.5432)
+transform = Transform3D(1, -8.74228e-08, -8.7262e-08, -8.74229e-08, -1, 1.14179e-11, -8.69969e-08, -1.14102e-11, -1, 0.929247, -7.29542, -29.5366)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL2/HEXfloor 5"]
 transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
@@ -654,31 +657,13 @@ mesh = SubResource("ArrayMesh_scsu7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cvjme")
 
-[node name="grass mapper" type="MeshInstance3D" parent="LEVEL2/HEXfloor 5/Circle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181653, -0.454133, 0.0908265)
-mesh = SubResource("QuadMesh_gu0jv")
-
 [node name="StaticBody3D" type="StaticBody3D" parent="LEVEL2/HEXfloor 5/Circle"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/HEXfloor 5/Circle/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8penb")
 
-[node name="Grass Generator" type="MultiMeshInstance3D" parent="LEVEL2/HEXfloor 5"]
-transform = Transform3D(0.346463, 0, 0, 0, 0.53, 0, 0, 0, 0.423062, -34.2861, -4.78194, -12.6845)
-material_override = SubResource("ShaderMaterial_w3bvu")
-cast_shadow = 0
-multimesh = SubResource("MultiMesh_2ssgd")
-
-[node name="grass plane" type="MeshInstance3D" parent="LEVEL2/HEXfloor 5/Grass Generator"]
-transform = Transform3D(0.476, 0, 0, 0, 0.365, 0, 0, 0, 0.401, 71.2725, 1.13764, 0)
-material_override = SubResource("StandardMaterial3D_arrka")
-mesh = SubResource("PlaneMesh_jprsr")
-
-[node name="grass" parent="LEVEL2/HEXfloor 5/Grass Generator/grass plane" instance=ExtResource("24_rldij")]
-visible = false
-
 [node name="HEXfloor 6" type="Node3D" parent="LEVEL2"]
-transform = Transform3D(1, -8.74228e-08, -8.73115e-08, -8.74229e-08, -1, 1.14179e-11, -8.72297e-08, -1.14102e-11, -1, 4.75525, -7.29542, 3.74712)
+transform = Transform3D(1, -8.74228e-08, -8.7262e-08, -8.74229e-08, -1, 1.14179e-11, -8.69969e-08, -1.14102e-11, -1, 0.98735, -7.29542, 3.75369)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL2/HEXfloor 6"]
 transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
@@ -688,31 +673,14 @@ mesh = SubResource("ArrayMesh_scsu7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cvjme")
 
-[node name="grass mapper" type="MeshInstance3D" parent="LEVEL2/HEXfloor 6/Circle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181653, -0.454133, 0.0908265)
-mesh = SubResource("QuadMesh_gu0jv")
-
 [node name="StaticBody3D" type="StaticBody3D" parent="LEVEL2/HEXfloor 6/Circle"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/HEXfloor 6/Circle/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8penb")
 
-[node name="Grass Generator" type="MultiMeshInstance3D" parent="LEVEL2/HEXfloor 6"]
-transform = Transform3D(0.346463, 0, 0, 0, 0.53, 0, 0, 0, 0.423062, -34.2861, -4.78194, -12.6845)
-material_override = SubResource("ShaderMaterial_w3bvu")
-cast_shadow = 0
-multimesh = SubResource("MultiMesh_2ssgd")
-
-[node name="grass plane" type="MeshInstance3D" parent="LEVEL2/HEXfloor 6/Grass Generator"]
-transform = Transform3D(0.476, 0, 0, 0, 0.365, 0, 0, 0, 0.401, 71.2725, 1.13764, 0)
-material_override = SubResource("StandardMaterial3D_arrka")
-mesh = SubResource("PlaneMesh_jprsr")
-
-[node name="grass" parent="LEVEL2/HEXfloor 6/Grass Generator/grass plane" instance=ExtResource("24_rldij")]
-visible = false
-
 [node name="Floor" type="CSGBox3D" parent="LEVEL2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20084, -0.05, -1.60602)
+visible = false
 use_collision = true
 size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
@@ -737,15 +705,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, 
 [node name="RayCast3D" type="RayCast3D" parent="ConnectorA"]
 target_position = Vector3(0, 0, -1)
 
-[node name="MusicBank" type="Node" parent="."]
-script = ExtResource("9_yv0im")
-label = "Music"
-tracks = Array[ExtResource("10_l7kqs")]([SubResource("Resource_fen5i"), SubResource("Resource_owi6n"), SubResource("Resource_ll6ke")])
-
 [editable path="STATIC DOME ENVIRONMENT/GRASS/grass plane/grass"]
 [editable path="LEVEL1/HEXfloor 1/Grass Generator/grass plane/grass"]
 [editable path="LEVEL1/HEXfloor 2/Grass Generator/grass plane/grass"]
 [editable path="LEVEL1/HEXfloor 3/Grass Generator/grass plane/grass"]
-[editable path="LEVEL2/HEXfloor 4/Grass Generator/grass plane/grass"]
-[editable path="LEVEL2/HEXfloor 5/Grass Generator/grass plane/grass"]
-[editable path="LEVEL2/HEXfloor 6/Grass Generator/grass plane/grass"]
