@@ -109,6 +109,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 tooltip_text = "Inverts looking up and down direction."
 theme_override_font_sizes/font_size = 25
+button_pressed = true
 text = "Invert Y Axis"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]

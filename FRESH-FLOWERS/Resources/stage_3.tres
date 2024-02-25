@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="MusicTrackResource" load_steps=15 format=3 uid="uid://buowkejaijh1"]
+
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="1_n465s"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="2_0m7ub"]
+[ext_resource type="AudioStream" uid="uid://4u7rhyop77tx" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 bass.ogg" id="3_6jbei"]
+[ext_resource type="AudioStream" uid="uid://t6veknx6y0rv" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 gabe chords.ogg" id="4_aeshh"]
+[ext_resource type="AudioStream" uid="uid://hr3vokaqd7bp" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 leadf-1.ogg" id="5_4epxp"]
+[ext_resource type="AudioStream" uid="uid://c4406g4rkgx3b" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 leadf.ogg" id="6_kohii"]
+[ext_resource type="AudioStream" uid="uid://dll7kbhwggtpo" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 main arp.ogg" id="7_8ceo5"]
+[ext_resource type="AudioStream" uid="uid://cx3ur7qlhxe8u" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 7-Audio.ogg" id="8_jxhvu"]
+
+[sub_resource type="Resource" id="Resource_3aixo"]
+script = ExtResource("2_0m7ub")
+name = "bass"
+enabled = false
+volume = 0.0
+stream = ExtResource("3_6jbei")
+
+[sub_resource type="Resource" id="Resource_04qdx"]
+script = ExtResource("2_0m7ub")
+name = "chords"
+enabled = false
+volume = 0.0
+stream = ExtResource("4_aeshh")
+
+[sub_resource type="Resource" id="Resource_dvh1q"]
+script = ExtResource("2_0m7ub")
+name = "lead1"
+enabled = false
+volume = 0.0
+stream = ExtResource("5_4epxp")
+
+[sub_resource type="Resource" id="Resource_d5fhy"]
+script = ExtResource("2_0m7ub")
+name = "lead"
+enabled = false
+volume = 0.0
+stream = ExtResource("6_kohii")
+
+[sub_resource type="Resource" id="Resource_o677e"]
+script = ExtResource("2_0m7ub")
+name = "arp"
+enabled = false
+volume = 0.0
+stream = ExtResource("7_8ceo5")
+
+[sub_resource type="Resource" id="Resource_ly1rv"]
+script = ExtResource("2_0m7ub")
+name = "bg"
+enabled = true
+volume = 0.0
+stream = ExtResource("8_jxhvu")
+
+[resource]
+script = ExtResource("1_n465s")
+name = "Stage3"
+bus = ""
+stems = Array[ExtResource("2_0m7ub")]([SubResource("Resource_3aixo"), SubResource("Resource_04qdx"), SubResource("Resource_dvh1q"), SubResource("Resource_d5fhy"), SubResource("Resource_o677e"), SubResource("Resource_ly1rv")])

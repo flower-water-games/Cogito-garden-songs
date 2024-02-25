@@ -1,132 +1,27 @@
-[gd_scene load_steps=85 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=61 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
 [ext_resource type="Texture2D" uid="uid://dntmkhn0pilpn" path="res://FRESH-FLOWERS/Assets/pink_sky.png" id="2_upsuv"]
+[ext_resource type="Resource" uid="uid://wa0jawp4obka" path="res://FRESH-FLOWERS/Resources/stage1.tres" id="3_5wqog"]
 [ext_resource type="PackedScene" uid="uid://wiugfhd6al3l" path="res://FRESH-FLOWERS/Scenes/flowers_player_hud.tscn" id="3_1351y"]
 [ext_resource type="PackedScene" uid="uid://cf0e57ahc0m1i" path="res://FRESH-FLOWERS/Scenes/flower_pause_menu.tscn" id="5_rt261"]
 [ext_resource type="Material" uid="uid://dkbgl3p3ffd1" path="res://COGITO/Assets/Materials/Prototype_DarkGrey.tres" id="6_8e7kf"]
 [ext_resource type="Texture2D" uid="uid://cn4nbo68thmvr" path="res://FRESH-FLOWERS/Assets/IMG_0607 (2).jpg" id="8_c5c38"]
-[ext_resource type="AudioStream" uid="uid://dkq8qtulsqp5g" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  6-Audio.ogg" id="9_opfm6"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_yv0im"]
-[ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="10_l7kqs"]
+[ext_resource type="Resource" uid="uid://mjr65n7vu26e" path="res://FRESH-FLOWERS/Resources/stage_2.tres" id="10_wa4kq"]
 [ext_resource type="PackedScene" uid="uid://bvylr50ht5dpa" path="res://FRESH-FLOWERS/PrefabScenes/pickup_watering_can.tscn" id="11_2lufm"]
-[ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="11_gwqgc"]
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/flower_cube.tscn" id="11_kigdu"]
-[ext_resource type="AudioStream" uid="uid://bputesskmkl1p" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  4-imagiro piano.ogg" id="12_ncg87"]
+[ext_resource type="Resource" uid="uid://buowkejaijh1" path="res://FRESH-FLOWERS/Resources/stage_3.tres" id="11_yw4mg"]
 [ext_resource type="Texture2D" uid="uid://d2nwnnjagyw7g" path="res://FRESH-FLOWERS/Assets/PB/textures/high_resdiffuse_v2.png" id="12_qxldb"]
 [ext_resource type="Texture2D" uid="uid://xk61i3y3l2rl" path="res://FRESH-FLOWERS/Assets/PB/textures/high_UV.png" id="13_pcrn7"]
-[ext_resource type="AudioStream" uid="uid://cmniasxpeliie" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  dangly.ogg" id="14_0cvbq"]
 [ext_resource type="Texture2D" uid="uid://dx62klv6k33u0" path="res://FRESH-FLOWERS/Assets/PB/textures/high_resNormal.png" id="14_kk815"]
-[ext_resource type="AudioStream" uid="uid://cxt2rgxinljev" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  FLute.ogg" id="15_mpcjl"]
 [ext_resource type="Texture2D" uid="uid://dw15kintsqss8" path="res://FRESH-FLOWERS/Assets/PB/textures/high_roughness.png" id="15_wmf80"]
-[ext_resource type="AudioStream" uid="uid://b4jkpu6hs7vy2" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  String.ogg" id="16_s1jak"]
-[ext_resource type="AudioStream" uid="uid://b7vss2aj0sjls" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 Mix.ogg" id="16_sc0nl"]
-[ext_resource type="AudioStream" uid="uid://4u7rhyop77tx" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 bass.ogg" id="16_ynvft"]
-[ext_resource type="AudioStream" uid="uid://t6veknx6y0rv" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 gabe chords.ogg" id="17_wvblp"]
-[ext_resource type="AudioStream" uid="uid://hr3vokaqd7bp" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 leadf-1.ogg" id="18_vo7ce"]
-[ext_resource type="AudioStream" uid="uid://c4406g4rkgx3b" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 leadf.ogg" id="19_dd0lf"]
-[ext_resource type="AudioStream" uid="uid://dll7kbhwggtpo" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 main arp.ogg" id="20_6wecq"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="23_o7m3t"]
 [ext_resource type="PackedScene" uid="uid://dibcob5mpje7q" path="res://FRESH-FLOWERS/Assets/PB/grass.glb" id="24_rldij"]
 [ext_resource type="Script" path="res://COGITO/Scripts/Cogito_Turnwheel.gd" id="30_c6scu"]
 [ext_resource type="PackedScene" uid="uid://poem1yjtmt3n" path="res://COGITO/Components/HoldInteraction.tscn" id="31_dkurf"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/spout_trigger.gd" id="32_6g2ia"]
-
-[sub_resource type="Resource" id="Resource_borns"]
-script = ExtResource("11_gwqgc")
-name = "piano"
-enabled = false
-volume = 0.0
-stream = ExtResource("12_ncg87")
-
-[sub_resource type="Resource" id="Resource_ska0b"]
-script = ExtResource("11_gwqgc")
-name = "dangly"
-enabled = false
-volume = 0.0
-stream = ExtResource("14_0cvbq")
-
-[sub_resource type="Resource" id="Resource_8cjrc"]
-script = ExtResource("11_gwqgc")
-name = "flute"
-enabled = false
-volume = 0.0
-stream = ExtResource("15_mpcjl")
-
-[sub_resource type="Resource" id="Resource_q8656"]
-script = ExtResource("11_gwqgc")
-name = "string"
-enabled = false
-volume = 0.0
-stream = ExtResource("16_s1jak")
-
-[sub_resource type="Resource" id="Resource_7drnl"]
-script = ExtResource("11_gwqgc")
-name = "audio"
-enabled = true
-volume = 0.0
-stream = ExtResource("9_opfm6")
-
-[sub_resource type="Resource" id="Resource_fen5i"]
-script = ExtResource("10_l7kqs")
-name = "Stage1"
-bus = ""
-stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_borns"), SubResource("Resource_ska0b"), SubResource("Resource_8cjrc"), SubResource("Resource_q8656"), SubResource("Resource_7drnl")])
-
-[sub_resource type="Resource" id="Resource_0542l"]
-script = ExtResource("11_gwqgc")
-name = "mix"
-enabled = true
-volume = 0.0
-stream = ExtResource("16_sc0nl")
-
-[sub_resource type="Resource" id="Resource_owi6n"]
-script = ExtResource("10_l7kqs")
-name = "Stage2"
-bus = ""
-stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_0542l")])
-
-[sub_resource type="Resource" id="Resource_3aixo"]
-script = ExtResource("11_gwqgc")
-name = "bass"
-enabled = false
-volume = 0.0
-stream = ExtResource("16_ynvft")
-
-[sub_resource type="Resource" id="Resource_04qdx"]
-script = ExtResource("11_gwqgc")
-name = "chords"
-enabled = false
-volume = 0.0
-stream = ExtResource("17_wvblp")
-
-[sub_resource type="Resource" id="Resource_dvh1q"]
-script = ExtResource("11_gwqgc")
-name = "lead1"
-enabled = false
-volume = 0.0
-stream = ExtResource("18_vo7ce")
-
-[sub_resource type="Resource" id="Resource_d5fhy"]
-script = ExtResource("11_gwqgc")
-name = "lead"
-enabled = false
-volume = 0.0
-stream = ExtResource("19_dd0lf")
-
-[sub_resource type="Resource" id="Resource_o677e"]
-script = ExtResource("11_gwqgc")
-name = "arp"
-enabled = false
-volume = 0.0
-stream = ExtResource("20_6wecq")
-
-[sub_resource type="Resource" id="Resource_ll6ke"]
-script = ExtResource("10_l7kqs")
-name = "Stage3"
-bus = ""
-stems = Array[ExtResource("11_gwqgc")]([SubResource("Resource_3aixo"), SubResource("Resource_04qdx"), SubResource("Resource_dvh1q"), SubResource("Resource_d5fhy"), SubResource("Resource_o677e")])
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
 panorama = ExtResource("2_upsuv")
@@ -385,7 +280,7 @@ connectors = [NodePath("ConnectorA")]
 [node name="MusicBank" type="Node" parent="."]
 script = ExtResource("9_yv0im")
 label = "Music"
-tracks = Array[ExtResource("10_l7kqs")]([SubResource("Resource_fen5i"), SubResource("Resource_owi6n"), SubResource("Resource_ll6ke")])
+tracks = Array[Resource("res://addons/resonate/music_manager/music_track_resource.gd")]([ExtResource("3_5wqog"), ExtResource("10_wa4kq"), ExtResource("11_yw4mg")])
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.773396, -0.200364, 0.601426, 0.632793, -0.187375, 0.751308, -0.0378429, 0.961637, 0.271704, 0, 0, 0)
@@ -477,7 +372,7 @@ autowrap_mode = 3
 width = 800.0
 
 [node name="Wall2" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.042024, -0.00775896, -0.999087, 0.00428434, 0.999959, -0.00794695, 0.999108, -0.00461434, -0.0419891, -6.74517, 1.94218, -1.8236)
+transform = Transform3D(-0.042024, -0.00775896, -0.999087, 0.00428434, 0.999959, -0.00794695, 0.999108, -0.00461434, -0.0419891, -6.74517, 2.22397, -1.8236)
 use_collision = true
 size = Vector3(12.3818, 4, 0.1)
 material = ExtResource("6_8e7kf")

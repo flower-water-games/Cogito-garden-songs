@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="MusicTrackResource" load_steps=17 format=3 uid="uid://mjr65n7vu26e"]
+
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="1_fctrq"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="2_v52ms"]
+[ext_resource type="AudioStream" uid="uid://7hiryd6ob6vp" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 5-Audio.ogg" id="3_oomq7"]
+[ext_resource type="AudioStream" uid="uid://do06t5ioo764e" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 4-Drum Rack.ogg" id="4_y2c2y"]
+[ext_resource type="AudioStream" uid="uid://iaefvbaf7o05" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 drone.ogg" id="5_de77v"]
+[ext_resource type="AudioStream" uid="uid://hb33o45kxxrg" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 flute.ogg" id="6_jdv4p"]
+[ext_resource type="AudioStream" uid="uid://58gtk2260c2q" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 gabechords.ogg" id="7_16fmk"]
+[ext_resource type="AudioStream" uid="uid://7nf3botyy20m" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 guira.ogg" id="8_mutji"]
+[ext_resource type="AudioStream" uid="uid://ktp6yysuyq54" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 piano smart.ogg" id="9_me624"]
+
+[sub_resource type="Resource" id="Resource_psci2"]
+script = ExtResource("2_v52ms")
+name = "bg"
+enabled = true
+volume = 0.0
+stream = ExtResource("3_oomq7")
+
+[sub_resource type="Resource" id="Resource_1oycu"]
+script = ExtResource("2_v52ms")
+name = "4-drumrack"
+enabled = true
+volume = 0.0
+stream = ExtResource("4_y2c2y")
+
+[sub_resource type="Resource" id="Resource_85h2r"]
+script = ExtResource("2_v52ms")
+name = "drone"
+enabled = true
+volume = 0.0
+stream = ExtResource("5_de77v")
+
+[sub_resource type="Resource" id="Resource_ehiwb"]
+script = ExtResource("2_v52ms")
+name = "flute"
+enabled = false
+volume = 0.0
+stream = ExtResource("6_jdv4p")
+
+[sub_resource type="Resource" id="Resource_seg8o"]
+script = ExtResource("2_v52ms")
+name = "gabechords"
+enabled = true
+volume = 0.0
+stream = ExtResource("7_16fmk")
+
+[sub_resource type="Resource" id="Resource_x3pwt"]
+script = ExtResource("2_v52ms")
+name = "guira"
+enabled = true
+volume = 0.0
+stream = ExtResource("8_mutji")
+
+[sub_resource type="Resource" id="Resource_je8wu"]
+script = ExtResource("2_v52ms")
+name = "pianosmart"
+enabled = true
+volume = 0.0
+stream = ExtResource("9_me624")
+
+[resource]
+script = ExtResource("1_fctrq")
+name = "Stage2"
+bus = ""
+stems = Array[ExtResource("2_v52ms")]([SubResource("Resource_psci2"), SubResource("Resource_1oycu"), SubResource("Resource_85h2r"), SubResource("Resource_ehiwb"), SubResource("Resource_seg8o"), SubResource("Resource_x3pwt"), SubResource("Resource_je8wu")])

@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="MusicTrackResource" load_steps=13 format=3 uid="uid://wa0jawp4obka"]
+
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="1_qmb7m"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="2_mievg"]
+[ext_resource type="AudioStream" uid="uid://bputesskmkl1p" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  4-imagiro piano.ogg" id="3_erfk3"]
+[ext_resource type="AudioStream" uid="uid://cmniasxpeliie" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  dangly.ogg" id="4_a3avm"]
+[ext_resource type="AudioStream" uid="uid://cxt2rgxinljev" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  FLute.ogg" id="5_uebio"]
+[ext_resource type="AudioStream" uid="uid://b4jkpu6hs7vy2" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  String.ogg" id="6_krmc0"]
+[ext_resource type="AudioStream" uid="uid://dkq8qtulsqp5g" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  6-Audio.ogg" id="7_47hd5"]
+
+[sub_resource type="Resource" id="Resource_borns"]
+script = ExtResource("2_mievg")
+name = "piano"
+enabled = false
+volume = 0.0
+stream = ExtResource("3_erfk3")
+
+[sub_resource type="Resource" id="Resource_ska0b"]
+script = ExtResource("2_mievg")
+name = "dangly"
+enabled = false
+volume = 0.0
+stream = ExtResource("4_a3avm")
+
+[sub_resource type="Resource" id="Resource_8cjrc"]
+script = ExtResource("2_mievg")
+name = "flute"
+enabled = false
+volume = 0.0
+stream = ExtResource("5_uebio")
+
+[sub_resource type="Resource" id="Resource_q8656"]
+script = ExtResource("2_mievg")
+name = "string"
+enabled = false
+volume = 0.0
+stream = ExtResource("6_krmc0")
+
+[sub_resource type="Resource" id="Resource_7drnl"]
+script = ExtResource("2_mievg")
+name = "audio"
+enabled = true
+volume = 0.0
+stream = ExtResource("7_47hd5")
+
+[resource]
+script = ExtResource("1_qmb7m")
+name = "Stage1"
+bus = ""
+stems = Array[ExtResource("2_mievg")]([SubResource("Resource_borns"), SubResource("Resource_ska0b"), SubResource("Resource_8cjrc"), SubResource("Resource_q8656"), SubResource("Resource_7drnl")])
