@@ -25,7 +25,7 @@ sound_click = ExtResource("4_k8sfh")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "v0.0.45
+text = "v0.0.53
 "
 
 [connection signal="start_game_pressed" from="MainMenuScene" to="." method="_on_main_menu_start_game_pressed"]
