@@ -5,7 +5,7 @@ extends Wieldable
 var current_water_level: float
 
 @onready var water_stream: GPUParticles3D = %WaterStream
-@onready var interaction_raycast: RayCast3D = %WateringRaycast
+@onready var interaction_raycast: RayCast3D = %WateringRaycast2
 
 func action_primary(is_pressed, is_released):
 	print("Watering Can: Primary action")
@@ -86,5 +86,7 @@ func equip(_player_interaction_component: PlayerInteractionComponent):
 # Function called when wieldable is unequipped.
 func unequip():
 	wieldable_mesh.hide()
+	if is_watering:
+		stop_watering()
 	print("Wieldable unequipped")
 	pass

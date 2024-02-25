@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=78 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -334,6 +334,31 @@ albedo_texture = SubResource("NoiseTexture2D_y16d2")
 [sub_resource type="PlaneMesh" id="PlaneMesh_jprsr"]
 size = Vector2(30, 30)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1vode"]
+emission_shape = 3
+emission_box_extents = Vector3(2.08165e-12, 0.1, 0.1)
+spread = 2.0
+initial_velocity_min = 13.0
+initial_velocity_max = 13.0
+color = Color(0.236366, 2.3722e-05, 0.92348, 1)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svcyr"]
+albedo_color = Color(0, 0.823459, 0.760311, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_yn73a"]
+material = SubResource("StandardMaterial3D_svcyr")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_6mxui"]
+size = Vector3(1, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ov47q"]
+size = Vector3(1, 4, 1)
+
 [node name="flower_songs_scene" type="Node3D" node_paths=PackedStringArray("connectors")]
 script = ExtResource("1_mmok6")
 connectors = [NodePath("ConnectorA")]
@@ -432,14 +457,16 @@ autowrap_mode = 3
 width = 800.0
 
 [node name="Wall2" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.999869, -9.71016e-10, 0.0162133, 0.00942709, 0.813588, 0.581365, -0.0131909, 0.581442, -0.813482, 1.41785, 5.24706, -6.47072)
+transform = Transform3D(-0.042024, -0.00775896, -0.999087, 0.00428434, 0.999959, -0.00794695, 0.999108, -0.00461434, -0.0419891, -6.74517, 1.94218, -1.8236)
 use_collision = true
 size = Vector3(12.3818, 4, 0.1)
 material = ExtResource("6_8e7kf")
 
 [node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall2"]
 transform = Transform3D(-1, 0, -9.24287e-08, 0, 1, 0, 9.24538e-08, 0, -1, 1.99732, 0.218324, -0.149947)
-text = "this area will house the 6 key hex tracker and eventually unlock the end state"
+text = "this area is locked
+complete level 1 to unlock
+(v.0.0.42< not working)"
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
@@ -529,10 +556,10 @@ stem_name = "string"
 [node name="LEVEL1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2766, 0, 0)
 
-[node name="HEXfloor 1" type="Node3D" parent="LEVEL1"]
+[node name="SOUTH" type="Node3D" parent="LEVEL1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.27687, 4.4717, 10.5093)
 
-[node name="Circle" type="MeshInstance3D" parent="LEVEL1/HEXfloor 1"]
+[node name="Circle" type="MeshInstance3D" parent="LEVEL1/SOUTH"]
 transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
 material_overlay = SubResource("StandardMaterial3D_cvjme")
 lod_bias = 4.94
@@ -540,33 +567,33 @@ mesh = SubResource("ArrayMesh_scsu7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cvjme")
 
-[node name="grass mapper" type="MeshInstance3D" parent="LEVEL1/HEXfloor 1/Circle"]
+[node name="grass mapper" type="MeshInstance3D" parent="LEVEL1/SOUTH/Circle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181653, -0.454133, 0.0908265)
 mesh = SubResource("QuadMesh_gu0jv")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LEVEL1/HEXfloor 1/Circle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="LEVEL1/SOUTH/Circle"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL1/HEXfloor 1/Circle/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL1/SOUTH/Circle/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8penb")
 
-[node name="Grass Generator" type="MultiMeshInstance3D" parent="LEVEL1/HEXfloor 1"]
+[node name="Grass Generator" type="MultiMeshInstance3D" parent="LEVEL1/SOUTH"]
 transform = Transform3D(0.346463, 0, 0, 0, 0.53, 0, 0, 0, 0.423062, -34.2861, -4.78194, -12.6845)
 material_override = SubResource("ShaderMaterial_w3bvu")
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_2ssgd")
 
-[node name="grass plane" type="MeshInstance3D" parent="LEVEL1/HEXfloor 1/Grass Generator"]
+[node name="grass plane" type="MeshInstance3D" parent="LEVEL1/SOUTH/Grass Generator"]
 transform = Transform3D(0.476, 0, 0, 0, 0.365, 0, 0, 0, 0.401, 71.2725, 1.13764, 0)
 material_override = SubResource("StandardMaterial3D_arrka")
 mesh = SubResource("PlaneMesh_jprsr")
 
-[node name="grass" parent="LEVEL1/HEXfloor 1/Grass Generator/grass plane" instance=ExtResource("24_rldij")]
+[node name="grass" parent="LEVEL1/SOUTH/Grass Generator/grass plane" instance=ExtResource("24_rldij")]
 visible = false
 
-[node name="HEXfloor 2" type="Node3D" parent="LEVEL1"]
+[node name="CENTER" type="Node3D" parent="LEVEL1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75588, 4.4717, 27.3223)
 
-[node name="Circle" type="MeshInstance3D" parent="LEVEL1/HEXfloor 2"]
+[node name="Circle" type="MeshInstance3D" parent="LEVEL1/CENTER"]
 transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
 material_overlay = SubResource("StandardMaterial3D_cvjme")
 lod_bias = 4.94
@@ -574,33 +601,53 @@ mesh = SubResource("ArrayMesh_scsu7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cvjme")
 
-[node name="grass mapper" type="MeshInstance3D" parent="LEVEL1/HEXfloor 2/Circle"]
+[node name="grass mapper" type="MeshInstance3D" parent="LEVEL1/CENTER/Circle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181653, -0.454133, 0.0908265)
 mesh = SubResource("QuadMesh_gu0jv")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LEVEL1/HEXfloor 2/Circle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="LEVEL1/CENTER/Circle"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL1/HEXfloor 2/Circle/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL1/CENTER/Circle/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8penb")
 
-[node name="Grass Generator" type="MultiMeshInstance3D" parent="LEVEL1/HEXfloor 2"]
+[node name="Grass Generator" type="MultiMeshInstance3D" parent="LEVEL1/CENTER"]
 transform = Transform3D(0.346463, 0, 0, 0, 0.53, 0, 0, 0, 0.423062, -34.2861, -4.78194, -12.6845)
 material_override = SubResource("ShaderMaterial_w3bvu")
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_2ssgd")
 
-[node name="grass plane" type="MeshInstance3D" parent="LEVEL1/HEXfloor 2/Grass Generator"]
+[node name="grass plane" type="MeshInstance3D" parent="LEVEL1/CENTER/Grass Generator"]
 transform = Transform3D(0.476, 0, 0, 0, 0.365, 0, 0, 0, 0.401, 71.2725, 1.13764, 0)
 material_override = SubResource("StandardMaterial3D_arrka")
 mesh = SubResource("PlaneMesh_jprsr")
 
-[node name="grass" parent="LEVEL1/HEXfloor 2/Grass Generator/grass plane" instance=ExtResource("24_rldij")]
+[node name="grass" parent="LEVEL1/CENTER/Grass Generator/grass plane" instance=ExtResource("24_rldij")]
 visible = false
 
-[node name="HEXfloor 3" type="Node3D" parent="LEVEL1"]
+[node name="Spout" type="Node3D" parent="LEVEL1/CENTER"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.08091, -29.361)
+
+[node name="WaterStream" type="GPUParticles3D" parent="LEVEL1/CENTER/Spout"]
+transform = Transform3D(-0.255471, 0.903748, 0.343474, 0.780418, 0.402467, -0.478506, -0.570686, 0.145809, -0.808119, -0.957672, -0.48182, -3.57628e-06)
+emitting = false
+amount = 2400
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_1vode")
+draw_pass_1 = SubResource("SphereMesh_yn73a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LEVEL1/CENTER/Spout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.72389, 0)
+mesh = SubResource("BoxMesh_6mxui")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LEVEL1/CENTER/Spout/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL1/CENTER/Spout/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_ov47q")
+
+[node name="NORTH" type="Node3D" parent="LEVEL1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75588, 4.4717, -5.96801)
 
-[node name="Circle" type="MeshInstance3D" parent="LEVEL1/HEXfloor 3"]
+[node name="Circle" type="MeshInstance3D" parent="LEVEL1/NORTH"]
 transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
 material_overlay = SubResource("StandardMaterial3D_cvjme")
 lod_bias = 4.94
@@ -608,27 +655,27 @@ mesh = SubResource("ArrayMesh_scsu7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cvjme")
 
-[node name="grass mapper" type="MeshInstance3D" parent="LEVEL1/HEXfloor 3/Circle"]
+[node name="grass mapper" type="MeshInstance3D" parent="LEVEL1/NORTH/Circle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181653, -0.454133, 0.0908265)
 mesh = SubResource("QuadMesh_gu0jv")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LEVEL1/HEXfloor 3/Circle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="LEVEL1/NORTH/Circle"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL1/HEXfloor 3/Circle/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL1/NORTH/Circle/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8penb")
 
-[node name="Grass Generator" type="MultiMeshInstance3D" parent="LEVEL1/HEXfloor 3"]
+[node name="Grass Generator" type="MultiMeshInstance3D" parent="LEVEL1/NORTH"]
 transform = Transform3D(0.346463, 0, 0, 0, 0.53, 0, 0, 0, 0.423062, -34.2861, -4.78194, -12.6845)
 material_override = SubResource("ShaderMaterial_w3bvu")
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_2ssgd")
 
-[node name="grass plane" type="MeshInstance3D" parent="LEVEL1/HEXfloor 3/Grass Generator"]
+[node name="grass plane" type="MeshInstance3D" parent="LEVEL1/NORTH/Grass Generator"]
 transform = Transform3D(0.476, 0, 0, 0, 0.365, 0, 0, 0, 0.401, 71.2725, 1.13764, 0)
 material_override = SubResource("StandardMaterial3D_arrka")
 mesh = SubResource("PlaneMesh_jprsr")
 
-[node name="grass" parent="LEVEL1/HEXfloor 3/Grass Generator/grass plane" instance=ExtResource("24_rldij")]
+[node name="grass" parent="LEVEL1/NORTH/Grass Generator/grass plane" instance=ExtResource("24_rldij")]
 visible = false
 
 [node name="Floor" type="CSGBox3D" parent="LEVEL1"]
@@ -731,6 +778,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, 
 target_position = Vector3(0, 0, -1)
 
 [editable path="STATIC DOME ENVIRONMENT/GRASS/grass plane/grass"]
-[editable path="LEVEL1/HEXfloor 1/Grass Generator/grass plane/grass"]
-[editable path="LEVEL1/HEXfloor 2/Grass Generator/grass plane/grass"]
-[editable path="LEVEL1/HEXfloor 3/Grass Generator/grass plane/grass"]
+[editable path="LEVEL1/SOUTH/Grass Generator/grass plane/grass"]
+[editable path="LEVEL1/CENTER/Grass Generator/grass plane/grass"]
+[editable path="LEVEL1/NORTH/Grass Generator/grass plane/grass"]

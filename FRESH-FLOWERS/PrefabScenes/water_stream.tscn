@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://drop1fpyufi4u"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1vode"]
+emission_shape = 3
+emission_box_extents = Vector3(2.08165e-12, 0.1, 0.1)
+spread = 5.0
+initial_velocity_min = 3.0
+initial_velocity_max = 10.0
+color = Color(0.236366, 2.3722e-05, 0.92348, 1)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svcyr"]
+albedo_color = Color(0, 0.823459, 0.760311, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_yn73a"]
+material = SubResource("StandardMaterial3D_svcyr")
+radius = 0.05
+height = 0.1
+
+[node name="WaterStream" type="GPUParticles3D"]
+transform = Transform3D(0.694734, -0.719267, -1.10506e-06, 0.719267, 0.694734, 2.60374e-06, -1.10506e-06, -2.60374e-06, 1, 0, 0.443186, 0)
+emitting = false
+amount = 1300
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_1vode")
+draw_pass_1 = SubResource("SphereMesh_yn73a")
+
+[node name="WateringRaycast" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0554425, -0.133795, 2.08616e-07)
+target_position = Vector3(1, 2.08165e-12, 2.08165e-12)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(0, 0, 1, 1)
