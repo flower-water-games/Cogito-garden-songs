@@ -16,11 +16,15 @@ func water(amount):
     # Implement additional logic here (e.g., visual feedback, triggering growth
 
 func update_moisture_level():
+	var normalized_moisture_level = moisture_level / max_moisture_level
+	var new_scale = Vector3(1, 1, 1) + Vector3(0.5, 0.5, 0.5) * normalized_moisture_level
+	# TODO tween the scale 
+	scale = new_scale
+
 	# Implement logic to update the visual representation of the moisture level here
 	if moisture_level > threshold:
 		# swap cube texture
 		_on_threshold_reached()
-		scale = Vector3(1.5, 1.5, 1.5)
 
 func _on_threshold_reached():
 	# Implement logic to trigger growth here

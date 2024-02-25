@@ -1,9 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt6brf8pfl28d"]
+[gd_scene load_steps=7 format=3 uid="uid://dt6brf8pfl28d"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/Wieldables/Wieldable_WateringCan.gd" id="1_jcj16"]
 [ext_resource type="Resource" uid="uid://cmqs55rmw7a35" path="res://FRESH-FLOWERS/Inventory/Watering_Can.tres" id="2_hxxwp"]
 [ext_resource type="PackedScene" uid="uid://b31v0mjo1op8x" path="res://FRESH-FLOWERS/Assets/barrelOpen.glb" id="2_qhl7i"]
-[ext_resource type="PackedScene" uid="uid://drop1fpyufi4u" path="res://FRESH-FLOWERS/PrefabScenes/water_stream.tscn" id="4_wnq7j"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1vode"]
+emission_shape = 3
+emission_box_extents = Vector3(2.08165e-12, 0.1, 0.1)
+spread = 0.5
+initial_velocity_min = 4.0
+initial_velocity_max = 4.0
+color = Color(0.252188, 0.0125756, 0.83884, 1)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svcyr"]
+albedo_color = Color(0, 0.823459, 0.760311, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_yn73a"]
+material = SubResource("StandardMaterial3D_svcyr")
+radius = 0.05
+height = 0.1
 
 [node name="watering_can" type="Node3D" node_paths=PackedStringArray("wieldable_mesh")]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.325805, -0.279839, -0.531526)
@@ -16,13 +34,19 @@ bus = &"SFX"
 
 [node name="barrelOpen2" parent="." instance=ExtResource("2_qhl7i")]
 
-[node name="WaterStream" parent="." instance=ExtResource("4_wnq7j")]
+[node name="WaterStream" type="GPUParticles3D" parent="."]
 unique_name_in_owner = true
+transform = Transform3D(0.694734, -0.719267, -1.10506e-06, 0.719267, 0.694734, 2.60374e-06, -1.10506e-06, -2.60374e-06, 1, 0, 0.443186, 0)
+emitting = false
+amount = 32
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_1vode")
+draw_pass_1 = SubResource("SphereMesh_yn73a")
 
-[node name="WateringRaycast2" type="RayCast3D" parent="WaterStream"]
+[node name="WateringRaycast" type="RayCast3D" parent="WaterStream"]
 unique_name_in_owner = true
 transform = Transform3D(0.0699306, -0.997552, -3.36684e-06, 0.997552, 0.0699306, 3.61113e-06, -3.36684e-06, -3.61113e-06, 1, 0, 0, 0)
-target_position = Vector3(2.08165e-12, -2.32, 2.08165e-12)
+target_position = Vector3(2.08165e-12, -1.6, 2.08165e-12)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false

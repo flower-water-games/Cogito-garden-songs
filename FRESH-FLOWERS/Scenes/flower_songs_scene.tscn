@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=85 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -29,6 +29,9 @@
 [ext_resource type="AudioStream" uid="uid://dll7kbhwggtpo" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 main arp.ogg" id="20_6wecq"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="23_o7m3t"]
 [ext_resource type="PackedScene" uid="uid://dibcob5mpje7q" path="res://FRESH-FLOWERS/Assets/PB/grass.glb" id="24_rldij"]
+[ext_resource type="Script" path="res://COGITO/Scripts/Cogito_Turnwheel.gd" id="30_c6scu"]
+[ext_resource type="PackedScene" uid="uid://poem1yjtmt3n" path="res://COGITO/Components/HoldInteraction.tscn" id="31_dkurf"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/spout_trigger.gd" id="32_6g2ia"]
 
 [sub_resource type="Resource" id="Resource_borns"]
 script = ExtResource("11_gwqgc")
@@ -359,6 +362,22 @@ size = Vector3(1, 4, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ov47q"]
 size = Vector3(1, 4, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2lyg"]
+albedo_color = Color(3.20406e-06, 0.882207, 0.417387, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yqbba"]
+material = SubResource("StandardMaterial3D_o2lyg")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.1
+radial_segments = 6
+rings = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qspks"]
+points = PackedVector3Array(0.259808, 0.05, 0.149941, 0, 0.05, 0.3, 0.259808, -0.05, 0.149941, 0.259808, 0.05, -0.150059, 0, -0.05, 0.3, -0.259808, 0.05, 0.149941, 0.259808, -0.05, -0.150059, 0, 0.05, -0.3, -0.259808, -0.05, 0.149941, -0.259808, 0.05, -0.15, 0, -0.05, -0.3, -0.259808, -0.05, -0.15)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_f5spn"]
+
 [node name="flower_songs_scene" type="Node3D" node_paths=PackedStringArray("connectors")]
 script = ExtResource("1_mmok6")
 connectors = [NodePath("ConnectorA")]
@@ -394,13 +413,14 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99721, 0, 0)
 
 [node name="Txt_SceneB2" type="Label3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.996528, 0, -0.0832611, 0, 1, 0, 0.0832611, 0, -0.996528, 4.25169, 2.35918, 7.25064)
+transform = Transform3D(-0.999983, 0, 0.00581125, 0, 1, 0, -0.00581125, 0, -0.999983, 4.25169, 2.07163, 7.69341)
 text = "welcome to the garden
-please pick up this watering can (that looks like a red barrel)
+please pick up this watering can (dev art looks like a red barrel)
 
-and click to water those cubes over there. once they're watered they'll grow!
+and click to water those cubes over there in level 1...listen to the music changing ... 
 
-listen to the music changing ... find the flute cube!"
+[wasd] - walk around
+[mouse movement] - look around"
 font_size = 37
 horizontal_alignment = 0
 autowrap_mode = 3
@@ -531,27 +551,11 @@ and many more flowers <3
 
 this is the prototype with our core mechanics and tracks from houis/wei
 
-[wasd] - walk around
-[mouse movement] - look around"
+"
 font_size = 37
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
-
-[node name="FlowerCube" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_kigdu")]
-stem_name = "piano"
-
-[node name="FlowerCube2" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_kigdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00236, 0.40733, 0)
-stem_name = "dangly"
-
-[node name="FlowerCube3" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_kigdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14611, 1.61743, -7.20495)
-stem_name = "flute"
-
-[node name="FlowerCube4" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_kigdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.69295, 0.40733, 0)
-stem_name = "string"
 
 [node name="LEVEL1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2766, 0, 0)
@@ -593,6 +597,40 @@ visible = false
 [node name="CENTER" type="Node3D" parent="LEVEL1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75588, 4.4717, 27.3223)
 
+[node name="FlowerCube" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94228, -4.06437, -46.5803)
+stem_name = "piano"
+
+[node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13164, 0)
+text = "piano
+"
+
+[node name="FlowerCube2" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
+transform = Transform3D(-0.993676, 0, 0.112284, 0, 1, 0, -0.112284, 0, -0.993676, -0.854364, -4.06437, -16.296)
+stem_name = "dangly"
+
+[node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18927, 0)
+text = "dangly"
+
+[node name="FlowerCube3" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29411, -2.85427, -34.5272)
+stem_name = "flute"
+
+[node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38363, 0)
+text = "flute cube <3"
+
+[node name="FlowerCube4" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
+transform = Transform3D(-0.862364, 0, -0.50629, 0, 1, 0, 0.50629, 0, -0.862364, -8.51706, -4.06437, -24.9691)
+stem_name = "string"
+
+[node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58969, 0)
+text = "string
+"
+
 [node name="Circle" type="MeshInstance3D" parent="LEVEL1/CENTER"]
 transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
 material_overlay = SubResource("StandardMaterial3D_cvjme")
@@ -628,7 +666,8 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.08091, -29.361)
 
 [node name="WaterStream" type="GPUParticles3D" parent="LEVEL1/CENTER/Spout"]
-transform = Transform3D(-0.255471, 0.903748, 0.343474, 0.780418, 0.402467, -0.478506, -0.570686, 0.145809, -0.808119, -0.957672, -0.48182, -3.57628e-06)
+unique_name_in_owner = true
+transform = Transform3D(-0.255471, 0.903748, 0.343474, 0.780418, 0.402467, -0.478506, -0.570686, 0.145809, -0.808119, -0.434889, -0.904604, -3.57628e-06)
 emitting = false
 amount = 2400
 lifetime = 2.0
@@ -643,6 +682,27 @@ mesh = SubResource("BoxMesh_6mxui")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL1/CENTER/Spout/MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_ov47q")
+
+[node name="TurnWheel" type="AnimatableBody3D" parent="LEVEL1/CENTER/Spout" node_paths=PackedStringArray("nodes_to_trigger")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.601742, -1.80318, 0)
+collision_layer = 3
+script = ExtResource("30_c6scu")
+nodes_to_trigger = [NodePath("../SpoutTrigger")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LEVEL1/CENTER/Spout/TurnWheel"]
+mesh = SubResource("CylinderMesh_yqbba")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL1/CENTER/Spout/TurnWheel"]
+shape = SubResource("ConvexPolygonShape3D_qspks")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="LEVEL1/CENTER/Spout/TurnWheel"]
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="HoldInteraction" parent="LEVEL1/CENTER/Spout/TurnWheel" instance=ExtResource("31_dkurf")]
+
+[node name="SpoutTrigger" type="Node3D" parent="LEVEL1/CENTER/Spout"]
+script = ExtResource("32_6g2ia")
 
 [node name="NORTH" type="Node3D" parent="LEVEL1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75588, 4.4717, -5.96801)
@@ -670,13 +730,11 @@ material_override = SubResource("ShaderMaterial_w3bvu")
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_2ssgd")
 
-[node name="grass plane" type="MeshInstance3D" parent="LEVEL1/NORTH/Grass Generator"]
-transform = Transform3D(0.476, 0, 0, 0, 0.365, 0, 0, 0, 0.401, 71.2725, 1.13764, 0)
-material_override = SubResource("StandardMaterial3D_arrka")
-mesh = SubResource("PlaneMesh_jprsr")
+[node name="Node3D" type="Node3D" parent="LEVEL1/NORTH"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5966, -3.29252, -13.3135)
 
-[node name="grass" parent="LEVEL1/NORTH/Grass Generator/grass plane" instance=ExtResource("24_rldij")]
-visible = false
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LEVEL1/NORTH/Node3D"]
+mesh = SubResource("CylinderMesh_f5spn")
 
 [node name="Floor" type="CSGBox3D" parent="LEVEL1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20084, -0.05, -1.60602)
@@ -780,4 +838,3 @@ target_position = Vector3(0, 0, -1)
 [editable path="STATIC DOME ENVIRONMENT/GRASS/grass plane/grass"]
 [editable path="LEVEL1/SOUTH/Grass Generator/grass plane/grass"]
 [editable path="LEVEL1/CENTER/Grass Generator/grass plane/grass"]
-[editable path="LEVEL1/NORTH/Grass Generator/grass plane/grass"]
