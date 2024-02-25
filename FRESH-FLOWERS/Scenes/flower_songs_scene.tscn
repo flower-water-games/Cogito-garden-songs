@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=68 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -47,9 +47,6 @@ ambient_light_energy = 0.2
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gqq3f"]
-size = Vector2(500, 300)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_a7rhk"]
 seed = 130
@@ -318,23 +315,21 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99721, 0, 0)
 
 [node name="Txt_SceneB2" type="Label3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.999983, 0, 0.00581125, 0, 1, 0, -0.00581125, 0, -0.999983, 4.25169, 1.56809, 7.01868)
-text = "welcome to the garden
+transform = Transform3D(-0.999983, 0, 0.00581125, 0, 1, 0, -0.00581125, 0, -0.999983, 4.25169, 1.57504, 7.01868)
+text = "welcome
+
 please pick up this watering can (dev art looks like a red barrel)
 
 and click to water those cubes over there in level 1...listen to the music changing ... 
 
 [wasd] - walk around
-[mouse movement] - look around"
-font_size = 37
+[mouse movement] - look around
+[f] - pick up watering can
+[1] - equip watering can (press 1 on keyboard)"
+font_size = 25
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
-
-[node name="Sprite3D" type="Sprite3D" parent="STATIC DOME ENVIRONMENT/Txt_SceneB2"]
-transform = Transform3D(1, 0, 2.58674e-12, 0, 1, 0, -8.86347e-12, 0, 1, 2.33086, 0, -0.0135455)
-modulate = Color(0.345098, 1, 0.662745, 1)
-texture = SubResource("PlaceholderTexture2D_gqq3f")
 
 [node name="pickup_watering_can" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_2lufm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74393, 0.712185, 6.5716)
@@ -485,16 +480,16 @@ autowrap_mode = 3
 width = 800.0
 
 [node name="wall5" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(-3.4378, -7.30096e-10, 0.76411, 1.90473e-09, 2.196, -7.3621e-10, -2.3615, 1.59154e-11, -1.11237, -3.5419, 0.12607, 5.18245)
+transform = Transform3D(-3.4378, -7.30096e-10, 0.76411, 1.90473e-09, 2.196, -7.3621e-10, -2.3615, 1.59154e-11, -1.11237, -3.15562, 0.12607, 5.44707)
 
 [node name="wall6" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(-3.4378, -7.30096e-10, 0.76411, 1.90473e-09, 2.196, -7.3621e-10, -2.3615, 1.59154e-11, -1.11237, -0.203687, 0.12607, 7.42546)
+transform = Transform3D(-3.4378, -7.30096e-10, 0.76411, 1.90473e-09, 2.196, -7.3621e-10, -2.3615, 1.59154e-11, -1.11237, 0.170671, 0.12607, 7.75212)
 
 [node name="wall7" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(-3.58879, -2.92762e-10, -0.687593, 1.90473e-09, 2.196, -7.3621e-10, 2.12502, 6.69017e-10, -1.16122, 5.02205, 0.12607, 7.34622)
+transform = Transform3D(-3.58822, 0.000834764, -0.687904, 0.00220686, 2.196, -0.000198825, 2.12598, -0.000870632, -1.16104, 4.07091, 0.12607, 7.74804)
 
 [node name="wall8" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(-3.58879, -2.92762e-10, -0.687593, 1.90473e-09, 2.196, -7.3621e-10, 2.12502, 6.69017e-10, -1.16122, 8.46145, 0.12607, 5.26169)
+transform = Transform3D(-3.58879, -2.92762e-10, -0.687593, 1.90473e-09, 2.196, -7.3621e-10, 2.12502, 6.69017e-10, -1.16122, 7.51032, 0.12607, 5.66351)
 
 [node name="wall9" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
 transform = Transform3D(0.0894547, 4.39119e-10, -1.34922, 1.90473e-09, 2.196, -7.3621e-10, 4.16979, 5.83496e-10, 0.0289447, 2.12311, 0.12607, 16.1828)
