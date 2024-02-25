@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=69 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -16,9 +16,16 @@
 [ext_resource type="Texture2D" uid="uid://d2nwnnjagyw7g" path="res://FRESH-FLOWERS/Assets/PB/textures/high_resdiffuse_v2.png" id="12_qxldb"]
 [ext_resource type="Texture2D" uid="uid://xk61i3y3l2rl" path="res://FRESH-FLOWERS/Assets/PB/textures/high_UV.png" id="13_pcrn7"]
 [ext_resource type="Texture2D" uid="uid://dx62klv6k33u0" path="res://FRESH-FLOWERS/Assets/PB/textures/high_resNormal.png" id="14_kk815"]
+[ext_resource type="PackedScene" uid="uid://b6bxswn86o054" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/wall.glb" id="15_3yq5u"]
 [ext_resource type="Texture2D" uid="uid://dw15kintsqss8" path="res://FRESH-FLOWERS/Assets/PB/textures/high_roughness.png" id="15_wmf80"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="23_o7m3t"]
+[ext_resource type="PackedScene" uid="uid://ceqiuhuh6nprf" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/column.glb" id="24_e16dj"]
 [ext_resource type="PackedScene" uid="uid://dibcob5mpje7q" path="res://FRESH-FLOWERS/Assets/PB/grass.glb" id="24_rldij"]
+[ext_resource type="PackedScene" uid="uid://bj7vmlso6v1a7" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/trophy.glb" id="25_ba7m4"]
+[ext_resource type="PackedScene" uid="uid://5a6nrbjywq2s" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/block.glb" id="26_2ijr8"]
+[ext_resource type="PackedScene" uid="uid://c8en7ojoiesv6" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/stairs.glb" id="26_do65x"]
+[ext_resource type="PackedScene" uid="uid://dnejul2gmtuxg" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/bricks.glb" id="27_bo2eq"]
+[ext_resource type="PackedScene" uid="uid://dxpfslhb0axcs" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/border-straight.glb" id="28_7f7yh"]
 [ext_resource type="Script" path="res://COGITO/Scripts/Cogito_Turnwheel.gd" id="30_c6scu"]
 [ext_resource type="PackedScene" uid="uid://poem1yjtmt3n" path="res://COGITO/Components/HoldInteraction.tscn" id="31_dkurf"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/spout_trigger.gd" id="32_6g2ia"]
@@ -40,6 +47,9 @@ ambient_light_energy = 0.2
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gqq3f"]
+size = Vector2(500, 300)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_a7rhk"]
 seed = 130
@@ -308,7 +318,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99721, 0, 0)
 
 [node name="Txt_SceneB2" type="Label3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.999983, 0, 0.00581125, 0, 1, 0, -0.00581125, 0, -0.999983, 4.25169, 2.07163, 7.69341)
+transform = Transform3D(-0.999983, 0, 0.00581125, 0, 1, 0, -0.00581125, 0, -0.999983, 4.25169, 1.56809, 7.01868)
 text = "welcome to the garden
 please pick up this watering can (dev art looks like a red barrel)
 
@@ -320,6 +330,11 @@ font_size = 37
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
+
+[node name="Sprite3D" type="Sprite3D" parent="STATIC DOME ENVIRONMENT/Txt_SceneB2"]
+transform = Transform3D(1, 0, 2.58674e-12, 0, 1, 0, -8.86347e-12, 0, 1, 2.33086, 0, -0.0135455)
+modulate = Color(0.345098, 1, 0.662745, 1)
+texture = SubResource("PlaceholderTexture2D_gqq3f")
 
 [node name="pickup_watering_can" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_2lufm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74393, 0.712185, 6.5716)
@@ -339,7 +354,7 @@ mesh = SubResource("PlaneMesh_vtbvp")
 visible = false
 
 [node name="Floor" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.70038, -0.0561991, 0.00219393)
+transform = Transform3D(1.7749, 0, 0, 0, 1, 0, 0, 0, 2.15361, 1.4053, -0.0561991, -2.79486)
 visible = false
 use_collision = true
 size = Vector3(27.6885, 0.1, 20)
@@ -347,6 +362,7 @@ material = ExtResource("6_8e7kf")
 
 [node name="Wall" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
 transform = Transform3D(-0.00115196, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00115196, 1.98723, 2.09898, 14.6315)
+visible = false
 use_collision = true
 size = Vector3(12.3818, 4, 0.1)
 material = ExtResource("6_8e7kf")
@@ -360,6 +376,7 @@ width = 800.0
 
 [node name="Wall7" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
 transform = Transform3D(-0.00115196, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00115196, 1.98723, 2.09898, -19.1295)
+visible = false
 use_collision = true
 size = Vector3(12.3818, 4, 0.1)
 material = ExtResource("6_8e7kf")
@@ -371,28 +388,24 @@ horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
 
-[node name="Wall2" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.042024, -0.00775896, -0.999087, 0.00428434, 0.999959, -0.00794695, 0.999108, -0.00461434, -0.0419891, -6.74517, 2.22397, -1.8236)
+[node name="wall4" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(0.0428036, -4.20396e-10, 1.34946, 1.90473e-09, 2.196, -7.3621e-10, -4.17053, -5.97126e-10, 0.01385, -6.77078, 0.12607, -6.03207)
+
+[node name="Wall2" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT/wall4"]
+transform = Transform3D(-0.239642, 0.00108721, 0.00760857, 0.00195097, 0.455355, -0.00361883, -0.0235402, -0.00578418, -0.740604, -1.00893, 0.955328, 0.050983)
+visible = false
 use_collision = true
 size = Vector3(12.3818, 4, 0.1)
 material = ExtResource("6_8e7kf")
 
-[node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/Wall2"]
-transform = Transform3D(-1, 0, -9.24287e-08, 0, 1, 0, 9.24538e-08, 0, -1, 1.99732, 0.218324, -0.149947)
-text = "this area is locked
-complete level 1 to unlock
-(v.0.0.42< not working)"
-horizontal_alignment = 0
-autowrap_mode = 3
-width = 800.0
-
-[node name="Sprite3D" type="Sprite3D" parent="STATIC DOME ENVIRONMENT/Wall2"]
+[node name="Sprite3D" type="Sprite3D" parent="STATIC DOME ENVIRONMENT/wall4/Wall2"]
 transform = Transform3D(0.09, 0, 6.26032e-10, 0, 0.09, 0, -5.35997e-10, 0, 0.09, -3.81772, 0, -0.0961447)
 flip_h = true
 texture = ExtResource("8_c5c38")
 
 [node name="Wall3" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
 transform = Transform3D(-0.844767, 0, 0.535134, 0, 1, 0, -0.535134, 0, -0.844767, 6.07187, 2, -10.2905)
+visible = false
 use_collision = true
 size = Vector3(10.2235, 4, 0.1)
 material = ExtResource("6_8e7kf")
@@ -407,6 +420,7 @@ width = 800.0
 
 [node name="Wall4" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
 transform = Transform3D(0.854559, 0, 0.519355, 0, 1, 0, -0.519355, 0, 0.854559, 6.5002, 2, 6.42297)
+visible = false
 use_collision = true
 size = Vector3(10.2235, 4, 0.1)
 material = ExtResource("6_8e7kf")
@@ -421,6 +435,7 @@ width = 800.0
 
 [node name="Wall5" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
 transform = Transform3D(0.836171, 0, -0.548468, 0, 1, 0, 0.548468, 0, 0.836172, -2.14592, 1.98244, 6.29667)
+visible = false
 use_collision = true
 size = Vector3(10.2235, 4, 0.1)
 material = ExtResource("6_8e7kf")
@@ -434,6 +449,7 @@ width = 800.0
 
 [node name="Wall6" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
 transform = Transform3D(-0.86269, 0, -0.505733, 0, 1, 0, 0.505733, 0, -0.86269, -2.59506, 2, -10.483)
+visible = false
 use_collision = true
 size = Vector3(10.2235, 4, 0.1)
 material = ExtResource("6_8e7kf")
@@ -448,6 +464,74 @@ this is the prototype with our core mechanics and tracks from houis/wei
 
 "
 font_size = 37
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 800.0
+
+[node name="FakeWalls" type="Node3D" parent="STATIC DOME ENVIRONMENT"]
+
+[node name="wall2" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(0.0428036, -4.20396e-10, 1.34946, 1.90473e-09, 2.196, -7.3621e-10, -4.17053, -5.97126e-10, 0.01385, -6.77078, 0.12607, -2.06317)
+
+[node name="wall3" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(0.0428036, -4.20396e-10, 1.34946, 1.90473e-09, 2.196, -7.3621e-10, -4.17053, -5.97126e-10, 0.01385, -6.77078, 0.12607, 1.95862)
+
+[node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/FakeWalls/wall3"]
+transform = Transform3D(0.239642, 0.00108721, -0.00760854, -0.00195097, 0.455355, 0.00361883, 0.0235401, -0.00578417, 0.740603, 0.427316, 1.20805, 0.0529861)
+text = "this area is locked
+complete level 1 to unlock"
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 800.0
+
+[node name="wall5" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(-3.4378, -7.30096e-10, 0.76411, 1.90473e-09, 2.196, -7.3621e-10, -2.3615, 1.59154e-11, -1.11237, -3.5419, 0.12607, 5.18245)
+
+[node name="wall6" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(-3.4378, -7.30096e-10, 0.76411, 1.90473e-09, 2.196, -7.3621e-10, -2.3615, 1.59154e-11, -1.11237, -0.203687, 0.12607, 7.42546)
+
+[node name="wall7" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(-3.58879, -2.92762e-10, -0.687593, 1.90473e-09, 2.196, -7.3621e-10, 2.12502, 6.69017e-10, -1.16122, 5.02205, 0.12607, 7.34622)
+
+[node name="wall8" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(-3.58879, -2.92762e-10, -0.687593, 1.90473e-09, 2.196, -7.3621e-10, 2.12502, 6.69017e-10, -1.16122, 8.46145, 0.12607, 5.26169)
+
+[node name="wall9" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(0.0894547, 4.39119e-10, -1.34922, 1.90473e-09, 2.196, -7.3621e-10, 4.16979, 5.83496e-10, 0.0289447, 2.12311, 0.12607, 16.1828)
+
+[node name="wall10" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(0.0894547, 4.39119e-10, -1.34922, 1.90473e-09, 2.196, -7.3621e-10, 4.16979, 5.83496e-10, 0.0289447, 1.99559, 0.12607, 12.163)
+
+[node name="wall11" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(3.39796, 7.3026e-10, -0.782543, 1.90473e-09, 2.196, -7.3621e-10, 2.41847, -3.7446e-12, 1.09948, 7.40913, 0.12607, -9.15268)
+
+[node name="wall12" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(3.39796, 7.3026e-10, -0.782543, 1.90473e-09, 2.196, -7.3621e-10, 2.41847, -3.7446e-12, 1.09948, 4.10876, 0.12607, -11.451)
+
+[node name="wall13" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(3.62371, 3.03872e-10, 0.668144, 1.90473e-09, 2.196, -7.3621e-10, -2.06491, -6.64045e-10, 1.17252, -1.11757, 0.12607, -11.4589)
+
+[node name="wall14" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(3.62371, 3.03872e-10, 0.668144, 1.90473e-09, 2.196, -7.3621e-10, -2.06491, -6.64045e-10, 1.17252, -4.59124, 0.12607, -9.43197)
+
+[node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/FakeWalls/wall14"]
+transform = Transform3D(0.239642, 0.00108721, -0.00760854, -0.00195097, 0.455355, 0.00361883, 0.0235401, -0.00578417, 0.740603, 0.427316, 1.20805, 0.0529861)
+text = "this area is locked
+complete level 1 to unlock"
+horizontal_alignment = 0
+autowrap_mode = 3
+width = 800.0
+
+[node name="wall15" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(-0.0199439, -4.29333e-10, 1.34951, 1.90473e-09, 2.196, -7.3621e-10, -4.1707, -5.90734e-10, -0.00645305, 1.92825, 0.12607, -20.2459)
+
+[node name="wall16" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(-0.0199439, -4.29333e-10, 1.34951, 1.90473e-09, 2.196, -7.3621e-10, -4.1707, -5.90734e-10, -0.00645305, 1.98875, 0.12607, -16.2246)
+
+[node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/FakeWalls/wall16"]
+transform = Transform3D(0.239642, 0.00108721, -0.00760854, -0.00195097, 0.455355, 0.00361883, 0.0235401, -0.00578417, 0.740603, 0.427316, 1.20805, 0.0529861)
+text = "this area is locked
+complete level 1 to unlock"
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
@@ -603,7 +687,7 @@ script = ExtResource("32_6g2ia")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75588, 4.4717, -5.96801)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL1/NORTH"]
-transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
+transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.914)
 material_overlay = SubResource("StandardMaterial3D_cvjme")
 lod_bias = 4.94
 mesh = SubResource("ArrayMesh_scsu7")
@@ -655,11 +739,14 @@ material = ExtResource("6_8e7kf")
 [node name="LEVEL2" type="Node3D" parent="."]
 transform = Transform3D(-0.999998, 0, 0.00174537, 0, 1, 0, -0.00174537, 0, -0.999998, -18.4861, 0, -2.2126)
 
+[node name="column2" parent="LEVEL2" instance=ExtResource("24_e16dj")]
+transform = Transform3D(5.86, 0, -3.4663e-09, 0, 5.86, 0, 3.28446e-09, 0, 5.86, -7.13916, -0.326991, -16.4962)
+
 [node name="HEXfloor 4" type="Node3D" parent="LEVEL2"]
 transform = Transform3D(1, -8.74228e-08, -8.7262e-08, -8.74229e-08, -1, 1.14179e-11, -8.69969e-08, -1.14102e-11, -1, 9.98862, -7.07331, -12.7394)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL2/HEXfloor 4"]
-transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
+transform = Transform3D(11.01, 4.04046e-14, -1.62031e-10, -9.29615e-14, 11.01, 8.14852e-17, -3.01059e-10, 5.44136e-17, 11.01, -8.91762, -0.216349, -12.6004)
 material_overlay = SubResource("StandardMaterial3D_cvjme")
 lod_bias = 4.94
 mesh = SubResource("ArrayMesh_scsu7")
@@ -670,6 +757,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cvjme")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/HEXfloor 4/Circle/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8penb")
+
+[node name="trophy2" parent="LEVEL2/HEXfloor 4/Circle" instance=ExtResource("25_ba7m4")]
+transform = Transform3D(0.999994, 2.55634e-05, 0.00349037, -2.59141e-05, -0.999891, 0.0147475, 0.00349037, -0.0147475, -0.999885, 0.242635, -1.1516, 0.0410177)
 
 [node name="HEXfloor 5" type="Node3D" parent="LEVEL2"]
 transform = Transform3D(1, -8.74228e-08, -8.7262e-08, -8.74229e-08, -1, 1.14179e-11, -8.69969e-08, -1.14102e-11, -1, 0.929247, -7.29542, -29.5366)
@@ -723,6 +813,21 @@ visible = false
 use_collision = true
 size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
+
+[node name="block2" parent="LEVEL2" instance=ExtResource("26_2ijr8")]
+transform = Transform3D(4, 0, -8.72001e-10, 0, 4, 0, 1.72384e-09, 0, 4, 5.05922, 0.228934, 1.92816)
+
+[node name="bricks2" parent="LEVEL2" instance=ExtResource("27_bo2eq")]
+transform = Transform3D(4.00001, 0, -2.45703e-09, 0, 4, 0, 4.51779e-09, 0, 4.00001, 0.00550652, 0.228934, 6.503)
+
+[node name="border-straight2" parent="LEVEL2/bricks2" instance=ExtResource("28_7f7yh")]
+transform = Transform3D(1, 0, 7.41666e-12, 0, 1, 0, 5.44237e-11, 0, 1, 1.10738, -2.38419e-07, -2.99794)
+
+[node name="block3" parent="LEVEL2" instance=ExtResource("26_2ijr8")]
+transform = Transform3D(4.00001, 0, -1.26826e-09, 0, 4, 0, 2.65516e-09, 0, 4.00001, -7.2161, 0.228934, 17.3404)
+
+[node name="stairs2" parent="LEVEL2" instance=ExtResource("26_do65x")]
+transform = Transform3D(4, 0, -2.77614e-10, 0, 4, 0, 3.2686e-10, 0, 4, -3.36867, 0.228934, -7.37515)
 
 [node name="ConnectorA" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, -4)

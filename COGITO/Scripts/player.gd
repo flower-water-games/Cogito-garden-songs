@@ -311,6 +311,10 @@ func _process(delta):
 	if is_using_sanity and sanity_component.current_sanity <= 0:
 		print("Taking damage due to 0 sanity.")
 		take_damage(health_component.no_sanity_damage * delta)
+	# if i fall out of the world (less than -50 on y axis) give me infinite damage
+	var y = global_transform.origin.y
+	if y < -500 and !is_dead:
+		take_damage(9999) 
 
 # Cache allocation of test motion parameters.
 @onready var _params: PhysicsTestMotionParameters3D = PhysicsTestMotionParameters3D.new()
