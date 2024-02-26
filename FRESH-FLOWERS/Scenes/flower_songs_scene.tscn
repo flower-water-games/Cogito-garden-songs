@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=74 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/flower_cube.tscn" id="11_kigdu"]
 [ext_resource type="Resource" uid="uid://buowkejaijh1" path="res://FRESH-FLOWERS/Resources/stage_3.tres" id="11_yw4mg"]
 [ext_resource type="PackedScene" uid="uid://b6bxswn86o054" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/wall.glb" id="15_3yq5u"]
+[ext_resource type="PackedScene" uid="uid://drop1fpyufi4u" path="res://FRESH-FLOWERS/PrefabScenes/water_stream.tscn" id="16_4l0pg"]
 [ext_resource type="Texture2D" uid="uid://co48157ddoxn0" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_grass.png" id="16_4lqet"]
 [ext_resource type="Texture2D" uid="uid://dg8owbwtacmcx" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_glossy.png" id="17_nggbq"]
 [ext_resource type="Texture2D" uid="uid://le1diumix7gn" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_normal.png" id="18_7jisy"]
@@ -25,9 +26,12 @@
 [ext_resource type="PackedScene" uid="uid://5a6nrbjywq2s" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/block.glb" id="26_2ijr8"]
 [ext_resource type="PackedScene" uid="uid://c8en7ojoiesv6" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/stairs.glb" id="26_do65x"]
 [ext_resource type="PackedScene" uid="uid://dnejul2gmtuxg" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/bricks.glb" id="27_bo2eq"]
+[ext_resource type="Script" path="res://COGITO/Scripts/Cogito_Object.gd" id="27_ikh1x"]
 [ext_resource type="PackedScene" uid="uid://dxpfslhb0axcs" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/border-straight.glb" id="28_7f7yh"]
 [ext_resource type="Script" path="res://COGITO/Scripts/Cogito_Turnwheel.gd" id="30_c6scu"]
+[ext_resource type="PackedScene" uid="uid://d3m4ni301eso7" path="res://COGITO/PrefabScenes/carriable_box.tscn" id="30_ow6wu"]
 [ext_resource type="PackedScene" uid="uid://poem1yjtmt3n" path="res://COGITO/Components/HoldInteraction.tscn" id="31_dkurf"]
+[ext_resource type="PackedScene" uid="uid://cio4x05ipvslu" path="res://COGITO/Components/CarryableComponent.tscn" id="31_efjv6"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/spout_trigger.gd" id="32_6g2ia"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
@@ -285,6 +289,9 @@ points = PackedVector3Array(0.259808, 0.05, 0.149941, 0, 0.05, 0.3, 0.259808, -0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_f5spn"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8q2en"]
+size = Vector3(4.102, 1.985, 5.049)
+
 [node name="flower_songs_scene" type="Node3D" node_paths=PackedStringArray("connectors")]
 script = ExtResource("1_mmok6")
 connectors = [NodePath("ConnectorA")]
@@ -388,21 +395,6 @@ horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
 
-[node name="wall4" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(0.0428036, -4.20396e-10, 1.34946, 1.90473e-09, 2.196, -7.3621e-10, -4.17053, -5.97126e-10, 0.01385, -6.77078, 0.12607, -6.03207)
-
-[node name="Wall2" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT/wall4"]
-transform = Transform3D(-0.239642, 0.00108721, 0.00760857, 0.00195097, 0.455355, -0.00361883, -0.0235402, -0.00578418, -0.740604, -1.00893, 0.955328, 0.050983)
-visible = false
-use_collision = true
-size = Vector3(12.3818, 4, 0.1)
-material = ExtResource("6_8e7kf")
-
-[node name="Sprite3D" type="Sprite3D" parent="STATIC DOME ENVIRONMENT/wall4/Wall2"]
-transform = Transform3D(0.09, 0, 6.26032e-10, 0, 0.09, 0, -5.35997e-10, 0, 0.09, -3.81772, 0, -0.0961447)
-flip_h = true
-texture = ExtResource("8_c5c38")
-
 [node name="Wall3" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
 transform = Transform3D(-0.844767, 0, 0.535134, 0, 1, 0, -0.535134, 0, -0.844767, 6.07187, 2, -10.2905)
 visible = false
@@ -467,6 +459,18 @@ font_size = 37
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
+
+[node name="Wall2" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
+transform = Transform3D(-0.0420241, -0.00775898, -0.99909, 0.00428433, 0.99996, -0.00794695, 0.999108, -0.00461435, -0.0419891, -6.74517, 4.82005, -1.82359)
+visible = false
+use_collision = true
+size = Vector3(12.3818, 4, 0.1)
+material = ExtResource("6_8e7kf")
+
+[node name="Sprite3D" type="Sprite3D" parent="STATIC DOME ENVIRONMENT/Wall2"]
+transform = Transform3D(0.09, 0, 6.26032e-10, 0, 0.09, 0, -5.35997e-10, 0, 0.09, -3.81772, 0, -0.0961447)
+flip_h = true
+texture = ExtResource("8_c5c38")
 
 [node name="FakeWalls" type="Node3D" parent="STATIC DOME ENVIRONMENT"]
 
@@ -535,6 +539,13 @@ complete level 1 to unlock"
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
+
+[node name="wall4" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
+transform = Transform3D(0.0428036, -4.20396e-10, 1.34946, 1.90473e-09, 2.196, -7.3621e-10, -4.17053, -5.97126e-10, 0.01385, -6.77078, 0.12607, -6.03207)
+
+[node name="HomeSpout" type="Node3D" parent="STATIC DOME ENVIRONMENT"]
+
+[node name="WaterStream" parent="STATIC DOME ENVIRONMENT/HomeSpout" instance=ExtResource("16_4l0pg")]
 
 [node name="LEVEL1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2766, 0, 0)
@@ -739,14 +750,11 @@ material = ExtResource("6_8e7kf")
 [node name="LEVEL2" type="Node3D" parent="."]
 transform = Transform3D(-0.999998, 0, 0.00174537, 0, 1, 0, -0.00174537, 0, -0.999998, -18.4861, 0, -2.2126)
 
-[node name="column2" parent="LEVEL2" instance=ExtResource("24_e16dj")]
-transform = Transform3D(5.86, 0, -3.4663e-09, 0, 5.86, 0, 3.28446e-09, 0, 5.86, -7.13916, -0.326991, -16.4962)
-
 [node name="HEXfloor 4" type="Node3D" parent="LEVEL2"]
 transform = Transform3D(1, -8.74228e-08, -8.7262e-08, -8.74229e-08, -1, 1.14179e-11, -8.69969e-08, -1.14102e-11, -1, 9.98862, -7.07331, -12.7394)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL2/HEXfloor 4"]
-transform = Transform3D(11.01, 4.04046e-14, -1.62031e-10, -9.29615e-14, 11.01, 8.14852e-17, -3.01059e-10, 5.44136e-17, 11.01, -8.91762, -0.216349, -12.6004)
+transform = Transform3D(11.01, 4.04048e-14, -1.62031e-10, -2.06648e-13, 11.01, 8.14852e-17, -3.01059e-10, -5.66086e-17, 11.01, -8.91762, -0.216349, -12.6004)
 material_overlay = SubResource("StandardMaterial3D_cvjme")
 lod_bias = 4.94
 mesh = SubResource("ArrayMesh_scsu7")
@@ -814,20 +822,133 @@ use_collision = true
 size = Vector3(15.8955, 0.1, 18.7568)
 material = ExtResource("6_8e7kf")
 
-[node name="block2" parent="LEVEL2" instance=ExtResource("26_2ijr8")]
-transform = Transform3D(4, 0, -8.72001e-10, 0, 4, 0, 1.72384e-09, 0, 4, 5.05922, 0.228934, 1.92816)
+[node name="Stackables" type="Node3D" parent="LEVEL2"]
 
-[node name="bricks2" parent="LEVEL2" instance=ExtResource("27_bo2eq")]
-transform = Transform3D(4.00001, 0, -2.45703e-09, 0, 4, 0, 4.51779e-09, 0, 4.00001, 0.00550652, 0.228934, 6.503)
+[node name="CarriableBox" parent="LEVEL2/Stackables" instance=ExtResource("30_ow6wu")]
+transform = Transform3D(1, 0, -2.16488e-09, 0, 1, 0, 2.17719e-09, 0, 1, 0, 2.61844, 0)
 
-[node name="border-straight2" parent="LEVEL2/bricks2" instance=ExtResource("28_7f7yh")]
-transform = Transform3D(1, 0, 7.41666e-12, 0, 1, 0, 5.44237e-11, 0, 1, 1.10738, -2.38419e-07, -2.99794)
+[node name="MeshInstance3D" parent="LEVEL2/Stackables/CarriableBox" index="1"]
+skeleton = NodePath("")
 
-[node name="block3" parent="LEVEL2" instance=ExtResource("26_2ijr8")]
-transform = Transform3D(4.00001, 0, -1.26826e-09, 0, 4, 0, 2.65516e-09, 0, 4.00001, -7.2161, 0.228934, 17.3404)
+[node name="MeshInstance3D2" parent="LEVEL2/Stackables/CarriableBox" index="2"]
+skeleton = NodePath("")
 
-[node name="stairs2" parent="LEVEL2" instance=ExtResource("26_do65x")]
-transform = Transform3D(4, 0, -2.77614e-10, 0, 4, 0, 3.2686e-10, 0, 4, -3.36867, 0.228934, -7.37515)
+[node name="MeshInstance3D3" parent="LEVEL2/Stackables/CarriableBox" index="3"]
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" parent="LEVEL2/Stackables/CarriableBox" index="4"]
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" parent="LEVEL2/Stackables/CarriableBox" index="5"]
+skeleton = NodePath("")
+
+[node name="MeshInstance3D10" parent="LEVEL2/Stackables/CarriableBox" index="6"]
+skeleton = NodePath("")
+
+[node name="MeshInstance3D11" parent="LEVEL2/Stackables/CarriableBox" index="7"]
+skeleton = NodePath("")
+
+[node name="MeshInstance3D12" parent="LEVEL2/Stackables/CarriableBox" index="8"]
+skeleton = NodePath("")
+
+[node name="MeshInstance3D13" parent="LEVEL2/Stackables/CarriableBox" index="9"]
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" parent="LEVEL2/Stackables/CarriableBox" index="10"]
+skeleton = NodePath("")
+
+[node name="MeshInstance3D7" parent="LEVEL2/Stackables/CarriableBox" index="11"]
+skeleton = NodePath("")
+
+[node name="MeshInstance3D8" parent="LEVEL2/Stackables/CarriableBox" index="12"]
+skeleton = NodePath("")
+
+[node name="MeshInstance3D9" parent="LEVEL2/Stackables/CarriableBox" index="13"]
+skeleton = NodePath("")
+
+[node name="border" type="RigidBody3D" parent="LEVEL2/Stackables"]
+transform = Transform3D(1, 0, -1.68468e-10, 0, 1, 0, 1.98129e-10, 0, 1, 5.05904, 0, -5.46809)
+collision_layer = 3
+script = ExtResource("27_ikh1x")
+
+[node name="border-straight2" parent="LEVEL2/Stackables/border" instance=ExtResource("28_7f7yh")]
+transform = Transform3D(4.00001, 0, -3.02176e-09, 0, 4, 0, 4.98345e-09, 0, 4.00001, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/border"]
+transform = Transform3D(0.999973, 0, 5.69869e-09, 0, 1, 0, -1.82548e-08, 0, 0.999973, -0.0183144, 0.996621, 0.136291)
+shape = SubResource("BoxShape3D_8q2en")
+
+[node name="CarryableComponent" parent="LEVEL2/Stackables/border" instance=ExtResource("31_efjv6")]
+
+[node name="stairs" type="RigidBody3D" parent="LEVEL2/Stackables"]
+transform = Transform3D(1, 0, -1.18936e-10, 0, 1, 0, 1.9813e-10, 0, 1, -2.06339, 0, -7.71712)
+collision_layer = 3
+script = ExtResource("27_ikh1x")
+
+[node name="stairs2" parent="LEVEL2/Stackables/stairs" instance=ExtResource("26_do65x")]
+transform = Transform3D(4, 0, -9.41405e-10, 0, 4, 0, 1.25818e-09, 0, 4, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/stairs"]
+transform = Transform3D(0.999973, 0, 5.69869e-09, 0, 1, 0, -1.82548e-08, 0, 0.999973, -0.0183144, 0.996621, 0.136291)
+shape = SubResource("BoxShape3D_8q2en")
+
+[node name="CarryableComponent" parent="LEVEL2/Stackables/stairs" instance=ExtResource("31_efjv6")]
+
+[node name="block" type="RigidBody3D" parent="LEVEL2/Stackables"]
+transform = Transform3D(1, 0, -2.18e-10, 0, 1, 0, 4.30959e-10, 0, 1, -2.71873, 0.822083, 18.3083)
+collision_layer = 3
+script = ExtResource("27_ikh1x")
+
+[node name="block3" parent="LEVEL2/Stackables/block" instance=ExtResource("26_2ijr8")]
+transform = Transform3D(4.00001, 0, -1.42664e-09, 0, 4, 0, 3.12081e-09, 0, 4.00001, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/block"]
+transform = Transform3D(0.999973, 0, 5.69869e-09, 0, 1, 0, -1.82548e-08, 0, 0.999973, -0.0183144, 0.996621, 0.136291)
+shape = SubResource("BoxShape3D_8q2en")
+
+[node name="CarryableComponent" parent="LEVEL2/Stackables/block" instance=ExtResource("31_efjv6")]
+
+[node name="bricks" type="RigidBody3D" parent="LEVEL2/Stackables"]
+transform = Transform3D(1, 0, -6.94036e-11, 0, 1, 0, 8.17151e-11, 0, 1, 0.0130997, 0, 7.5073)
+collision_layer = 3
+script = ExtResource("27_ikh1x")
+
+[node name="bricks2" parent="LEVEL2/Stackables/bricks" instance=ExtResource("27_bo2eq")]
+transform = Transform3D(4.00001, 0, -2.82363e-09, 0, 4, 0, 4.98345e-09, 0, 4.00001, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/bricks"]
+transform = Transform3D(0.999973, 0, 5.69869e-09, 0, 1, 0, -1.82548e-08, 0, 0.999973, -0.0183144, 0.996621, 0.136291)
+shape = SubResource("BoxShape3D_8q2en")
+
+[node name="CarryableComponent" parent="LEVEL2/Stackables/bricks" instance=ExtResource("31_efjv6")]
+
+[node name="block2" type="RigidBody3D" parent="LEVEL2/Stackables"]
+transform = Transform3D(1, 0, -1.18936e-10, 0, 1, 0, 1.9813e-10, 0, 1, -2.90359, 0, -16.8756)
+collision_layer = 3
+script = ExtResource("27_ikh1x")
+
+[node name="block2" parent="LEVEL2/Stackables/block2" instance=ExtResource("26_2ijr8")]
+transform = Transform3D(4, 0, -1.20894e-09, 0, 4, 0, 2.1895e-09, 0, 4, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/block2"]
+transform = Transform3D(0.999977, 0, 4.86404e-09, 0, 1, 0, -1.64665e-08, 0, 0.999977, -0.0183125, 0.380021, -0.435582)
+shape = SubResource("BoxShape3D_8q2en")
+
+[node name="CarryableComponent" parent="LEVEL2/Stackables/block2" instance=ExtResource("31_efjv6")]
+
+[node name="col" type="RigidBody3D" parent="LEVEL2/Stackables"]
+transform = Transform3D(1, 0, -2.18e-10, 0, 1, 0, 4.30959e-10, 0, 1, -10.8347, 0, -20.4727)
+collision_layer = 3
+script = ExtResource("27_ikh1x")
+
+[node name="CarryableComponent" parent="LEVEL2/Stackables/col" instance=ExtResource("31_efjv6")]
+
+[node name="column2" parent="LEVEL2/Stackables/col" instance=ExtResource("24_e16dj")]
+transform = Transform3D(5.86, 0, -7.38972e-09, 0, 5.86, 0, 7.00974e-09, 0, 5.86, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/col"]
+transform = Transform3D(0.999964, 0, 7.50664e-09, 0, 1, 0, -1.68083e-08, 0, 0.999964, -0.0183144, 3.11916, 0.136292)
+shape = SubResource("BoxShape3D_8q2en")
 
 [node name="ConnectorA" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, -4)
@@ -838,3 +959,4 @@ target_position = Vector3(0, 0, -1)
 [editable path="STATIC DOME ENVIRONMENT/GRASS/grass plane/grass"]
 [editable path="LEVEL1/SOUTH/Grass Generator/grass plane/grass"]
 [editable path="LEVEL1/CENTER/Grass Generator/grass plane/grass"]
+[editable path="LEVEL2/Stackables/CarriableBox"]
