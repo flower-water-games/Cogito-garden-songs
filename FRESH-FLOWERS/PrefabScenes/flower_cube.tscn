@@ -1,28 +1,30 @@
 [gd_scene load_steps=6 format=3 uid="uid://5pjvp6vhf3n5"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/flower_cube.gd" id="1_fcdht"]
+[ext_resource type="Material" uid="uid://cttrostyoflm0" path="res://FRESH-FLOWERS/Resources/flower-cube-mat.tres" id="2_pjvv4"]
+[ext_resource type="ArrayMesh" uid="uid://cfj3thtuhkb56" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj" id="3_an74d"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cswtw"]
-albedo_color = Color(0.172452, 0.547043, 0.416552, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kscu"]
+albedo_color = Color(1, 0.180392, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o14ho"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrpw8"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_jqxj6"]
-material = SubResource("StandardMaterial3D_yrpw8")
 
 [node name="FlowerCube" type="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40733, 0)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_fcdht")
-my_grown_material = SubResource("StandardMaterial3D_cswtw")
+my_grown_material = SubResource("StandardMaterial3D_1kscu")
+
+[node name="FlowerCubeMesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.139221, 0)
+mesh = ExtResource("3_an74d")
+skeleton = NodePath("../CollisionShape3D")
+surface_material_override/0 = ExtResource("2_pjvv4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139221, 0)
 shape = SubResource("BoxShape3D_o14ho")
 
-[node name="FlowerCubeMesh" type="MeshInstance3D" parent="CollisionShape3D"]
-unique_name_in_owner = true
-mesh = SubResource("BoxMesh_jqxj6")
+[node name="Node" type="Node" parent="."]

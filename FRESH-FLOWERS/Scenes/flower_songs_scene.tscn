@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=69 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://dg8owbwtacmcx" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_glossy.png" id="17_nggbq"]
 [ext_resource type="Texture2D" uid="uid://le1diumix7gn" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_normal.png" id="18_7jisy"]
 [ext_resource type="Texture2D" uid="uid://cm414yacmtwo1" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_roughness.png" id="19_jave2"]
-[ext_resource type="ArrayMesh" uid="uid://cfj3thtuhkb56" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj" id="21_y242y"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="23_o7m3t"]
 [ext_resource type="PackedScene" uid="uid://ceqiuhuh6nprf" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/column.glb" id="24_e16dj"]
 [ext_resource type="PackedScene" uid="uid://dibcob5mpje7q" path="res://FRESH-FLOWERS/Assets/PB/grass.glb" id="24_rldij"]
@@ -28,11 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://dnejul2gmtuxg" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/bricks.glb" id="27_bo2eq"]
 [ext_resource type="PackedScene" uid="uid://dxpfslhb0axcs" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/border-straight.glb" id="28_7f7yh"]
 [ext_resource type="Script" path="res://COGITO/Scripts/Cogito_Turnwheel.gd" id="30_c6scu"]
-[ext_resource type="PackedScene" uid="uid://ctk4qrbfaprrl" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.glb" id="30_mhmin"]
 [ext_resource type="PackedScene" uid="uid://poem1yjtmt3n" path="res://COGITO/Components/HoldInteraction.tscn" id="31_dkurf"]
-[ext_resource type="Texture2D" uid="uid://ds83d7h0v07ds" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/Default_happy_diffuse.png" id="31_u8ef7"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/spout_trigger.gd" id="32_6g2ia"]
-[ext_resource type="PackedScene" uid="uid://6vsdx7au2icu" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube_v2.glb" id="33_yjcw2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
 panorama = ExtResource("2_upsuv")
@@ -49,8 +45,10 @@ ambient_light_color = Color(0.588235, 0.588235, 0.588235, 1)
 ambient_light_sky_contribution = 0.1
 ambient_light_energy = 0.2
 tonemap_mode = 2
-ssao_enabled = true
+ssao_light_affect = 1.0
+ssao_ao_channel_affect = 0.25
 glow_enabled = true
+volumetric_fog_albedo = Color(0.845557, 1, 0.959561, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_a7rhk"]
 seed = 130
@@ -246,9 +244,6 @@ albedo_texture = SubResource("NoiseTexture2D_y16d2")
 [sub_resource type="PlaneMesh" id="PlaneMesh_jprsr"]
 size = Vector2(30, 30)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eun1f"]
-albedo_texture = ExtResource("31_u8ef7")
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1vode"]
 emission_shape = 3
 emission_box_extents = Vector3(2.08165e-12, 0.1, 0.1)
@@ -290,11 +285,6 @@ points = PackedVector3Array(0.259808, 0.05, 0.149941, 0, 0.05, 0.3, 0.259808, -0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_f5spn"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4a7h"]
-specular_mode = 1
-albedo_texture = ExtResource("31_u8ef7")
-metallic_specular = 0.0
-
 [node name="flower_songs_scene" type="Node3D" node_paths=PackedStringArray("connectors")]
 script = ExtResource("1_mmok6")
 connectors = [NodePath("ConnectorA")]
@@ -305,7 +295,7 @@ label = "Music"
 tracks = Array[Resource("res://addons/resonate/music_manager/music_track_resource.gd")]([ExtResource("3_5wqog"), ExtResource("10_wa4kq"), ExtResource("11_yw4mg")])
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.773396, -0.200364, 0.601426, 0.632793, -0.187375, 0.751308, -0.0378429, 0.961637, 0.271704, 0, 0, 0)
+transform = Transform3D(-0.674253, 0.482183, -0.55936, -0.635904, 0.00606098, 0.771744, 0.375512, 0.87605, 0.302535, 0, 0, 0)
 light_color = Color(1, 0.988235, 0.988235, 1)
 shadow_enabled = true
 shadow_opacity = 0.8
@@ -587,7 +577,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75588, 4.4717, 27.3223)
 
 [node name="FlowerCube" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94228, -4.06437, -46.5803)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94228, -3.48893, -46.5803)
 stem_name = "piano"
 
 [node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube"]
@@ -596,7 +586,7 @@ text = "piano
 "
 
 [node name="FlowerCube2" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
-transform = Transform3D(-0.993676, 0, 0.112284, 0, 1, 0, -0.112284, 0, -0.993676, -0.854364, -4.06437, -16.296)
+transform = Transform3D(-0.993676, 0, 0.112284, 0, 1, 0, -0.112284, 0, -0.993676, -0.854364, -3.48893, -16.296)
 stem_name = "dangly"
 
 [node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube2"]
@@ -604,7 +594,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18927, 0)
 text = "dangly"
 
 [node name="FlowerCube3" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29411, -2.85427, -34.5272)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29411, -2.27883, -34.5272)
 stem_name = "flute"
 
 [node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube3"]
@@ -612,12 +602,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38363, 0)
 text = "flute cube <3"
 
 [node name="FlowerCube4" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
-transform = Transform3D(-0.862364, 0, -0.50629, 0, 1, 0, 0.50629, 0, -0.862364, -8.51706, -4.06437, -24.9691)
+transform = Transform3D(0.485161, 0, -0.874426, 0, 1, 0, 0.874426, 0, 0.485161, -10.982, -3.48893, -31.7608)
 stem_name = "string"
-
-[node name="FlowerCubeMesh" parent="LEVEL1/CENTER/FlowerCube4/CollisionShape3D" index="0"]
-mesh = ExtResource("21_y242y")
-surface_material_override/0 = SubResource("StandardMaterial3D_eun1f")
 
 [node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58969, 0)
@@ -849,18 +835,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, 
 [node name="RayCast3D" type="RayCast3D" parent="ConnectorA"]
 target_position = Vector3(0, 0, -1)
 
-[node name="cube" parent="." instance=ExtResource("30_mhmin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0042, 1.45535, 8.48265)
-
-[node name="Cube" parent="cube" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.215162, -4.97674)
-material_override = SubResource("StandardMaterial3D_g4a7h")
-
-[node name="cube_v2" parent="." instance=ExtResource("33_yjcw2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1774, 1.23413, -2.0059)
-
 [editable path="STATIC DOME ENVIRONMENT/GRASS/grass plane/grass"]
 [editable path="LEVEL1/SOUTH/Grass Generator/grass plane/grass"]
-[editable path="LEVEL1/CENTER/FlowerCube4"]
 [editable path="LEVEL1/CENTER/Grass Generator/grass plane/grass"]
-[editable path="cube"]
