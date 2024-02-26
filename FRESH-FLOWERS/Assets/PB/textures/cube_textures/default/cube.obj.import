@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cfj3thtuhkb56"
+path="res://.godot/imported/cube.obj-e96ed6ee7f2d10d890f0cc70fc2e669e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cube.obj-e96ed6ee7f2d10d890f0cc70fc2e669e.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj"
+dest_files=["res://.godot/imported/cube.obj-e96ed6ee7f2d10d890f0cc70fc2e669e.mesh", "res://.godot/imported/cube.obj-e96ed6ee7f2d10d890f0cc70fc2e669e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
