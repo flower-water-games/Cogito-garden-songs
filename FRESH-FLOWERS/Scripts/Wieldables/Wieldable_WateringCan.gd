@@ -1,18 +1,19 @@
 extends Wieldable 
 
-@export var water_capacity: float = 100.0
+@export var water_capacity: float = 10.0
 @export var drainage_rate: float = 1.0
 var current_water_level: float
 
 @onready var water_stream: GPUParticles3D = %WaterStream
 @onready var interaction_raycast: RayCast3D = %WateringRaycast
 
-func action_primary(is_pressed, is_released):
+func action_primary(item, is_released):
+	item_reference = item
 	print("Watering Can: Primary action")
-	if is_pressed:
-		start_watering()
-	elif is_released:
+	if is_watering:
 		stop_watering()
+	else:
+		start_watering()
 
 var is_watering: bool = false
 var watering_timer: Timer
@@ -29,8 +30,18 @@ func _ready():
 func _process(delta):
 	if is_watering:
 		check_for_waterable_surface()
+	if current_water_level < 9.0:
+		check_for_refill()
 		
 var watering_target;
+
+func check_for_refill():
+	if interaction_raycast.is_colliding():
+		var target = interaction_raycast.get_collider()
+		# scale up target if is colliding
+		if target.has_method("refill"):
+			print("refilling")
+			current_water_level = water_capacity
 
 func check_for_waterable_surface():
 	if interaction_raycast.is_colliding():
@@ -71,6 +82,7 @@ func use_water():
 		if current_water_level < 0:
 			current_water_level = 0
 		print("Watering Can: Used water. Current water level: ", current_water_level)
+
 	else:
 		print("Watering Can: Can is empty.")
 		stop_watering()

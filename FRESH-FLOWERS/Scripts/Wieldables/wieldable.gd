@@ -18,7 +18,7 @@ func _ready():
 	wieldable_mesh.hide()
 	pass
 
-func action_primary(_camera_collision:Vector3, _passed_item_reference:InventoryItemPD):
+func action_primary(_passed_item_reference:InventoryItemPD, is_released: bool):
 	pass
 	
 func action_secondary(_is_released: bool):

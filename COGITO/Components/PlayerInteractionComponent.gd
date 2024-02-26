@@ -116,7 +116,9 @@ func _input(event):
 	# Wieldable primary Action Input
 	if !get_parent().is_movement_paused:
 		if is_wielding and Input.is_action_just_pressed("action_primary"):
-			attempt_action_primary()
+			attempt_action_primary(false)
+		if is_wielding and Input.is_action_just_released("action_secondary"):
+			attempt_action_primary(true)
 		
 		if is_wielding and Input.is_action_just_pressed("action_secondary"):
 			attempt_action_secondary(false)
@@ -172,7 +174,7 @@ func change_wieldable_to(next_wieldable: InventoryItemPD):
 	equip_wieldable(next_wieldable)
 
 
-func attempt_action_primary():
+func attempt_action_primary(is_released: bool):
 	if equipped_wieldable_node == null:
 		print("Nothing equipped, but is_wielding was true. This shouldn't happen!")
 		return
@@ -182,7 +184,7 @@ func attempt_action_primary():
 		if equipped_wieldable_node.animation_player != null:
 			if !equipped_wieldable_node.animation_player.is_playing(): # Enforces fire rate.
 				equipped_wieldable_item.subtract(1)
-		equipped_wieldable_node.action_primary(Get_Camera_Collision(), equipped_wieldable_item)
+		equipped_wieldable_node.action_primary(equipped_wieldable_item, is_released)
 
 
 func attempt_action_secondary(is_released:bool):
