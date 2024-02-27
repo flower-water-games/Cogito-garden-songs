@@ -160,12 +160,12 @@ func _ready():
 
 	# play music
 	MusicManager.play("Music", "Stage1")
-	await get_tree().create_timer(90).timeout
-	MusicManager.play("Music", "Stage2")
-	await get_tree().create_timer(40).timeout
-	MusicManager.play("Music", "Stage3")
-	MusicManager.enable_stem("lead")
-	MusicManager.enable_stem("arp")
+	# await get_tree().create_timer(90).timeout
+	# MusicManager.play("Music", "Stage2")
+	# await get_tree().create_timer(40).timeout
+	# MusicManager.play("Music", "Stage3")
+	# MusicManager.enable_stem("lead")
+	# MusicManager.enable_stem("arp")
 
 
 # Use this function to manipulate player attributes.
