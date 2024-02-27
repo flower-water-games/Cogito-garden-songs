@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://fc0yjkvu0twc"]
+
+[ext_resource type="Texture2D" uid="uid://xd0nu6pych7n" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/Default_sad_diffuse.png" id="1_cd7ti"]
+
+[resource]
+albedo_texture = ExtResource("1_cd7ti")

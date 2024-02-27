@@ -5,7 +5,7 @@ class_name Waterable
 
 var moisture_level = 0.0
 var max_moisture_level = 10.0
-var threshold = 4.0
+var threshold = 2.0
 
 func water(amount):
 	moisture_level += amount

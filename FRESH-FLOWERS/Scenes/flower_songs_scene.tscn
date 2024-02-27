@@ -594,7 +594,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75588, 4.4717, 27.3223)
 
 [node name="FlowerCube" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94228, -3.48893, -46.5803)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94228, -3.87874, -46.5803)
 stem_name = "piano"
 
 [node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube"]
@@ -603,7 +603,7 @@ text = "piano
 "
 
 [node name="FlowerCube2" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
-transform = Transform3D(-0.993676, 0, 0.112284, 0, 1, 0, -0.112284, 0, -0.993676, -0.854364, -3.48893, -16.296)
+transform = Transform3D(-0.993676, 0, 0.112284, 0, 1, 0, -0.112284, 0, -0.993676, -0.854364, -3.87874, -16.296)
 stem_name = "dangly"
 
 [node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube2"]
@@ -611,7 +611,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18927, 0)
 text = "dangly"
 
 [node name="FlowerCube3" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29411, -2.27883, -34.5272)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29411, -2.66864, -34.5272)
 stem_name = "flute"
 
 [node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube3"]
@@ -619,7 +619,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38363, 0)
 text = "flute cube <3"
 
 [node name="FlowerCube4" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
-transform = Transform3D(0.485161, 0, -0.874426, 0, 1, 0, 0.874426, 0, 0.485161, -10.982, -3.48893, -31.7608)
+transform = Transform3D(0.485161, 0, -0.874426, 0, 1, 0, 0.874426, 0, 0.485161, -10.982, -3.87874, -31.7608)
 stem_name = "string"
 
 [node name="Label3D" type="Label3D" parent="LEVEL1/CENTER/FlowerCube4"]
