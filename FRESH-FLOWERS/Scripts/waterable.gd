@@ -4,8 +4,8 @@ class_name Waterable
 
 
 var moisture_level = 0.0
-var max_moisture_level = 10.0
-var threshold = 2.0
+@export var max_moisture_level = 10.0
+@export var threshold = 2.0
 
 func water(amount):
 	moisture_level += amount
@@ -17,7 +17,7 @@ func water(amount):
 
 func update_moisture_level():
 	var normalized_moisture_level = moisture_level / max_moisture_level
-	var new_scale = Vector3(1, 1, 1) + Vector3(0.5, 0.5, 0.5) * normalized_moisture_level
+	var new_scale = Vector3(scale.x, scale.y, scale.z) + Vector3(0.5, 0.5, 0.5) * normalized_moisture_level
 	# TODO tween the scale 
 	scale = new_scale
 

@@ -1,18 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://5pjvp6vhf3n5"]
+[gd_scene load_steps=7 format=3 uid="uid://5pjvp6vhf3n5"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/flower_cube.gd" id="1_fcdht"]
 [ext_resource type="Material" uid="uid://bct5kchviw2gr" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_happy.tres" id="2_8hkrn"]
 [ext_resource type="Material" uid="uid://cttrostyoflm0" path="res://FRESH-FLOWERS/Resources/flower-cube-mat.tres" id="2_pjvv4"]
 [ext_resource type="ArrayMesh" uid="uid://cfj3thtuhkb56" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj" id="3_an74d"]
+[ext_resource type="Material" uid="uid://fc0yjkvu0twc" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_sad.tres" id="3_w1b62"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o14ho"]
 
 [node name="FlowerCube" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40733, 0)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.40733, 0)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_fcdht")
 my_happy_material = ExtResource("2_8hkrn")
+my_sad_material = ExtResource("3_w1b62")
 
 [node name="FlowerCubeMesh" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true

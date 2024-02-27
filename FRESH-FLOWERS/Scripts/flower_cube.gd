@@ -1,5 +1,5 @@
 extends Waterable
-
+@export var is_stem_flower = true
 @export var stem_name = "Stem"
 
 @onready var flower_cube_mesh:MeshInstance3D = %FlowerCubeMesh
@@ -15,4 +15,7 @@ func _ready():
 func _on_threshold_reached():
 	#need to switch the instance of the mesh's material to the grown material
 	flower_cube_mesh.material_override = my_happy_material
-	MusicManager.enable_stem(stem_name)
+	if is_stem_flower:
+		#enable the stem
+		MusicManager.enable_stem(stem_name)
+		

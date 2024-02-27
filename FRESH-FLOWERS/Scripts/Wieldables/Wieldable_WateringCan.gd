@@ -28,9 +28,9 @@ func _ready():
 	add_child(watering_timer)
 
 func _process(delta):
-	if is_watering:
+	if is_watering && equipped:
 		check_for_waterable_surface()
-	if current_water_level < 9.0:
+	if current_water_level < water_capacity-1 && equipped:
 		check_for_refill()
 		
 var watering_target;
@@ -81,14 +81,17 @@ func use_water():
 			watering_target.water(drainage_rate)
 		if current_water_level < 0:
 			current_water_level = 0
+			stop_watering()
 		print("Watering Can: Used water. Current water level: ", current_water_level)
 
 	else:
 		print("Watering Can: Can is empty.")
 		stop_watering()
 
+var equipped = false;
 # Function called when wieldable is unequipped.
 func equip(_player_interaction_component: PlayerInteractionComponent):
+	equipped = true
 	wieldable_mesh.show()
 	player_interaction_component = _player_interaction_component
 	print("Wieldable equipped")
@@ -97,6 +100,7 @@ func equip(_player_interaction_component: PlayerInteractionComponent):
 
 # Function called when wieldable is unequipped.
 func unequip():
+	equipped = false
 	wieldable_mesh.hide()
 	if is_watering:
 		stop_watering()

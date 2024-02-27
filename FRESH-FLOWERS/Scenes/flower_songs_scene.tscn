@@ -461,7 +461,7 @@ autowrap_mode = 3
 width = 800.0
 
 [node name="Wall2" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.0420241, -0.00775898, -0.99909, 0.00428433, 0.99996, -0.00794695, 0.999108, -0.00461435, -0.0419891, -6.74517, 4.82005, -1.82359)
+transform = Transform3D(-0.0420241, -0.00775898, -0.99909, 0.00428433, 0.99996, -0.00794695, 0.999108, -0.00461435, -0.0419891, -6.74517, 1.24613, -1.82359)
 visible = false
 use_collision = true
 size = Vector3(12.3818, 4, 0.1)
@@ -489,34 +489,34 @@ autowrap_mode = 3
 width = 800.0
 
 [node name="wall5" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(-3.4378, -7.30096e-10, 0.76411, 1.90473e-09, 2.196, -7.3621e-10, -2.3615, 1.59154e-11, -1.11237, -3.15562, 0.12607, 5.44707)
+transform = Transform3D(-7.13895, 5.85155e-10, 0.764377, 3.95537e-09, 2.196, 2.62194e-10, -4.9039, 9.1939e-10, -1.11276, -3.15562, 0.12607, 5.44707)
 
 [node name="wall6" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
 transform = Transform3D(-3.4378, -7.30096e-10, 0.76411, 1.90473e-09, 2.196, -7.3621e-10, -2.3615, 1.59154e-11, -1.11237, 0.170671, 0.12607, 7.75212)
 
 [node name="wall7" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(-3.58822, 0.000834764, -0.687904, 0.00220686, 2.196, -0.000198825, 2.12598, -0.000870632, -1.16104, 4.07091, 0.12607, 7.74804)
+transform = Transform3D(-4.39715, 0.000834764, -0.688144, 0.00270438, 2.196, -0.000198886, 2.60526, -0.000870632, -1.16145, 4.07091, 0.12607, 7.74804)
 
 [node name="wall8" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
 transform = Transform3D(-3.58879, -2.92762e-10, -0.687593, 1.90473e-09, 2.196, -7.3621e-10, 2.12502, 6.69017e-10, -1.16122, 7.51032, 0.12607, 5.66351)
 
 [node name="wall9" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(0.0894547, 4.39119e-10, -1.34922, 1.90473e-09, 2.196, -7.3621e-10, 4.16979, 5.83496e-10, 0.0289447, 2.12311, 0.12607, 16.1828)
+transform = Transform3D(0.173108, 4.04895e-10, -1.34969, 3.68593e-09, 2.196, 2.62195e-10, 8.06914, -1.0118e-09, 0.028955, 2.12311, 0.12607, 16.1828)
 
 [node name="wall10" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(0.0894547, 4.39119e-10, -1.34922, 1.90473e-09, 2.196, -7.3621e-10, 4.16979, 5.83496e-10, 0.0289447, 1.99559, 0.12607, 12.163)
+transform = Transform3D(0.142866, 4.04895e-10, -1.34969, 3.042e-09, 2.196, 2.62195e-10, 6.65947, -1.0118e-09, 0.028955, 1.99559, 0.12607, 12.163)
 
 [node name="wall11" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(3.39796, 7.3026e-10, -0.782543, 1.90473e-09, 2.196, -7.3621e-10, 2.41847, -3.7446e-12, 1.09948, 7.40913, 0.12607, -9.15268)
+transform = Transform3D(5.39421, -5.6975e-10, -0.782818, 3.02373e-09, 2.196, 2.62194e-10, 3.83929, -9.29016e-10, 1.09986, 7.40913, 0.12607, -9.15268)
 
 [node name="wall12" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(3.39796, 7.3026e-10, -0.782543, 1.90473e-09, 2.196, -7.3621e-10, 2.41847, -3.7446e-12, 1.09948, 4.10876, 0.12607, -11.451)
+transform = Transform3D(4.63653, -5.6975e-10, -0.782818, 2.59901e-09, 2.196, 2.62194e-10, 3.30001, -9.29016e-10, 1.09986, 4.10876, 0.12607, -11.451)
 
 [node name="wall13" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(3.62371, 3.03872e-10, 0.668144, 1.90473e-09, 2.196, -7.3621e-10, -2.06491, -6.64045e-10, 1.17252, -1.11757, 0.12607, -11.4589)
+transform = Transform3D(5.33554, -1.08251e-09, 0.668376, 2.80452e-09, 2.196, 2.62195e-10, -3.04037, 1.2596e-10, 1.17293, -1.11757, 0.12607, -11.4589)
 
 [node name="wall14" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(3.62371, 3.03872e-10, 0.668144, 1.90473e-09, 2.196, -7.3621e-10, -2.06491, -6.64045e-10, 1.17252, -4.59124, 0.12607, -9.43197)
+transform = Transform3D(3.86721, -1.08251e-09, 0.668376, 2.03272e-09, 2.196, 2.62195e-10, -2.20366, 1.2596e-10, 1.17293, -4.59124, 0.12607, -9.43197)
 
 [node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/FakeWalls/wall14"]
 transform = Transform3D(0.239642, 0.00108721, -0.00760854, -0.00195097, 0.455355, 0.00361883, 0.0235401, -0.00578417, 0.740603, 0.427316, 1.20805, 0.0529861)
@@ -549,7 +549,7 @@ autowrap_mode = 3
 width = 800.0
 
 [node name="wall4" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(0.0428036, -4.20396e-10, 1.34946, 1.90473e-09, 2.196, -7.3621e-10, -4.17053, -5.97126e-10, 0.01385, -6.77078, 0.12607, -6.03207)
+transform = Transform3D(0.050093, -4.36772e-10, 1.34993, 2.22909e-09, 2.196, 2.62194e-10, -4.88074, 9.98456e-10, 0.0138549, -6.77078, 0.12607, -6.03207)
 
 [node name="HomeSpout" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("16_mjwwg")]
 
@@ -700,6 +700,26 @@ bus = &"SFX"
 [node name="SpoutTrigger" type="Node3D" parent="LEVEL1/CENTER/Spout" node_paths=PackedStringArray("fountain")]
 script = ExtResource("32_6g2ia")
 fountain = NodePath("../../../NORTH/fountain")
+
+[node name="FlowerCube5" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -24.8935, -3.93837, -31.188)
+is_stem_flower = false
+
+[node name="FlowerCube7" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -24.0357, -3.93837, -31.8628)
+is_stem_flower = false
+
+[node name="FlowerCube8" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -24.0357, -3.93837, -30.3089)
+is_stem_flower = false
+
+[node name="FlowerCube9" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -23.6133, -3.93837, -31.1796)
+is_stem_flower = false
+
+[node name="FlowerCube6" parent="LEVEL1/CENTER" instance=ExtResource("11_kigdu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -24.2524, -3.93837, -31.188)
+is_stem_flower = false
 
 [node name="NORTH" type="Node3D" parent="LEVEL1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75588, 4.4717, -5.96801)
