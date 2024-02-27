@@ -26,7 +26,7 @@ sound_click = ExtResource("4_k8sfh")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "v0.0.62
+text = "v0.0.66
 "
 
 [node name="Node" type="Node" parent="." node_paths=PackedStringArray("set_node")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=73 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -24,10 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://dibcob5mpje7q" path="res://FRESH-FLOWERS/Assets/PB/grass.glb" id="24_rldij"]
 [ext_resource type="PackedScene" uid="uid://bj7vmlso6v1a7" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/trophy.glb" id="25_ba7m4"]
 [ext_resource type="PackedScene" uid="uid://5a6nrbjywq2s" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/block.glb" id="26_2ijr8"]
-[ext_resource type="PackedScene" uid="uid://c8en7ojoiesv6" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/stairs.glb" id="26_do65x"]
 [ext_resource type="PackedScene" uid="uid://dnejul2gmtuxg" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/bricks.glb" id="27_bo2eq"]
 [ext_resource type="Script" path="res://COGITO/Scripts/Cogito_Object.gd" id="27_ikh1x"]
-[ext_resource type="PackedScene" uid="uid://dxpfslhb0axcs" path="res://FRESH-FLOWERS/Assets/KenneyHex/GLB format/border-straight.glb" id="28_7f7yh"]
 [ext_resource type="Script" path="res://COGITO/Scripts/Cogito_Turnwheel.gd" id="30_c6scu"]
 [ext_resource type="PackedScene" uid="uid://d3m4ni301eso7" path="res://COGITO/PrefabScenes/carriable_box.tscn" id="30_ow6wu"]
 [ext_resource type="PackedScene" uid="uid://poem1yjtmt3n" path="res://COGITO/Components/HoldInteraction.tscn" id="31_dkurf"]
@@ -289,8 +287,11 @@ points = PackedVector3Array(0.259808, 0.05, 0.149941, 0, 0.05, 0.3, 0.259808, -0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_f5spn"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3bm3"]
+size = Vector3(0.585649, 0.466289, 0.35)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_8q2en"]
-size = Vector3(4.102, 1.985, 5.049)
+size = Vector3(4.38734, 2.10327, 3.31533)
 
 [node name="flower_songs_scene" type="Node3D" node_paths=PackedStringArray("connectors")]
 script = ExtResource("1_mmok6")
@@ -461,7 +462,7 @@ autowrap_mode = 3
 width = 800.0
 
 [node name="Wall2" type="CSGBox3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.0420241, -0.00775898, -0.99909, 0.00428433, 0.99996, -0.00794695, 0.999108, -0.00461435, -0.0419891, -6.74517, 1.24613, -1.82359)
+transform = Transform3D(-0.0420241, -0.00775898, -0.99909, 0.00428433, 0.99996, -0.00794695, 0.999108, -0.00461435, -0.0419891, -6.74517, 4.47342, -1.82359)
 visible = false
 use_collision = true
 size = Vector3(12.3818, 4, 0.1)
@@ -475,15 +476,14 @@ texture = ExtResource("8_c5c38")
 [node name="FakeWalls" type="Node3D" parent="STATIC DOME ENVIRONMENT"]
 
 [node name="wall2" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
-transform = Transform3D(0.0428036, -4.20396e-10, 1.34946, 1.90473e-09, 2.196, -7.3621e-10, -4.17053, -5.97126e-10, 0.01385, -6.77078, 0.12607, -2.06317)
+transform = Transform3D(0.0428036, -4.20396e-10, 1.34946, 1.90473e-09, 2.196, -7.3621e-10, -4.17053, -5.97126e-10, 0.01385, -6.77078, 2.696, -2.06317)
 
 [node name="wall3" parent="STATIC DOME ENVIRONMENT/FakeWalls" instance=ExtResource("15_3yq5u")]
 transform = Transform3D(0.0428036, -4.20396e-10, 1.34946, 1.90473e-09, 2.196, -7.3621e-10, -4.17053, -5.97126e-10, 0.01385, -6.77078, 0.12607, 1.95862)
 
 [node name="Txt_SceneB" type="Label3D" parent="STATIC DOME ENVIRONMENT/FakeWalls/wall3"]
-transform = Transform3D(0.239642, 0.00108721, -0.00760854, -0.00195097, 0.455355, 0.00361883, 0.0235401, -0.00578417, 0.740603, 0.427316, 1.20805, 0.0529861)
-text = "this area is locked
-complete level 1 to unlock"
+transform = Transform3D(0.239642, 0.00108721, -0.00760854, -0.00195097, 0.455355, 0.00361883, 0.0235401, -0.00578417, 0.740603, 0.514565, 1.09521, 0.0502181)
+text = "temporarily unlocked for playtesting"
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
@@ -784,7 +784,7 @@ transform = Transform3D(-0.999998, 0, 0.00174537, 0, 1, 0, -0.00174537, 0, -0.99
 transform = Transform3D(1, -8.74228e-08, -8.7262e-08, -8.74229e-08, -1, 1.14179e-11, -8.69969e-08, -1.14102e-11, -1, 9.98862, -7.07331, -12.7394)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL2/HEXfloor 4"]
-transform = Transform3D(11.01, 4.04048e-14, -1.62031e-10, -2.06648e-13, 11.01, 8.14852e-17, -3.01059e-10, -5.66086e-17, 11.01, -8.91762, -0.216349, -12.6004)
+transform = Transform3D(11.01, 4.04054e-14, -3.4909e-09, -4.87081e-13, 11.01, 3.94282e-16, 1.56159e-09, -3.89675e-16, 11.01, -8.91762, -0.21635, -12.6004)
 material_overlay = SubResource("StandardMaterial3D_cvjme")
 lod_bias = 4.94
 mesh = SubResource("ArrayMesh_scsu7")
@@ -796,8 +796,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cvjme")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/HEXfloor 4/Circle/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8penb")
 
-[node name="trophy2" parent="LEVEL2/HEXfloor 4/Circle" instance=ExtResource("25_ba7m4")]
-transform = Transform3D(0.999994, 2.55634e-05, 0.00349037, -2.59141e-05, -0.999891, 0.0147475, 0.00349037, -0.0147475, -0.999885, 0.242635, -1.1516, 0.0410177)
+[node name="Area3D" type="Area3D" parent="LEVEL2/HEXfloor 4/Circle"]
+transform = Transform3D(0.999994, 2.55634e-05, 0.00349037, -2.59141e-05, -0.999891, 0.0147475, 0.00349037, -0.0147475, -0.999886, 0.778908, -1.40247, -0.167009)
+
+[node name="trophy2" parent="LEVEL2/HEXfloor 4/Circle/Area3D" instance=ExtResource("25_ba7m4")]
+transform = Transform3D(1, -3.50624e-13, 7.6911e-12, 5.89651e-13, 1, -1.99719e-10, -8.25131e-11, -1.20494e-09, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/HEXfloor 4/Circle/Area3D"]
+transform = Transform3D(1.00006, 2.79218e-10, 7.6911e-12, 4.23137e-10, 1, -1.99719e-10, -3.89645e-08, -6.9814e-07, 1, 0.000841379, 0.23768, -0.00479808)
+shape = SubResource("BoxShape3D_w3bm3")
 
 [node name="HEXfloor 5" type="Node3D" parent="LEVEL2"]
 transform = Transform3D(1, -8.74228e-08, -8.7262e-08, -8.74229e-08, -1, 1.14179e-11, -8.69969e-08, -1.14102e-11, -1, 0.929247, -7.29542, -29.5366)
@@ -896,89 +903,75 @@ skeleton = NodePath("")
 [node name="MeshInstance3D9" parent="LEVEL2/Stackables/CarriableBox" index="13"]
 skeleton = NodePath("")
 
-[node name="border" type="RigidBody3D" parent="LEVEL2/Stackables"]
-transform = Transform3D(1, 0, -1.68468e-10, 0, 1, 0, 1.98129e-10, 0, 1, 5.05904, 0, -5.46809)
-collision_layer = 3
-script = ExtResource("27_ikh1x")
-
-[node name="border-straight2" parent="LEVEL2/Stackables/border" instance=ExtResource("28_7f7yh")]
-transform = Transform3D(4.00001, 0, -3.02176e-09, 0, 4, 0, 4.98345e-09, 0, 4.00001, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/border"]
-transform = Transform3D(0.999973, 0, 5.69869e-09, 0, 1, 0, -1.82548e-08, 0, 0.999973, -0.0183144, 0.996621, 0.136291)
-shape = SubResource("BoxShape3D_8q2en")
-
-[node name="CarryableComponent" parent="LEVEL2/Stackables/border" instance=ExtResource("31_efjv6")]
-
-[node name="stairs" type="RigidBody3D" parent="LEVEL2/Stackables"]
-transform = Transform3D(1, 0, -1.18936e-10, 0, 1, 0, 1.9813e-10, 0, 1, -2.06339, 0, -7.71712)
-collision_layer = 3
-script = ExtResource("27_ikh1x")
-
-[node name="stairs2" parent="LEVEL2/Stackables/stairs" instance=ExtResource("26_do65x")]
-transform = Transform3D(4, 0, -9.41405e-10, 0, 4, 0, 1.25818e-09, 0, 4, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/stairs"]
-transform = Transform3D(0.999973, 0, 5.69869e-09, 0, 1, 0, -1.82548e-08, 0, 0.999973, -0.0183144, 0.996621, 0.136291)
-shape = SubResource("BoxShape3D_8q2en")
-
-[node name="CarryableComponent" parent="LEVEL2/Stackables/stairs" instance=ExtResource("31_efjv6")]
-
 [node name="block" type="RigidBody3D" parent="LEVEL2/Stackables"]
-transform = Transform3D(1, 0, -2.18e-10, 0, 1, 0, 4.30959e-10, 0, 1, -2.71873, 0.822083, 18.3083)
+transform = Transform3D(1, 0, -4.30959e-10, 0, 1, 0, 4.30959e-10, 0, 1, -2.71873, 0.822083, 18.3083)
 collision_layer = 3
 script = ExtResource("27_ikh1x")
-
-[node name="block3" parent="LEVEL2/Stackables/block" instance=ExtResource("26_2ijr8")]
-transform = Transform3D(4.00001, 0, -1.42664e-09, 0, 4, 0, 3.12081e-09, 0, 4.00001, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/block"]
-transform = Transform3D(0.999973, 0, 5.69869e-09, 0, 1, 0, -1.82548e-08, 0, 0.999973, -0.0183144, 0.996621, 0.136291)
+transform = Transform3D(1, 0, 1.10569e-08, 0, 1, 0, -1.09777e-08, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_8q2en")
+
+[node name="block3" parent="LEVEL2/Stackables/block" instance=ExtResource("26_2ijr8")]
+transform = Transform3D(2.6, 0, -2.02852e-09, 0, 2.6, 0, 2.02852e-09, 0, 2.6, 0, 0, 0)
 
 [node name="CarryableComponent" parent="LEVEL2/Stackables/block" instance=ExtResource("31_efjv6")]
 
-[node name="bricks" type="RigidBody3D" parent="LEVEL2/Stackables"]
-transform = Transform3D(1, 0, -6.94036e-11, 0, 1, 0, 8.17151e-11, 0, 1, 0.0130997, 0, 7.5073)
-collision_layer = 3
-script = ExtResource("27_ikh1x")
-
-[node name="bricks2" parent="LEVEL2/Stackables/bricks" instance=ExtResource("27_bo2eq")]
-transform = Transform3D(4.00001, 0, -2.82363e-09, 0, 4, 0, 4.98345e-09, 0, 4.00001, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/bricks"]
-transform = Transform3D(0.999973, 0, 5.69869e-09, 0, 1, 0, -1.82548e-08, 0, 0.999973, -0.0183144, 0.996621, 0.136291)
-shape = SubResource("BoxShape3D_8q2en")
-
-[node name="CarryableComponent" parent="LEVEL2/Stackables/bricks" instance=ExtResource("31_efjv6")]
-
 [node name="block2" type="RigidBody3D" parent="LEVEL2/Stackables"]
-transform = Transform3D(1, 0, -1.18936e-10, 0, 1, 0, 1.9813e-10, 0, 1, -2.90359, 0, -16.8756)
+transform = Transform3D(1, 0, -3.72753e-10, 0, 1, 0, 3.72753e-10, 0, 1, -2.75805, 0.822083, -4.21655)
 collision_layer = 3
 script = ExtResource("27_ikh1x")
-
-[node name="block2" parent="LEVEL2/Stackables/block2" instance=ExtResource("26_2ijr8")]
-transform = Transform3D(4, 0, -1.20894e-09, 0, 4, 0, 2.1895e-09, 0, 4, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/block2"]
-transform = Transform3D(0.999977, 0, 4.86404e-09, 0, 1, 0, -1.64665e-08, 0, 0.999977, -0.0183125, 0.380021, -0.435582)
+transform = Transform3D(0.499976, 0, 5.46095e-09, 0, 0.499983, 0, -5.54703e-09, 0, 0.499976, -0.00617981, 0.518519, -0.1783)
 shape = SubResource("BoxShape3D_8q2en")
+
+[node name="block3" parent="LEVEL2/Stackables/block2" instance=ExtResource("26_2ijr8")]
+transform = Transform3D(2, 0, -1.5604e-09, 0, 2, 0, 1.5604e-09, 0, 2, 0, 0, 0)
 
 [node name="CarryableComponent" parent="LEVEL2/Stackables/block2" instance=ExtResource("31_efjv6")]
 
+[node name="block3" type="RigidBody3D" parent="LEVEL2/Stackables"]
+transform = Transform3D(1, 0, -3.72752e-10, 0, 1, 0, 3.72752e-10, 0, 1, -2.77349, 0.822083, -13.0616)
+collision_layer = 3
+script = ExtResource("27_ikh1x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/block3"]
+transform = Transform3D(0.499976, 0, 5.46095e-09, 0, 0.499983, 0, -5.54703e-09, 0, 0.499976, -0.00617981, 0.518519, -0.178301)
+shape = SubResource("BoxShape3D_8q2en")
+
+[node name="block3" parent="LEVEL2/Stackables/block3" instance=ExtResource("26_2ijr8")]
+transform = Transform3D(2, 0, -1.5604e-09, 0, 2, 0, 1.5604e-09, 0, 2, 0, 0, 0)
+
+[node name="CarryableComponent" parent="LEVEL2/Stackables/block3" instance=ExtResource("31_efjv6")]
+
+[node name="bricks" type="RigidBody3D" parent="LEVEL2/Stackables"]
+transform = Transform3D(1, 0, -8.17151e-11, 0, 1, 0, 8.17151e-11, 0, 1, 0.0130997, 0, 7.5073)
+collision_layer = 3
+script = ExtResource("27_ikh1x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/bricks"]
+transform = Transform3D(0.563105, 0, 0.32465, 0, 0.65, 0, -0.32465, 0, 0.563105, 0.316135, 0.316315, -0.14092)
+shape = SubResource("BoxShape3D_8q2en")
+
+[node name="bricks2" parent="LEVEL2/Stackables/bricks" instance=ExtResource("27_bo2eq")]
+transform = Transform3D(2.6, 0, -3.54191e-09, 0, 2.6, 0, 3.54191e-09, 0, 2.6, 0, 0, 0)
+
+[node name="CarryableComponent" parent="LEVEL2/Stackables/bricks" instance=ExtResource("31_efjv6")]
+
 [node name="col" type="RigidBody3D" parent="LEVEL2/Stackables"]
-transform = Transform3D(1, 0, -2.18e-10, 0, 1, 0, 4.30959e-10, 0, 1, -10.8347, 0, -20.4727)
+transform = Transform3D(1, 0, -4.30959e-10, 0, 1, 0, 4.30959e-10, 0, 1, -10.8347, 0, -20.4727)
 collision_layer = 3
 script = ExtResource("27_ikh1x")
 
 [node name="CarryableComponent" parent="LEVEL2/Stackables/col" instance=ExtResource("31_efjv6")]
 
-[node name="column2" parent="LEVEL2/Stackables/col" instance=ExtResource("24_e16dj")]
-transform = Transform3D(5.86, 0, -7.38972e-09, 0, 5.86, 0, 7.00974e-09, 0, 5.86, 0, 0, 0)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL2/Stackables/col"]
-transform = Transform3D(0.999964, 0, 7.50664e-09, 0, 1, 0, -1.68083e-08, 0, 0.999964, -0.0183144, 3.11916, 0.136292)
+transform = Transform3D(0.68238, 0, 1.39802e-08, 0, 0.682404, 0, -1.40579e-08, 0, 0.68238, -0.0124979, 2.05222, 0.093008)
 shape = SubResource("BoxShape3D_8q2en")
+
+[node name="column2" parent="LEVEL2/Stackables/col" instance=ExtResource("24_e16dj")]
+transform = Transform3D(3.999, 0, -4.78361e-09, 0, 3.999, 0, 4.78361e-09, 0, 3.999, 0, 0, 0)
 
 [node name="ConnectorA" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, -4)
