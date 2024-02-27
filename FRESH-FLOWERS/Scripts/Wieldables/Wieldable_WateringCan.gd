@@ -1,6 +1,6 @@
 extends Wieldable 
 
-@export var water_capacity: float = 3.0
+@export var water_capacity: float = 6.0
 @export var drainage_rate: float = 1.0
 var current_water_level: float
 
