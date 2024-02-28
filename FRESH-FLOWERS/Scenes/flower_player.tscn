@@ -47,10 +47,10 @@ inventory_data = ExtResource("2_tacho")
 jump_sound = ExtResource("3_7i333")
 STEP_MAX_SLOPE_DEGREE = 1.0
 
-[node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
+[node name="StandingCollisionShape" type="CollisionShape3D" parent="." groups=["Player"]]
 shape = SubResource("BoxShape3D_bvi11")
 
-[node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
+[node name="CrouchingCollisionShape" type="CollisionShape3D" parent="." groups=["Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
 shape = SubResource("CapsuleShape3D_fgxde")
 disabled = true

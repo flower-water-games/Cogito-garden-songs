@@ -159,7 +159,6 @@ func _ready():
 	
 
 	# play music
-	MusicManager.play("Music", "Stage1")
 	# await get_tree().create_timer(90).timeout
 	# MusicManager.play("Music", "Stage2")
 	# await get_tree().create_timer(40).timeout

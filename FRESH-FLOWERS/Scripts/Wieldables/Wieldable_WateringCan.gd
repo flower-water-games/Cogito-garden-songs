@@ -1,6 +1,6 @@
 extends Wieldable 
 
-@export var water_capacity: float = 6.0
+@export var water_capacity: float = 16.0
 @export var drainage_rate: float = 1.0
 var current_water_level: float
 
@@ -65,6 +65,7 @@ func start_watering():
 		tween_down()
 		watering_timer.start()
 		print("Watering Can: Started watering")
+
 
 
 func tween_down():
