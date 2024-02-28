@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=74 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://poem1yjtmt3n" path="res://COGITO/Components/HoldInteraction.tscn" id="31_dkurf"]
 [ext_resource type="PackedScene" uid="uid://cio4x05ipvslu" path="res://COGITO/Components/CarryableComponent.tscn" id="31_efjv6"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/spout_trigger.gd" id="32_6g2ia"]
+[ext_resource type="PackedScene" uid="uid://qeg82g0l3iks" path="res://FRESH-FLOWERS/Assets/PB/watering_can.glb" id="32_20twn"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
 panorama = ExtResource("2_upsuv")
@@ -316,6 +317,14 @@ transform = Transform3D(-0.999295, 0, -0.0375332, 0, 1, 0, 0.0375332, 0, -0.9992
 pause_menu = NodePath("../PauseMenu")
 player_hud = NodePath("../Player_HUD")
 is_using_sanity = false
+
+[node name="watering_can" parent="Player/Neck/Head/Wieldables" index="0" node_paths=PackedStringArray("wieldable_mesh")]
+wieldable_mesh = NodePath("barrelOpen2")
+
+[node name="PlayerInteractionComponent" parent="Player" index="9" node_paths=PackedStringArray("interaction_raycast", "carryable_position", "wieldable_nodes")]
+interaction_raycast = NodePath("../Neck/Head/Eyes/Camera/InteractionRaycast")
+carryable_position = NodePath("../CarryablePosition")
+wieldable_nodes = [NodePath("../Neck/Head/Wieldables/watering_can")]
 
 [node name="Player_HUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_1351y")]
 player = NodePath("../Player")
@@ -979,6 +988,11 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, 
 [node name="RayCast3D" type="RayCast3D" parent="ConnectorA"]
 target_position = Vector3(0, 0, -1)
 
+[node name="watering_can" parent="." instance=ExtResource("32_20twn")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 4.46802, 0.987589, 1.73905)
+
+[editable path="Player"]
+[editable path="STATIC DOME ENVIRONMENT/pickup_watering_can"]
 [editable path="STATIC DOME ENVIRONMENT/GRASS/grass plane/grass"]
 [editable path="LEVEL1/SOUTH/Grass Generator/grass plane/grass"]
 [editable path="LEVEL1/CENTER/Grass Generator/grass plane/grass"]
