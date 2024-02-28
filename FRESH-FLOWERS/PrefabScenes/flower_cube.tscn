@@ -34,3 +34,7 @@ shape = SubResource("BoxShape3D_o14ho")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139221, 0)
 shape = SubResource("BoxShape3D_o14ho")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138887, 0)
+size = Vector3(1, 1, 1)

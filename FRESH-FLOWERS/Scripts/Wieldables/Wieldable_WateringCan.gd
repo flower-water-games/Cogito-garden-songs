@@ -69,16 +69,17 @@ func start_watering():
 
 func tween_down():
 	var tween = create_tween()
-	tween.connect("timeout", on_tween_complete)
 	tween.tween_property(self, "rotation_degrees:z", target_rotation_z, .5)
+	tween.tween_callback(on_tween_complete)
 
 func tween_up():
 	var tween = create_tween()
-	tween.connect("timeout", on_tween_complete)
 	tween.tween_property(self, "rotation_degrees:z", original_rotation.z, .5)
+	tween.tween_callback(on_tween_complete)
 	
 
 func on_tween_complete(tween):
+	print("tween complete")
 	tween.queue_free()
 
 func stop_watering():

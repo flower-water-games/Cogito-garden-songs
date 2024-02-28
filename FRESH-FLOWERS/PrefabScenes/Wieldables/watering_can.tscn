@@ -11,9 +11,7 @@ spread = 0.5
 initial_velocity_min = 4.0
 initial_velocity_max = 4.0
 color = Color(0.252188, 0.0125756, 0.83884, 1)
-collision_mode = 1
-collision_friction = 0.0
-collision_bounce = 0.15
+collision_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svcyr"]
 albedo_color = Color(0, 0.823459, 0.760311, 1)
@@ -33,13 +31,13 @@ wieldable_mesh = NodePath("watering_can_mesh")
 bus = &"SFX"
 
 [node name="watering_can_mesh" parent="." instance=ExtResource("4_1y0j6")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 2.21571e-14, 0, 0.2, 0, 0, 0)
 
 [node name="WaterStream" type="GPUParticles3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(-0.971259, 0.238025, 1.91319e-08, 0.238025, 0.971259, 8.82457e-07, 1.91465e-07, 8.61648e-07, -1, -0.672128, 0.156144, -2.44379e-06)
 emitting = false
-amount = 55
+amount = 255
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_1vode")
 draw_pass_1 = SubResource("SphereMesh_yn73a")
