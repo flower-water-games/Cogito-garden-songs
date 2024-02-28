@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/Wieldables/Wieldable_WateringCan.gd" id="1_jcj16"]
 [ext_resource type="Resource" uid="uid://cmqs55rmw7a35" path="res://FRESH-FLOWERS/Inventory/Watering_Can.tres" id="2_hxxwp"]
-[ext_resource type="PackedScene" uid="uid://b31v0mjo1op8x" path="res://FRESH-FLOWERS/Assets/barrelOpen.glb" id="2_qhl7i"]
+[ext_resource type="PackedScene" uid="uid://qeg82g0l3iks" path="res://FRESH-FLOWERS/Assets/PB/watering_can.glb" id="4_1y0j6"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1vode"]
 emission_shape = 3
@@ -24,21 +24,22 @@ radius = 0.05
 height = 0.1
 
 [node name="watering_can" type="Node3D" node_paths=PackedStringArray("wieldable_mesh")]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.325805, -0.279839, -0.531526)
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.325805, -0.279839, -0.453892)
 script = ExtResource("1_jcj16")
 item_reference = ExtResource("2_hxxwp")
-wieldable_mesh = NodePath("barrelOpen2")
+wieldable_mesh = NodePath("watering_can_mesh")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 bus = &"SFX"
 
-[node name="barrelOpen2" parent="." instance=ExtResource("2_qhl7i")]
+[node name="watering_can_mesh" parent="." instance=ExtResource("4_1y0j6")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="WaterStream" type="GPUParticles3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.694734, -0.719267, -1.10506e-06, 0.719267, 0.694734, 2.60374e-06, -1.10506e-06, -2.60374e-06, 1, 0, 0.443186, 0)
+transform = Transform3D(-0.971259, 0.238025, 1.91319e-08, 0.238025, 0.971259, 8.82457e-07, 1.91465e-07, 8.61648e-07, -1, -0.672128, 0.156144, -2.44379e-06)
 emitting = false
-amount = 32
+amount = 55
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_1vode")
 draw_pass_1 = SubResource("SphereMesh_yn73a")

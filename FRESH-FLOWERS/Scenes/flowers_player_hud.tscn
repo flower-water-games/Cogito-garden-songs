@@ -6,3 +6,9 @@
 
 [node name="UseBar" parent="." index="4"]
 visible = false
+
+[node name="PlayerAttributes" parent="." index="5"]
+visible = false
+
+[node name="HotBarInventory" parent="InventoryInterface" index="3"]
+visible = false

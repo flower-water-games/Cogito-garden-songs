@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bvylr50ht5dpa"]
 
 [ext_resource type="Script" path="res://COGITO/Scripts/Cogito_Object.gd" id="1_iw4u4"]
-[ext_resource type="PackedScene" uid="uid://b31v0mjo1op8x" path="res://FRESH-FLOWERS/Assets/barrelOpen.glb" id="2_m344n"]
+[ext_resource type="PackedScene" uid="uid://qeg82g0l3iks" path="res://FRESH-FLOWERS/Assets/PB/watering_can.glb" id="2_0b3hc"]
 [ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://COGITO/Components/PickupComponent.tscn" id="3_8c0ly"]
 [ext_resource type="Resource" uid="uid://cmqs55rmw7a35" path="res://FRESH-FLOWERS/Inventory/Watering_Can.tres" id="4_ms6e8"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_klhiw"]
@@ -23,8 +23,8 @@ script = ExtResource("1_iw4u4")
 transform = Transform3D(2.13, 0, 0, 0, 2.13, 0, 0, 0, 2.13, 0.010732, 0.177845, -0.00766547)
 shape = SubResource("BoxShape3D_amy1d")
 
-[node name="barrelOpen2" parent="CollisionShape3D" instance=ExtResource("2_m344n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010732, -0.177845, 0.00766547)
+[node name="watering_can_mesh" parent="CollisionShape3D" instance=ExtResource("2_0b3hc")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="pistol_mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.00433487, 0.733729, 0)

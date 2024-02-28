@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=73 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -31,7 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://poem1yjtmt3n" path="res://COGITO/Components/HoldInteraction.tscn" id="31_dkurf"]
 [ext_resource type="PackedScene" uid="uid://cio4x05ipvslu" path="res://COGITO/Components/CarryableComponent.tscn" id="31_efjv6"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/spout_trigger.gd" id="32_6g2ia"]
-[ext_resource type="PackedScene" uid="uid://qeg82g0l3iks" path="res://FRESH-FLOWERS/Assets/PB/watering_can.glb" id="32_20twn"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
 panorama = ExtResource("2_upsuv")
@@ -295,6 +294,7 @@ size = Vector3(0.585649, 0.466289, 0.35)
 size = Vector3(4.38734, 2.10327, 3.31533)
 
 [node name="flower_songs_scene" type="Node3D" node_paths=PackedStringArray("connectors")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00473046, 0, 0.00626111)
 script = ExtResource("1_mmok6")
 connectors = [NodePath("ConnectorA")]
 
@@ -313,18 +313,10 @@ shadow_opacity = 0.8
 environment = SubResource("Environment_ai7l5")
 
 [node name="Player" parent="." instance=ExtResource("2_ds3e6")]
-transform = Transform3D(-0.999295, 0, -0.0375332, 0, 1, 0, 0.0375332, 0, -0.999295, -0.492924, 1.27955, 3.70879)
+transform = Transform3D(-0.999295, 0, -0.0375332, 0, 1, 0, 0.0375332, 0, -0.999295, -0.493819, 1.2656, 3.70392)
 pause_menu = NodePath("../PauseMenu")
 player_hud = NodePath("../Player_HUD")
 is_using_sanity = false
-
-[node name="watering_can" parent="Player/Neck/Head/Wieldables" index="0" node_paths=PackedStringArray("wieldable_mesh")]
-wieldable_mesh = NodePath("barrelOpen2")
-
-[node name="PlayerInteractionComponent" parent="Player" index="9" node_paths=PackedStringArray("interaction_raycast", "carryable_position", "wieldable_nodes")]
-interaction_raycast = NodePath("../Neck/Head/Eyes/Camera/InteractionRaycast")
-carryable_position = NodePath("../CarryablePosition")
-wieldable_nodes = [NodePath("../Neck/Head/Wieldables/watering_can")]
 
 [node name="Player_HUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_1351y")]
 player = NodePath("../Player")
@@ -337,24 +329,23 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99721, 0, 0)
 
 [node name="Txt_SceneB2" type="Label3D" parent="STATIC DOME ENVIRONMENT"]
-transform = Transform3D(-0.999983, 0, 0.00581125, 0, 1, 0, -0.00581125, 0, -0.999983, 4.25169, 1.57504, 7.01868)
+transform = Transform3D(-0.999967, 0, 0.00809758, 0, 1, 0, -0.00809758, 0, -0.999967, 4.25169, 1.36346, 7.01868)
 text = "welcome
 
-please pick up this watering can (dev art looks like a red barrel)
+please pick up this watering can
 
 and click to water those cubes over there in level 1...listen to the music changing ... 
 
 [wasd] - walk around
 [mouse movement] - look around
-[f] - pick up watering can
-[1] - equip watering can (press 1 on keyboard)"
+[f] - pick up watering can"
 font_size = 25
 horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
 
 [node name="pickup_watering_can" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("11_2lufm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74393, 0.712185, 6.5716)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.39656, 0.586436, 5.49669)
 
 [node name="GRASS" type="MultiMeshInstance3D" parent="STATIC DOME ENVIRONMENT"]
 transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 2.89982, -1.0866, -1.9651)
@@ -988,11 +979,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, 
 [node name="RayCast3D" type="RayCast3D" parent="ConnectorA"]
 target_position = Vector3(0, 0, -1)
 
-[node name="watering_can" parent="." instance=ExtResource("32_20twn")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 4.46802, 0.987589, 1.73905)
-
-[editable path="Player"]
-[editable path="STATIC DOME ENVIRONMENT/pickup_watering_can"]
 [editable path="STATIC DOME ENVIRONMENT/GRASS/grass plane/grass"]
 [editable path="LEVEL1/SOUTH/Grass Generator/grass plane/grass"]
 [editable path="LEVEL1/CENTER/Grass Generator/grass plane/grass"]
