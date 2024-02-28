@@ -42,6 +42,7 @@ func check_for_refill():
 		if target.has_method("refill"):
 			print("refilling")
 			current_water_level = water_capacity
+			stop_watering()
 
 func check_for_waterable_surface():
 	if interaction_raycast.is_colliding():
@@ -68,12 +69,12 @@ func start_watering():
 
 func tween_down():
 	var tween = create_tween()
-	tween.connect("tween_all_completed", on_tween_complete)
+	tween.connect("timeout", on_tween_complete)
 	tween.tween_property(self, "rotation_degrees:z", target_rotation_z, .5)
 
 func tween_up():
 	var tween = create_tween()
-	tween.connect("tween_all_completed", on_tween_complete)
+	tween.connect("timeout", on_tween_complete)
 	tween.tween_property(self, "rotation_degrees:z", original_rotation.z, .5)
 	
 

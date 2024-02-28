@@ -52,4 +52,20 @@ collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
+[node name="WateringRaycast2" type="RayCast3D" parent="WaterStream"]
+unique_name_in_owner = true
+transform = Transform3D(0.0811897, -0.932089, 0.353013, 0.994793, 0.0538873, -0.0865096, 0.0616117, 0.358199, 0.93161, 0, 0, 0)
+target_position = Vector3(2.08165e-12, -1.6, 2.08165e-12)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="WateringRaycast3" type="RayCast3D" parent="WaterStream"]
+unique_name_in_owner = true
+transform = Transform3D(0.0799967, -0.939039, -0.334375, 0.995085, 0.0555912, 0.0819476, -0.0583637, -0.339287, 0.938871, 0, 0, 0)
+target_position = Vector3(2.08165e-12, -1.6, 2.08165e-12)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
