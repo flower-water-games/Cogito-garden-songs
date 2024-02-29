@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bhw477otjhdkc"]
+[gd_scene load_steps=74 format=3 uid="uid://bhw477otjhdkc"]
 
 [ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_mmok6"]
 [ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="2_ds3e6"]
@@ -19,10 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://7dt4mnn8lkdd" path="res://FRESH-FLOWERS/PrefabScenes/refill_spout.tscn" id="16_mjwwg"]
 [ext_resource type="Texture2D" uid="uid://dg8owbwtacmcx" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_glossy.png" id="17_nggbq"]
 [ext_resource type="Texture2D" uid="uid://le1diumix7gn" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_normal.png" id="18_7jisy"]
+[ext_resource type="PackedScene" uid="uid://c5i02euvrmxfy" path="res://FRESH-FLOWERS/Assets/KenneyHex/fantasytown/GLTF format/fountainRound.glb" id="18_ib6qq"]
+[ext_resource type="PackedScene" uid="uid://cousgyfwrx1ph" path="res://FRESH-FLOWERS/Assets/KenneyHex/fantasytown/GLTF format/fountainCenter.glb" id="19_am0uh"]
 [ext_resource type="Texture2D" uid="uid://cm414yacmtwo1" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_roughness.png" id="19_jave2"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="23_o7m3t"]
 [ext_resource type="PackedScene" uid="uid://dibcob5mpje7q" path="res://FRESH-FLOWERS/Assets/PB/grass.glb" id="24_rldij"]
 [ext_resource type="PackedScene" uid="uid://cabd0ksvn5761" path="res://FRESH-FLOWERS/Assets/KenneyHex/nature/GLTF format/rock_smallFlatA.glb" id="25_sr88f"]
+[ext_resource type="PackedScene" uid="uid://jpkppfsajlyt" path="res://FRESH-FLOWERS/Assets/KenneyHex/fantasytown/GLTF format/fountainRoundDetail.glb" id="26_eacmo"]
 [ext_resource type="PackedScene" uid="uid://c6lkersp61wts" path="res://FRESH-FLOWERS/Assets/KenneyHex/nature/GLTF format/rock_largeA.glb" id="26_r2tm1"]
 [ext_resource type="PackedScene" uid="uid://b4fg4mlqwmk5j" path="res://FRESH-FLOWERS/Assets/KenneyHex/nature/GLTF format/rock_smallG.glb" id="27_q32k5"]
 [ext_resource type="PackedScene" uid="uid://q2jvre5cf3xw" path="res://FRESH-FLOWERS/Assets/KenneyHex/nature/GLTF format/rock_smallH.glb" id="28_m3oe4"]
@@ -544,6 +547,12 @@ transform = Transform3D(-0.0199439, -4.29333e-10, 1.34951, 1.90473e-09, 2.196, -
 transform = Transform3D(0.050093, -4.36772e-10, 1.34993, 2.22909e-09, 2.196, 2.62194e-10, -4.88074, 9.98456e-10, 0.0138549, -6.77078, 0.12607, -6.03207)
 
 [node name="HomeSpout" parent="STATIC DOME ENVIRONMENT" instance=ExtResource("16_mjwwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5774, 0.320564, -10.7171)
+
+[node name="fountainRound2" parent="STATIC DOME ENVIRONMENT/HomeSpout" instance=ExtResource("18_ib6qq")]
+
+[node name="fountainCenter2" parent="STATIC DOME ENVIRONMENT/HomeSpout" instance=ExtResource("19_am0uh")]
+transform = Transform3D(1.47808, 0, 0, 0, 1, 0, 0, 0, 1.16129, 0, 0, 0)
 
 [node name="LEVEL1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2766, 0, 0)
@@ -743,10 +752,9 @@ multimesh = SubResource("MultiMesh_2ssgd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.597, -100, -13.314)
 
 [node name="HomeSpout" parent="LEVEL1/NORTH/fountain" instance=ExtResource("16_mjwwg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LEVEL1/NORTH/fountain"]
-mesh = SubResource("CylinderMesh_f5spn")
+[node name="fountainRoundDetail2" parent="LEVEL1/NORTH/fountain" instance=ExtResource("26_eacmo")]
 
 [node name="Floor" type="CSGBox3D" parent="LEVEL1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20084, -0.05, -1.60602)
@@ -785,31 +793,58 @@ mesh = SubResource("CylinderMesh_f5spn")
 transform = Transform3D(1, 0, -9.41697e-11, 0, 1, 0, 1.9813e-10, 0, 1, 0, 0.40733, 0)
 stem_name = "4-drumrack"
 
+[node name="Label3D" type="Label3D" parent="LEVEL2/Stem_Stage_2Cube"]
+transform = Transform3D(1, 0, -7.6818e-11, 0, 1, 0, 3.95971e-11, 0, 1, 0, 1.04289, 0)
+text = "4-drumrack"
+
 [node name="Stem_Stage_2Cube2" parent="LEVEL2" instance=ExtResource("11_kigdu")]
 transform = Transform3D(1, 0, -1.93234e-10, 0, 1, 0, 3.14545e-10, 0, 1, 3.93099, 0.40733, -0.00686145)
 stem_name = "drone"
+
+[node name="Label3D" type="Label3D" parent="LEVEL2/Stem_Stage_2Cube2"]
+transform = Transform3D(1, 0, -7.6818e-11, 0, 1, 0, 3.95971e-11, 0, 1, 0, 1.04289, 0)
+text = "drone
+"
 
 [node name="Stem_Stage_2Cube3" parent="LEVEL2" instance=ExtResource("11_kigdu")]
 transform = Transform3D(1, 0, -1.93234e-10, 0, 1, 0, 3.14545e-10, 0, 1, 2.02684, 0.40733, 2.99361)
 stem_name = "flute"
 
+[node name="Label3D" type="Label3D" parent="LEVEL2/Stem_Stage_2Cube3"]
+transform = Transform3D(1, 0, -7.6818e-11, 0, 1, 0, 3.95971e-11, 0, 1, 0, 1.04289, 0)
+text = "flute
+"
+
 [node name="Stem_Stage_2Cube4" parent="LEVEL2" instance=ExtResource("11_kigdu")]
 transform = Transform3D(1, 0, -1.93234e-10, 0, 1, 0, 3.14545e-10, 0, 1, 2.03053, 0.40733, 5.10485)
 stem_name = "gabechords"
+
+[node name="Label3D" type="Label3D" parent="LEVEL2/Stem_Stage_2Cube4"]
+transform = Transform3D(1, 0, -7.6818e-11, 0, 1, 0, 3.95971e-11, 0, 1, 0, 1.04289, 0)
+text = "gabechords
+"
 
 [node name="Stem_Stage_2Cube5" parent="LEVEL2" instance=ExtResource("11_kigdu")]
 transform = Transform3D(1, 0, -1.93234e-10, 0, 1, 0, 3.14545e-10, 0, 1, 2.01761, 0.40733, -2.29416)
 stem_name = "guira"
 
+[node name="Label3D" type="Label3D" parent="LEVEL2/Stem_Stage_2Cube5"]
+transform = Transform3D(1, 0, -7.6818e-11, 0, 1, 0, 3.95971e-11, 0, 1, 0, 1.04289, 0)
+text = "guira"
+
 [node name="Stem_Stage_2Cube6" parent="LEVEL2" instance=ExtResource("11_kigdu")]
 transform = Transform3D(1, 0, -1.93234e-10, 0, 1, 0, 3.14545e-10, 0, 1, 6.72441, 0.40733, -0.0117371)
 stem_name = "pianosmart"
+
+[node name="Label3D" type="Label3D" parent="LEVEL2/Stem_Stage_2Cube6"]
+transform = Transform3D(1, 0, -7.6818e-11, 0, 1, 0, 3.95971e-11, 0, 1, 0, 1.04289, 0)
+text = "pianosmart"
 
 [node name="HEXfloor 4" type="Node3D" parent="LEVEL2"]
 transform = Transform3D(1, -8.74228e-08, -8.7262e-08, -8.74229e-08, -1, 1.14179e-11, -8.69969e-08, -1.14102e-11, -1, 9.98862, -7.07331, -12.7394)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL2/HEXfloor 4"]
-transform = Transform3D(11.01, 4.04054e-14, -3.4909e-09, -4.87081e-13, 11.01, 3.94282e-16, 1.56159e-09, -3.89675e-16, 11.01, -8.91762, -0.21635, -12.6004)
+transform = Transform3D(11.01, 4.04056e-14, -3.88732e-09, -5.47709e-13, 11.01, 5.25574e-16, 1.56158e-09, -5.00697e-16, 11.01, -8.91762, -0.21635, -12.6004)
 material_overlay = SubResource("StandardMaterial3D_cvjme")
 lod_bias = 4.94
 mesh = SubResource("ArrayMesh_scsu7")
@@ -825,7 +860,7 @@ shape = SubResource("ConvexPolygonShape3D_8penb")
 transform = Transform3D(1, -8.74228e-08, -8.7262e-08, -8.74229e-08, -1, 1.14179e-11, -8.69969e-08, -1.14102e-11, -1, 0.929247, -7.29542, -29.5366)
 
 [node name="Circle" type="MeshInstance3D" parent="LEVEL2/HEXfloor 5"]
-transform = Transform3D(11.01, 0, 0, 0, 11.01, 0, 0, 0, 11.01, -8.91762, -0.216349, -12.6004)
+transform = Transform3D(11.01, 4.04046e-14, -1.62031e-10, -9.29615e-14, 11.01, 8.14852e-17, -3.01059e-10, 5.44136e-17, 11.01, -8.91762, -0.216349, -12.6004)
 material_overlay = SubResource("StandardMaterial3D_cvjme")
 lod_bias = 4.94
 mesh = SubResource("ArrayMesh_scsu7")
