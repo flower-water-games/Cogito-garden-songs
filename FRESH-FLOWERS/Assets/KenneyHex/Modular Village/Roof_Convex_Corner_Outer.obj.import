@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxy30m6chvr11"
+path="res://.godot/imported/Roof_Convex_Corner_Outer.obj-7e1092fb9a5e9b16fb26b14806a0b84a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Roof_Convex_Corner_Outer.obj-7e1092fb9a5e9b16fb26b14806a0b84a.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Roof_Convex_Corner_Outer.obj"
+dest_files=["res://.godot/imported/Roof_Convex_Corner_Outer.obj-7e1092fb9a5e9b16fb26b14806a0b84a.mesh", "res://.godot/imported/Roof_Convex_Corner_Outer.obj-7e1092fb9a5e9b16fb26b14806a0b84a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

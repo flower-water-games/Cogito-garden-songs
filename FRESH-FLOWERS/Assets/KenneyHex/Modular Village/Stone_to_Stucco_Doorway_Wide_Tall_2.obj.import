@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://db6yisuw5wajs"
+path="res://.godot/imported/Stone_to_Stucco_Doorway_Wide_Tall_2.obj-64aac6a814f922b259cead67e5ba4247.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stone_to_Stucco_Doorway_Wide_Tall_2.obj-64aac6a814f922b259cead67e5ba4247.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Stone_to_Stucco_Doorway_Wide_Tall_2.obj"
+dest_files=["res://.godot/imported/Stone_to_Stucco_Doorway_Wide_Tall_2.obj-64aac6a814f922b259cead67e5ba4247.mesh", "res://.godot/imported/Stone_to_Stucco_Doorway_Wide_Tall_2.obj-64aac6a814f922b259cead67e5ba4247.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

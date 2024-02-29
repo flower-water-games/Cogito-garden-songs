@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0nkat3nejs8n"
+path="res://.godot/imported/Prop_Well_Grass.obj-24ea7049d45200bf147704de1d8be2de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Well_Grass.obj-24ea7049d45200bf147704de1d8be2de.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Prop_Well_Grass.obj"
+dest_files=["res://.godot/imported/Prop_Well_Grass.obj-24ea7049d45200bf147704de1d8be2de.mesh", "res://.godot/imported/Prop_Well_Grass.obj-24ea7049d45200bf147704de1d8be2de.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

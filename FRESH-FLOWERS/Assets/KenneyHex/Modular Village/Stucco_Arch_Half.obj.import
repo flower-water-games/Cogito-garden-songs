@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfvrd8gv1j780"
+path="res://.godot/imported/Stucco_Arch_Half.obj-f11075d7bac65201988e703d97e798de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stucco_Arch_Half.obj-f11075d7bac65201988e703d97e798de.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Stucco_Arch_Half.obj"
+dest_files=["res://.godot/imported/Stucco_Arch_Half.obj-f11075d7bac65201988e703d97e798de.mesh", "res://.godot/imported/Stucco_Arch_Half.obj-f11075d7bac65201988e703d97e798de.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

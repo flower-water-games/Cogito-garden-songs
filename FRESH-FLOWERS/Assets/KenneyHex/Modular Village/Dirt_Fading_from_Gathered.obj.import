@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dilvhxjer5d51"
+path="res://.godot/imported/Dirt_Fading_from_Gathered.obj-71cccc9b29ee177f77fe376d970e2566.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Dirt_Fading_from_Gathered.obj-71cccc9b29ee177f77fe376d970e2566.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Dirt_Fading_from_Gathered.obj"
+dest_files=["res://.godot/imported/Dirt_Fading_from_Gathered.obj-71cccc9b29ee177f77fe376d970e2566.mesh", "res://.godot/imported/Dirt_Fading_from_Gathered.obj-71cccc9b29ee177f77fe376d970e2566.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

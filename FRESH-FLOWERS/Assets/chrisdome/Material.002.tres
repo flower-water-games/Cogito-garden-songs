@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bkdw0cj8bmk1h"]
+
+[sub_resource type="Gradient" id="Gradient_0q8r7"]
+colors = PackedColorArray(0, 0, 0, 1, 0.364706, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c8chc"]
+gradient = SubResource("Gradient_0q8r7")
+
+[resource]
+resource_name = "Material.002"
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.521569, 0.788235, 0.905882, 0.85098)
+albedo_texture = SubResource("GradientTexture2D_c8chc")
+roughness = 0.5

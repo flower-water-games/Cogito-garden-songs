@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://phm64ea2hg4a"
+path="res://.godot/imported/Stone_Stairs_Railing.obj-5c06b621ae68ac9258c1e2ffe3465343.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stone_Stairs_Railing.obj-5c06b621ae68ac9258c1e2ffe3465343.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Stone_Stairs_Railing.obj"
+dest_files=["res://.godot/imported/Stone_Stairs_Railing.obj-5c06b621ae68ac9258c1e2ffe3465343.mesh", "res://.godot/imported/Stone_Stairs_Railing.obj-5c06b621ae68ac9258c1e2ffe3465343.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

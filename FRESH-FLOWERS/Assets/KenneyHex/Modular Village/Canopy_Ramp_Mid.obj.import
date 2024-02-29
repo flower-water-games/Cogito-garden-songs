@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bpbg3pdfuywsg"
+path="res://.godot/imported/Canopy_Ramp_Mid.obj-41d2cf5a607bef17d789d7693d60d34a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Canopy_Ramp_Mid.obj-41d2cf5a607bef17d789d7693d60d34a.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Canopy_Ramp_Mid.obj"
+dest_files=["res://.godot/imported/Canopy_Ramp_Mid.obj-41d2cf5a607bef17d789d7693d60d34a.mesh", "res://.godot/imported/Canopy_Ramp_Mid.obj-41d2cf5a607bef17d789d7693d60d34a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

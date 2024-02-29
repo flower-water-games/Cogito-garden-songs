@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Garden-Songs"
 run/main_scene="res://FRESH-FLOWERS/Scenes/main_menu.tscn"
-config/features=PackedStringArray("4.3")
+config/features=PackedStringArray("4.3", "C#")
 run/max_fps=120
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/image="res://FRESH-FLOWERS/Assets/freshlogo.png"
@@ -44,9 +44,13 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/initial_position_type=3
 
+[dotnet]
+
+project/assembly_name="Garden-Songs"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/input_helper/plugin.cfg", "res://addons/quick_audio/plugin.cfg", "res://addons/resonate/plugin.cfg")
+enabled=PackedStringArray("res://addons/assetplacer/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/quick_audio/plugin.cfg", "res://addons/resonate/plugin.cfg")
 
 [file_customization]
 
@@ -58,6 +62,10 @@ folder_colors={
 "res://COGITO/Scripts/": "gray",
 "res://FRESH-FLOWERS/": "green"
 }
+
+[filesystem]
+
+import/fbx/enabled=false
 
 [importer_defaults]
 

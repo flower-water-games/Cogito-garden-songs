@@ -1,0 +1,122 @@
+[gd_scene load_steps=19 format=3 uid="uid://dm5pxkq6gyr21"]
+
+[ext_resource type="Script" path="res://COGITO/SceneManagement/cogito_scene.gd" id="1_y6yde"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/music_manager.gd" id="2_b3ywg"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="3_lertc"]
+[ext_resource type="Resource" uid="uid://wa0jawp4obka" path="res://FRESH-FLOWERS/Resources/stage1.tres" id="4_nsrcl"]
+[ext_resource type="Resource" uid="uid://mjr65n7vu26e" path="res://FRESH-FLOWERS/Resources/stage_2.tres" id="5_mfw6h"]
+[ext_resource type="Resource" uid="uid://buowkejaijh1" path="res://FRESH-FLOWERS/Resources/stage_3.tres" id="6_kilp1"]
+[ext_resource type="Texture2D" uid="uid://dntmkhn0pilpn" path="res://FRESH-FLOWERS/Assets/pink_sky.png" id="7_2tcgf"]
+[ext_resource type="PackedScene" uid="uid://r5um2mxw2dfg" path="res://FRESH-FLOWERS/Scenes/flower_player.tscn" id="8_w4cpl"]
+[ext_resource type="PackedScene" uid="uid://wiugfhd6al3l" path="res://FRESH-FLOWERS/Scenes/flowers_player_hud.tscn" id="9_ljlnw"]
+[ext_resource type="PackedScene" uid="uid://cf0e57ahc0m1i" path="res://FRESH-FLOWERS/Scenes/flower_pause_menu.tscn" id="10_wxk3t"]
+[ext_resource type="PackedScene" uid="uid://bpcc5kcfi5ox5" path="res://FRESH-FLOWERS/PrefabScenes/stairs.tscn" id="12_s88hj"]
+[ext_resource type="ArrayMesh" uid="uid://xct1o4pj8si4" path="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Stucco_Doorway_Wide_Tall.obj" id="12_w177t"]
+[ext_resource type="PackedScene" uid="uid://cpxbbx0eydsyl" path="res://FRESH-FLOWERS/Assets/chrisdome/Dome.glb" id="13_w34kd"]
+[ext_resource type="Material" uid="uid://dkbgl3p3ffd1" path="res://COGITO/Assets/Materials/Prototype_DarkGrey.tres" id="14_gwcao"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lceqg"]
+size = Vector3(27.69, 1, 52)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4q5fr"]
+panorama = ExtResource("7_2tcgf")
+energy_multiplier = 1.4
+
+[sub_resource type="Sky" id="Sky_6xcgc"]
+sky_material = SubResource("PanoramaSkyMaterial_4q5fr")
+
+[sub_resource type="Environment" id="Environment_ai7l5"]
+background_mode = 2
+sky = SubResource("Sky_6xcgc")
+ambient_light_source = 3
+ambient_light_color = Color(0.588235, 0.588235, 0.588235, 1)
+ambient_light_sky_contribution = 0.1
+ambient_light_energy = 0.2
+tonemap_mode = 2
+ssao_light_affect = 1.0
+ssao_ao_channel_affect = 0.25
+glow_enabled = true
+fog_density = 0.0203
+volumetric_fog_albedo = Color(0.845557, 1, 0.959561, 1)
+
+[node name="main_gameplay_scene" type="Node3D" node_paths=PackedStringArray("connectors")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00473046, 0, 0.00626111)
+script = ExtResource("1_y6yde")
+connectors = [NodePath("ConnectorA")]
+
+[node name="MusicManager" type="Node3D" parent="." node_paths=PackedStringArray("stage1_area", "stage2_area")]
+script = ExtResource("2_b3ywg")
+stage1_area = NodePath("stage1_music_shape")
+stage2_area = NodePath("stage1_music_shape2")
+
+[node name="MusicBank" type="Node" parent="MusicManager"]
+script = ExtResource("3_lertc")
+label = "Music"
+tracks = Array[Resource("res://addons/resonate/music_manager/music_track_resource.gd")]([ExtResource("4_nsrcl"), ExtResource("5_mfw6h"), ExtResource("6_kilp1")])
+
+[node name="stage1_music_shape" type="Area3D" parent="MusicManager"]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicManager/stage1_music_shape"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0154, 0, 0)
+shape = SubResource("BoxShape3D_lceqg")
+
+[node name="stage1_music_shape2" type="Area3D" parent="MusicManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8479, 0, 0)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicManager/stage1_music_shape2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8153, 0, 0)
+shape = SubResource("BoxShape3D_lceqg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.674253, 0.482183, -0.55936, -0.635904, 0.00606098, 0.771744, 0.375512, 0.87605, 0.302535, 0, 0, 0)
+light_color = Color(1, 0.988235, 0.988235, 1)
+shadow_enabled = true
+shadow_opacity = 0.8
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ai7l5")
+
+[node name="Player" parent="." instance=ExtResource("8_w4cpl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.493819, 1.2656, 3.70392)
+pause_menu = NodePath("../PauseMenu")
+player_hud = NodePath("../Player_HUD")
+is_using_sanity = false
+
+[node name="Player_HUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_ljlnw")]
+player = NodePath("../Player")
+use_stamina_component = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_wxk3t")]
+visible = false
+
+[node name="LEVEL" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="LEVEL"]
+transform = Transform3D(0.239512, 0, 0, 0, 1, 0, 0, 0, 2.15361, -1.59191, -0.0561991, 15.1331)
+use_collision = true
+size = Vector3(27.6885, 0.1, 20)
+material = ExtResource("14_gwcao")
+
+[node name="Floor2" type="CSGBox3D" parent="LEVEL"]
+transform = Transform3D(0.239512, 0, 0, 0, 1, 0, 0, 0, 2.15361, -17.3142, 2.79384, -9.90821)
+use_collision = true
+size = Vector3(114.531, 0.1, 2.61398)
+material = ExtResource("14_gwcao")
+
+[node name="stairs" parent="LEVEL" instance=ExtResource("12_s88hj")]
+transform = Transform3D(-1, -1.13999e-14, 3.89414e-07, -2.84217e-14, 1, -4.37114e-08, -3.89414e-07, -4.37114e-08, -1, -0.583898, 0, -6.63329)
+
+[node name="Stucco_Doorway_Wide_Tall_obj6" type="MeshInstance3D" parent="LEVEL"]
+transform = Transform3D(0.039548, 0.0605276, -1.64809, -0.00154122, 1.55297, 0.0642347, 0.972719, -2.71736e-07, 0.0671083, 0.00473046, 0, -1.00626)
+mesh = ExtResource("12_w177t")
+
+[node name="Dome" parent="LEVEL" instance=ExtResource("13_w34kd")]
+transform = Transform3D(19.35, 0, 0, 0, 19.35, 0, 0, 0, 19.35, -0.813629, 0, -11.9414)
+
+[node name="ConnectorA" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, -4)
+
+[node name="RayCast3D" type="RayCast3D" parent="ConnectorA"]
+target_position = Vector3(0, 0, -1)

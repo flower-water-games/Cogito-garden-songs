@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d012yrca3yqtg"
+path="res://.godot/imported/Wood_Railing_Corner.obj-4466d537acbee614b27cf80a2999c61c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Railing_Corner.obj-4466d537acbee614b27cf80a2999c61c.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Wood_Railing_Corner.obj"
+dest_files=["res://.godot/imported/Wood_Railing_Corner.obj-4466d537acbee614b27cf80a2999c61c.mesh", "res://.godot/imported/Wood_Railing_Corner.obj-4466d537acbee614b27cf80a2999c61c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

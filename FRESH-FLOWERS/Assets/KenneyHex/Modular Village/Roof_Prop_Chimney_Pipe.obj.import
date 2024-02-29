@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cksoeqp304k0i"
+path="res://.godot/imported/Roof_Prop_Chimney_Pipe.obj-546a7717e830b229b34c5e05041abd12.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Roof_Prop_Chimney_Pipe.obj-546a7717e830b229b34c5e05041abd12.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Roof_Prop_Chimney_Pipe.obj"
+dest_files=["res://.godot/imported/Roof_Prop_Chimney_Pipe.obj-546a7717e830b229b34c5e05041abd12.mesh", "res://.godot/imported/Roof_Prop_Chimney_Pipe.obj-546a7717e830b229b34c5e05041abd12.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

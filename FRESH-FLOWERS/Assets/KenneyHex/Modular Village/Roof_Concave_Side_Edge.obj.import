@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://gpskxpptq4qx"
+path="res://.godot/imported/Roof_Concave_Side_Edge.obj-ca06bb5f4b463b21664f5b3f135a4eb0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Roof_Concave_Side_Edge.obj-ca06bb5f4b463b21664f5b3f135a4eb0.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Roof_Concave_Side_Edge.obj"
+dest_files=["res://.godot/imported/Roof_Concave_Side_Edge.obj-ca06bb5f4b463b21664f5b3f135a4eb0.mesh", "res://.godot/imported/Roof_Concave_Side_Edge.obj-ca06bb5f4b463b21664f5b3f135a4eb0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

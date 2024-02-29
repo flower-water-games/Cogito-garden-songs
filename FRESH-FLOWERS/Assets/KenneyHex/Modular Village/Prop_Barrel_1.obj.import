@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cjbqq2dwquw4x"
+path="res://.godot/imported/Prop_Barrel_1.obj-7e1dced3f1a59791cb109ec19bde3352.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Barrel_1.obj-7e1dced3f1a59791cb109ec19bde3352.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Prop_Barrel_1.obj"
+dest_files=["res://.godot/imported/Prop_Barrel_1.obj-7e1dced3f1a59791cb109ec19bde3352.mesh", "res://.godot/imported/Prop_Barrel_1.obj-7e1dced3f1a59791cb109ec19bde3352.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

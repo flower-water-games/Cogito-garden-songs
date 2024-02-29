@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bt7rfsrxi7ycs"
+path="res://.godot/imported/Prop_Cart_1.obj-b71580388265563b2b74dc6b08bd115a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Cart_1.obj-b71580388265563b2b74dc6b08bd115a.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Prop_Cart_1.obj"
+dest_files=["res://.godot/imported/Prop_Cart_1.obj-b71580388265563b2b74dc6b08bd115a.mesh", "res://.godot/imported/Prop_Cart_1.obj-b71580388265563b2b74dc6b08bd115a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

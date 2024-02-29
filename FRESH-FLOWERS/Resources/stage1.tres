@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MusicTrackResource" load_steps=13 format=3 uid="uid://wa0jawp4obka"]
+[gd_resource type="Resource" script_class="MusicTrackResource" load_steps=12 format=3 uid="uid://wa0jawp4obka"]
 
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="1_qmb7m"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="2_mievg"]
@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://cmniasxpeliie" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  dangly.ogg" id="4_a3avm"]
 [ext_resource type="AudioStream" uid="uid://cxt2rgxinljev" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  FLute.ogg" id="5_uebio"]
 [ext_resource type="AudioStream" uid="uid://b4jkpu6hs7vy2" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1  String.ogg" id="6_krmc0"]
-[ext_resource type="AudioStream" uid="uid://bbj0i1c20q16r" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage-1-ogg/Stage 1 Mix.ogg" id="7_n04ei"]
 
 [sub_resource type="Resource" id="Resource_borns"]
 script = ExtResource("2_mievg")
@@ -39,9 +38,8 @@ stream = ExtResource("6_krmc0")
 [sub_resource type="Resource" id="Resource_7drnl"]
 script = ExtResource("2_mievg")
 name = "audio"
-enabled = true
+enabled = false
 volume = 0.0
-stream = ExtResource("7_n04ei")
 
 [resource]
 script = ExtResource("1_qmb7m")

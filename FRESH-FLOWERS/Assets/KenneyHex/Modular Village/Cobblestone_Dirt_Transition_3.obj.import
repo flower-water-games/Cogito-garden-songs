@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://do4xv5qngqe5a"
+path="res://.godot/imported/Cobblestone_Dirt_Transition_3.obj-a7f269614bfe4b6fe0276cc04eea93da.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cobblestone_Dirt_Transition_3.obj-a7f269614bfe4b6fe0276cc04eea93da.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Cobblestone_Dirt_Transition_3.obj"
+dest_files=["res://.godot/imported/Cobblestone_Dirt_Transition_3.obj-a7f269614bfe4b6fe0276cc04eea93da.mesh", "res://.godot/imported/Cobblestone_Dirt_Transition_3.obj-a7f269614bfe4b6fe0276cc04eea93da.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

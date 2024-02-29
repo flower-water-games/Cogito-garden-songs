@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bn7c615xgb44x"
+path="res://.godot/imported/Stucco_Window_Double_Narrow.obj-56643eecbb3146ec2a9f0fa76389d8fc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stucco_Window_Double_Narrow.obj-56643eecbb3146ec2a9f0fa76389d8fc.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Stucco_Window_Double_Narrow.obj"
+dest_files=["res://.godot/imported/Stucco_Window_Double_Narrow.obj-56643eecbb3146ec2a9f0fa76389d8fc.mesh", "res://.godot/imported/Stucco_Window_Double_Narrow.obj-56643eecbb3146ec2a9f0fa76389d8fc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

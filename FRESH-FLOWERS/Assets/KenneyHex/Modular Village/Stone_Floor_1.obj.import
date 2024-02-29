@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://gk0hgaa41olt"
+path="res://.godot/imported/Stone_Floor_1.obj-f63c3dd1927fdfc415f9705b129b64ad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stone_Floor_1.obj-f63c3dd1927fdfc415f9705b129b64ad.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Stone_Floor_1.obj"
+dest_files=["res://.godot/imported/Stone_Floor_1.obj-f63c3dd1927fdfc415f9705b129b64ad.mesh", "res://.godot/imported/Stone_Floor_1.obj-f63c3dd1927fdfc415f9705b129b64ad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

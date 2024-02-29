@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dwuqjg6g7q4k5"
+path="res://.godot/imported/Cobblestone_Floor_1.obj-0eba91f4dbf68b9735a005ef55717044.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cobblestone_Floor_1.obj-0eba91f4dbf68b9735a005ef55717044.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Cobblestone_Floor_1.obj"
+dest_files=["res://.godot/imported/Cobblestone_Floor_1.obj-0eba91f4dbf68b9735a005ef55717044.mesh", "res://.godot/imported/Cobblestone_Floor_1.obj-0eba91f4dbf68b9735a005ef55717044.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
