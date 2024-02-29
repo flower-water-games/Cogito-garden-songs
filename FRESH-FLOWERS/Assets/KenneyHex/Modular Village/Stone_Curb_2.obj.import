@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bgscmogyo425i"
+path="res://.godot/imported/Stone_Curb_2.obj-ec728e6a9ed27e2d549240052c18539a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stone_Curb_2.obj-ec728e6a9ed27e2d549240052c18539a.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Stone_Curb_2.obj"
+dest_files=["res://.godot/imported/Stone_Curb_2.obj-ec728e6a9ed27e2d549240052c18539a.mesh", "res://.godot/imported/Stone_Curb_2.obj-ec728e6a9ed27e2d549240052c18539a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

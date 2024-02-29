@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dn0bvmsuskbid"
+path="res://.godot/imported/Wood_Floor_Corner.obj-30adb8e99a59a141da7faaf9074103eb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Floor_Corner.obj-30adb8e99a59a141da7faaf9074103eb.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Wood_Floor_Corner.obj"
+dest_files=["res://.godot/imported/Wood_Floor_Corner.obj-30adb8e99a59a141da7faaf9074103eb.mesh", "res://.godot/imported/Wood_Floor_Corner.obj-30adb8e99a59a141da7faaf9074103eb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

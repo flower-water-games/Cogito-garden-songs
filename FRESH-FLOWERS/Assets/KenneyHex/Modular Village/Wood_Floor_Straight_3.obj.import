@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://pi7tan3lnkbd"
+path="res://.godot/imported/Wood_Floor_Straight_3.obj-d287cf266a35b5eaf8982a4f5783744d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Floor_Straight_3.obj-d287cf266a35b5eaf8982a4f5783744d.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Wood_Floor_Straight_3.obj"
+dest_files=["res://.godot/imported/Wood_Floor_Straight_3.obj-d287cf266a35b5eaf8982a4f5783744d.mesh", "res://.godot/imported/Wood_Floor_Straight_3.obj-d287cf266a35b5eaf8982a4f5783744d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

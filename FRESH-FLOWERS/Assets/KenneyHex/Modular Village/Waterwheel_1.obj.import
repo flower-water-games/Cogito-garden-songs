@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://diiotdby4m7v6"
+path="res://.godot/imported/Waterwheel_1.obj-383b5e3c75d0ba260c35590296527e4d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Waterwheel_1.obj-383b5e3c75d0ba260c35590296527e4d.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Waterwheel_1.obj"
+dest_files=["res://.godot/imported/Waterwheel_1.obj-383b5e3c75d0ba260c35590296527e4d.mesh", "res://.godot/imported/Waterwheel_1.obj-383b5e3c75d0ba260c35590296527e4d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

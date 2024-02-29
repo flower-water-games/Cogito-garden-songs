@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://0b0yins4xk8q"
+path="res://.godot/imported/Roof_Straight_Side_Eave.obj-d1385188e934d8c1825108783227e4be.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Roof_Straight_Side_Eave.obj-d1385188e934d8c1825108783227e4be.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Roof_Straight_Side_Eave.obj"
+dest_files=["res://.godot/imported/Roof_Straight_Side_Eave.obj-d1385188e934d8c1825108783227e4be.mesh", "res://.godot/imported/Roof_Straight_Side_Eave.obj-d1385188e934d8c1825108783227e4be.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

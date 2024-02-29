@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqss6w3klo8ee"
+path="res://.godot/imported/Prop_Hay_1.obj-0b36778e24fab4a8f6cbaa4112f870ec.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Hay_1.obj-0b36778e24fab4a8f6cbaa4112f870ec.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Prop_Hay_1.obj"
+dest_files=["res://.godot/imported/Prop_Hay_1.obj-0b36778e24fab4a8f6cbaa4112f870ec.mesh", "res://.godot/imported/Prop_Hay_1.obj-0b36778e24fab4a8f6cbaa4112f870ec.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

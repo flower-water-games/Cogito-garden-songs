@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garden-Songs", "Garden-Songs.csproj", "{C2B3D9E1-6E53-43E8-98D0-AE3D0DD440B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2B3D9E1-6E53-43E8-98D0-AE3D0DD440B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B3D9E1-6E53-43E8-98D0-AE3D0DD440B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B3D9E1-6E53-43E8-98D0-AE3D0DD440B1}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{C2B3D9E1-6E53-43E8-98D0-AE3D0DD440B1}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{C2B3D9E1-6E53-43E8-98D0-AE3D0DD440B1}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{C2B3D9E1-6E53-43E8-98D0-AE3D0DD440B1}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal

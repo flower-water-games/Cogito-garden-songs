@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ci2sloexnv44"
+path="res://.godot/imported/Prop_Lamp_Street.obj-9dfd70aa4c8371235507e6e8dcabe24d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Lamp_Street.obj-9dfd70aa4c8371235507e6e8dcabe24d.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Prop_Lamp_Street.obj"
+dest_files=["res://.godot/imported/Prop_Lamp_Street.obj-9dfd70aa4c8371235507e6e8dcabe24d.mesh", "res://.godot/imported/Prop_Lamp_Street.obj-9dfd70aa4c8371235507e6e8dcabe24d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

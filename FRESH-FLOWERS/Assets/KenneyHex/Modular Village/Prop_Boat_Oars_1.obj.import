@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5xdv1s8uaxpv"
+path="res://.godot/imported/Prop_Boat_Oars_1.obj-2c9b265e563d71dc0276bfffbb708b8b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Boat_Oars_1.obj-2c9b265e563d71dc0276bfffbb708b8b.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Prop_Boat_Oars_1.obj"
+dest_files=["res://.godot/imported/Prop_Boat_Oars_1.obj-2c9b265e563d71dc0276bfffbb708b8b.mesh", "res://.godot/imported/Prop_Boat_Oars_1.obj-2c9b265e563d71dc0276bfffbb708b8b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://egne3es7f7fa"
+path="res://.godot/imported/Roof_Straight_Side.obj-58a2c42fa623c4d46dc5d3f1a96b1cdf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Roof_Straight_Side.obj-58a2c42fa623c4d46dc5d3f1a96b1cdf.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Roof_Straight_Side.obj"
+dest_files=["res://.godot/imported/Roof_Straight_Side.obj-58a2c42fa623c4d46dc5d3f1a96b1cdf.mesh", "res://.godot/imported/Roof_Straight_Side.obj-58a2c42fa623c4d46dc5d3f1a96b1cdf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

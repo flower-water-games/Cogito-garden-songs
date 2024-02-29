@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ryoo2ucx6af3"
+path="res://.godot/imported/Wood_Post_Large.obj-648097dce1c92d253c9018b2eda799ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Post_Large.obj-648097dce1c92d253c9018b2eda799ca.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Wood_Post_Large.obj"
+dest_files=["res://.godot/imported/Wood_Post_Large.obj-648097dce1c92d253c9018b2eda799ca.mesh", "res://.godot/imported/Wood_Post_Large.obj-648097dce1c92d253c9018b2eda799ca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

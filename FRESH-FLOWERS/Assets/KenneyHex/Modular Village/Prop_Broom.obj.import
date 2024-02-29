@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cr6145f1xy7aq"
+path="res://.godot/imported/Prop_Broom.obj-a765011fe69b66c307b8b406431b2334.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Broom.obj-a765011fe69b66c307b8b406431b2334.mesh"]
+
+source_file="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Prop_Broom.obj"
+dest_files=["res://.godot/imported/Prop_Broom.obj-a765011fe69b66c307b8b406431b2334.mesh", "res://.godot/imported/Prop_Broom.obj-a765011fe69b66c307b8b406431b2334.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
