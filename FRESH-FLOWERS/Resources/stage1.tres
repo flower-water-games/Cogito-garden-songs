@@ -39,7 +39,7 @@ stream = ExtResource("6_krmc0")
 [sub_resource type="Resource" id="Resource_7drnl"]
 script = ExtResource("2_mievg")
 name = "audio"
-enabled = false
+enabled = true
 volume = 0.0
 stream = ExtResource("7_sogda")
 

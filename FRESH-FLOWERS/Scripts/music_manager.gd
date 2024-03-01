@@ -1,5 +1,6 @@
 extends Node3D
 
+class_name GardenMusicManager
 
 # two area 3ds, one for stage 1 music, stage 2 music, 
 @export var stage1_area : Area3D
@@ -24,7 +25,11 @@ func _stage_1_entered(node):
 	# play stage 1 music
 	# if the body is in the group "player"
 	if node.is_in_group("Player"):
+		# enable all stems for stage 1 that are playing already
+
 		MusicManager.play("Music", "Stage1", 1)
+		for stem in stage1_stems:
+			MusicManager.enable_stem(stem)
 		print("stage 1 music playing")
 
 
@@ -32,6 +37,54 @@ func _stage_2_entered(node):
 	# play stage 2 music if player entered
 	if node.is_in_group("Player"):
 		MusicManager.play("Music", "Stage2", 1)
+		for stem in stage2_stems:
+			MusicManager.enable_stem(stem)
 		print("stage 2 music playing")
 	
 
+# two dictionaries per stage, to remember which stems are playing
+var stage1_total_additional_stems = 1#5-1= /4/
+var stage2_total_additional_stems = 6
+
+var stage1_all_stems_found = false;
+var stage2_all_stems_found = true;
+
+var stage1_stems = {}
+var stage2_stems = {}
+
+func _is_stage_playing(num: int) -> bool:
+	return MusicManager.is_playing("Music", "Stage" + str(num))
+
+func enable_stem(stem_name: String):
+	if _is_stage_playing(1):
+		# first check if the stem is already playing
+		if stem_name in stage1_stems:
+			return
+		# if not, add it to the dictionary
+		stage1_stems[stem_name] = true
+		if len(stage1_stems) == stage1_total_additional_stems:
+			# if all stems are playing, all_playing is true
+			stage1_all_stems_found = true
+
+	elif _is_stage_playing(2):
+		if stem_name in stage2_stems:
+			return
+		stage2_stems[stem_name] = true
+		if len(stage1_stems) == stage1_total_additional_stems:
+			# if all stems are playing, all_playing is true
+			stage2_all_stems_found = true
+	MusicManager.enable_stem(stem_name)
+
+func stage3():
+	# wait 30 seconds
+	print("stage 3 party time")
+	await get_tree().create_timer(30).timeout 
+	MusicManager.stop(1)
+	MusicManager.play("Music", "Stage3", 1)
+
+func _process(delta):
+	# if all stems are playing, stop the music
+	if stage1_all_stems_found and stage2_all_stems_found:
+		stage1_all_stems_found = false
+		stage3()
+	pass
