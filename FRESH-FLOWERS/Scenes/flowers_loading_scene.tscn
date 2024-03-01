@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxrij0qq7fsld"]
 
 [ext_resource type="PackedScene" uid="uid://d1tj50tt4hw2j" path="res://COGITO/SceneManagement/LoadingScene.tscn" id="1_35h8l"]
-[ext_resource type="Texture2D" uid="uid://d2ht7gjkm2qfw" path="res://FRESH-FLOWERS/Assets/loader.png" id="2_iglhl"]
+[ext_resource type="Texture2D" uid="uid://cp1pdcwti3s8n" path="res://FRESH-FLOWERS/Assets/colormap.png" id="2_22qds"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nc3os"]
 font_size = 48
@@ -9,8 +9,8 @@ font_size = 48
 [node name="LoadingScene" instance=ExtResource("1_35h8l")]
 
 [node name="TextureRect" parent="Control" index="0"]
-texture = ExtResource("2_iglhl")
+texture = ExtResource("2_22qds")
 
 [node name="Label" parent="Control" index="1"]
-text = "loading..."
+text = "down......."
 label_settings = SubResource("LabelSettings_nc3os")
