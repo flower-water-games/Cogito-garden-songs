@@ -12,35 +12,35 @@
 [sub_resource type="Resource" id="Resource_3aixo"]
 script = ExtResource("2_0m7ub")
 name = "bass"
-enabled = false
+enabled = true
 volume = 0.0
 stream = ExtResource("3_6jbei")
 
 [sub_resource type="Resource" id="Resource_04qdx"]
 script = ExtResource("2_0m7ub")
 name = "chords"
-enabled = false
+enabled = true
 volume = 0.0
 stream = ExtResource("4_aeshh")
 
 [sub_resource type="Resource" id="Resource_dvh1q"]
 script = ExtResource("2_0m7ub")
 name = "lead1"
-enabled = false
+enabled = true
 volume = 0.0
 stream = ExtResource("5_4epxp")
 
 [sub_resource type="Resource" id="Resource_d5fhy"]
 script = ExtResource("2_0m7ub")
 name = "lead"
-enabled = false
+enabled = true
 volume = 0.0
 stream = ExtResource("6_kohii")
 
 [sub_resource type="Resource" id="Resource_o677e"]
 script = ExtResource("2_0m7ub")
 name = "arp"
-enabled = false
+enabled = true
 volume = 0.0
 stream = ExtResource("7_8ceo5")
 

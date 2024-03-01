@@ -6,7 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cfj3thtuhkb56" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj" id="3_an74d"]
 [ext_resource type="Material" uid="uid://fc0yjkvu0twc" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_sad.tres" id="3_w1b62"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_o14ho"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vcjnl"]
 
 [node name="FlowerCube" type="Area3D"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.40733, 0)
@@ -27,13 +27,13 @@ surface_material_override/0 = ExtResource("2_pjvv4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139221, 0)
-shape = SubResource("BoxShape3D_o14ho")
+shape = SubResource("BoxShape3D_vcjnl")
 
 [node name="Node" type="Node" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139221, 0)
-shape = SubResource("BoxShape3D_o14ho")
+shape = SubResource("BoxShape3D_vcjnl")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138887, 0)
