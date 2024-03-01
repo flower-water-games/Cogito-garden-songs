@@ -20,14 +20,14 @@ stream = ExtResource("3_oomq7")
 [sub_resource type="Resource" id="Resource_1oycu"]
 script = ExtResource("2_v52ms")
 name = "4-drumrack"
-enabled = true
+enabled = false
 volume = 0.0
 stream = ExtResource("4_y2c2y")
 
 [sub_resource type="Resource" id="Resource_85h2r"]
 script = ExtResource("2_v52ms")
 name = "drone"
-enabled = true
+enabled = false
 volume = 0.0
 stream = ExtResource("5_de77v")
 
@@ -41,7 +41,7 @@ stream = ExtResource("6_jdv4p")
 [sub_resource type="Resource" id="Resource_seg8o"]
 script = ExtResource("2_v52ms")
 name = "gabechords"
-enabled = true
+enabled = false
 volume = 0.0
 stream = ExtResource("7_16fmk")
 
@@ -55,7 +55,7 @@ stream = ExtResource("8_mutji")
 [sub_resource type="Resource" id="Resource_je8wu"]
 script = ExtResource("2_v52ms")
 name = "pianosmart"
-enabled = true
+enabled = false
 volume = 0.0
 stream = ExtResource("9_me624")
 

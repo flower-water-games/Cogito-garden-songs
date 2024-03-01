@@ -112,8 +112,8 @@ transform = Transform3D(-1, -1.13999e-14, 3.89414e-07, -2.84217e-14, 1, -4.37114
 transform = Transform3D(0.039548, 0.0605276, -1.64809, -0.00154122, 1.55297, 0.0642347, 0.972719, -2.71736e-07, 0.0671083, 0.00473046, 0, -1.00626)
 mesh = ExtResource("12_w177t")
 
-[node name="Dome" parent="LEVEL" instance=ExtResource("13_w34kd")]
-transform = Transform3D(19.35, 0, 0, 0, 19.35, 0, 0, 0, 19.35, -0.813629, 0, -11.9414)
+[node name="Dome_glb" parent="LEVEL" instance=ExtResource("13_w34kd")]
+transform = Transform3D(-5.24537e-07, 12, 0, -12, -5.24537e-07, 0, 0, 0, 12, -33.737, 10.0698, -10.0063)
 
 [node name="ConnectorA" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, -4)
