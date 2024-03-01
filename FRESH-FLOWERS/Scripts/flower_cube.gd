@@ -6,6 +6,9 @@ extends Waterable
 
 @export var my_happy_material:StandardMaterial3D = null
 @export var my_sad_material:StandardMaterial3D = null
+# %GardenMusicManager
+
+@onready var garden_music_manager:GardenMusicManager = get_node("%GardenMusicManager")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
