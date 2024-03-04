@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bct5kchviw2gr"]
 
-[ext_resource type="Texture2D" uid="uid://ds83d7h0v07ds" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/Default_happy_diffuse.png" id="1_tp4sn"]
+[ext_resource type="Texture2D" uid="uid://cd136o5p5v5ho" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/GOD_CUBE_marigold_pink.png" id="1_xhio3"]
 
 [resource]
-albedo_texture = ExtResource("1_tp4sn")
+albedo_texture = ExtResource("1_xhio3")
